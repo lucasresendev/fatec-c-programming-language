@@ -1,17 +1,26 @@
-node_modules/
+# Build outputs and binaries
 dist/
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+build/
+bin/
+out/
+*.o
+*.out
+*.exe
+*.obj
+*.dSYM/
+
+# OS and logs
 .DS_Store
 Thumbs.db
+*.log
+
+# AI Assistant configuration (zero trace on Git)
 .agents/
 .agent/
 AGENTS.md
 .agent-instructions.md
 
-# Scratchpad / Drafts (pasta de rascunhos da aula)
+# Scratchpad / Drafts
 drafts/
 rascunhos/
 scratch/
