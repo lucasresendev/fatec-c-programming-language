@@ -38,9 +38,9 @@ Repositório dedicado ao registro de práticas laboratoriais e exercícios do cu
 | :---: | :--- | :---: |
 | 01 | Introdução à Programação em C e Pipeline de Compilação | ✅ Concluído |
 | 02 | Declaração de Variáveis e Constantes, Tipos Primitivos e Entrada/Saída | ✅ Concluído |
-| 03 | Estruturas de Decisão: Parte 1 (`if`, `else`) | ⏳ Em breve |
-| 04 | Estruturas de Decisão: Parte 2 (`switch`, condicionais aninhadas) | ⏳ Em breve |
-| 05 | Estruturas de Repetição: Parte 1 (`while`) | ⏳ Em breve |
+| 03 | Estruturas de Decisão: Parte 1 (`if`, `else`, verdade numérica, operadores) | ✅ Concluído |
+| 04 | Estruturas de Decisão: Parte 2 (`else if`, condicionais aninhadas, menu) | ✅ Concluído |
+| 05 | Estruturas de Decisão: Parte 3 (`switch`, fallthrough, suíte unificada) | ✅ Concluído |
 | 06 | Estruturas de Repetição: Parte 2 (`do-while`, `for`) | ⏳ Em breve |
 | 07 | Estruturas de Repetição: Parte 3 (laços aninhados e controle de fluxo) | ⏳ Em breve |
 | 08 | Trabalho Prático 1 | ⏳ Em breve |
@@ -64,6 +64,11 @@ Repositório dedicado ao registro de práticas laboratoriais e exercícios do cu
 | # | Exercício | Código & Documentação | Conceitos Principais |
 | :-: | :--- | :--- | :--- |
 | 01 | **Tipos Básicos, E/S e Tamanho de Memória** | [`src/01-primitive-types-and-io/`](src/01-primitive-types-and-io/) | Tipos primitivos (`char`, `int`, `float`, `long`, `double`), operador `sizeof()`, `%zu`, `printf()` e `scanf()` formatados. |
+| 02 | **Verificador de Par ou Ímpar** | [`src/02-even-or-odd/`](src/02-even-or-odd/) | Operador módulo (`%`), exclusividade mútua (`if/else`), limpeza do buffer de entrada (`scanf(" %c")`), repetição com `do...while`. |
+| 03 | **Avaliador de Notas Acadêmicas** | [`src/03-grade-evaluator/`](src/03-grade-evaluator/) | Cálculo de média aritmética, reaproveitamento de variáveis, condicionais aninhadas (`if` dentro de `else`), recuperação (`retakeExam`). |
+| 04 | **One Item Shop - Seletor de Descontos** | [`src/04-one-item-shop/`](src/04-one-item-shop/) | Cadeia `else if`, comparação de caracteres (`'a' \|\| 'A'`), escape de porcentagem literal (`%%`), fluxo estruturado sem `return` prematuro. |
+| 05 | **Loja de Sobremesas - Switch & Fallthrough** | [`src/05-dessert-shop/`](src/05-dessert-shop/) | Ramificação com `switch/case`, controle com `break`, *fallthrough* intencional para preços acumulados, tratamento com `default`. |
+| 06 | **Menu Consolidado - Suíte de Exercícios** | [`src/06-consolidated-menu/`](src/06-consolidated-menu/) | Painel unificado para terminal, roteamento interativo por menu, isolamento de escopo, saída controlada. |
 
 ---
 
@@ -72,8 +77,28 @@ Repositório dedicado ao registro de práticas laboratoriais e exercícios do cu
 ```text
 .
 ├── src/
-│   └── 01-primitive-types-and-io/
-│       ├── primitive_types_and_io.c
+│   ├── 01-primitive-types-and-io/
+│   │   ├── primitive_types_and_io.c
+│   │   ├── README.md
+│   │   └── README.pt-BR.md
+│   ├── 02-even-or-odd/
+│   │   ├── even_or_odd.c
+│   │   ├── README.md
+│   │   └── README.pt-BR.md
+│   ├── 03-grade-evaluator/
+│   │   ├── grade_evaluator.c
+│   │   ├── README.md
+│   │   └── README.pt-BR.md
+│   ├── 04-one-item-shop/
+│   │   ├── one_item_shop.c
+│   │   ├── README.md
+│   │   └── README.pt-BR.md
+│   ├── 05-dessert-shop/
+│   │   ├── dessert_shop.c
+│   │   ├── README.md
+│   │   └── README.pt-BR.md
+│   └── 06-consolidated-menu/
+│       ├── consolidated_menu.c
 │       ├── README.md
 │       └── README.pt-BR.md
 │
@@ -93,11 +118,23 @@ Repositório dedicado ao registro de práticas laboratoriais e exercícios do cu
 Compile e execute diretamente a partir da raiz do repositório:
 
 ```bash
-# Exercício 1: Tipos Básicos, E/S e Tamanho de Memória (GCC)
-mkdir -p dist && gcc -Wall -O2 src/01-primitive-types-and-io/primitive_types_and_io.c -o dist/primitive_types_and_io && ./dist/primitive_types_and_io
-
-# Exercício 1: Tipos Básicos, E/S e Tamanho de Memória (Clang no macOS)
+# Exercício 1: Tipos Básicos, E/S e Tamanho de Memória
 mkdir -p dist && clang -Wall -O2 src/01-primitive-types-and-io/primitive_types_and_io.c -o dist/primitive_types_and_io && ./dist/primitive_types_and_io
+
+# Exercício 2: Verificador de Par ou Ímpar
+mkdir -p dist && clang -Wall -O2 src/02-even-or-odd/even_or_odd.c -o dist/even_or_odd && ./dist/even_or_odd
+
+# Exercício 3: Avaliador de Notas Acadêmicas
+mkdir -p dist && clang -Wall -O2 src/03-grade-evaluator/grade_evaluator.c -o dist/grade_evaluator && ./dist/grade_evaluator
+
+# Exercício 4: One Item Shop - Seletor de Descontos
+mkdir -p dist && clang -Wall -O2 src/04-one-item-shop/one_item_shop.c -o dist/one_item_shop && ./dist/one_item_shop
+
+# Exercício 5: Loja de Sobremesas - Switch & Fallthrough
+mkdir -p dist && clang -Wall -O2 src/05-dessert-shop/dessert_shop.c -o dist/dessert_shop && ./dist/dessert_shop
+
+# Exercício 6: Menu Consolidado - Suíte de Exercícios
+mkdir -p dist && clang -Wall -O2 src/06-consolidated-menu/consolidated_menu.c -o dist/consolidated_menu && ./dist/consolidated_menu
 ```
 
 ---

@@ -38,9 +38,9 @@ Practical coursework and laboratory exercises for the **Introduction to the C Pr
 | :---: | :--- | :---: |
 | 01 | Introduction to Programming in C & Compilation Pipeline | ✅ Done |
 | 02 | Variable & Constant Declarations, Primitive Types, and Formatted I/O | ✅ Done |
-| 03 | Decision Structures: Part 1 (`if`, `else`) | ⏳ Upcoming |
-| 04 | Decision Structures: Part 2 (`switch`, nested conditionals) | ⏳ Upcoming |
-| 05 | Repetition Structures: Part 1 (`while`) | ⏳ Upcoming |
+| 03 | Decision Structures: Part 1 (`if`, `else`, numeric truth, operators) | ✅ Done |
+| 04 | Decision Structures: Part 2 (`else if`, nested conditionals, discount menu) | ✅ Done |
+| 05 | Decision Structures: Part 3 (`switch`, fallthrough, consolidated suite) | ✅ Done |
 | 06 | Repetition Structures: Part 2 (`do-while`, `for`) | ⏳ Upcoming |
 | 07 | Repetition Structures: Part 3 (nested loops, loop control) | ⏳ Upcoming |
 | 08 | Practical Assignment 1 | ⏳ Upcoming |
@@ -64,6 +64,11 @@ Practical coursework and laboratory exercises for the **Introduction to the C Pr
 | # | Exercise | Code & Documentation | Core Concepts |
 | :-: | :--- | :--- | :--- |
 | 01 | **Basic Types, I/O & Memory Sizing** | [`src/01-primitive-types-and-io/`](src/01-primitive-types-and-io/) | Primitive types (`char`, `int`, `float`, `long`, `double`), `sizeof()` operator, `%zu`, formatted `printf()` and `scanf()`. |
+| 02 | **Even or Odd Checker** | [`src/02-even-or-odd/`](src/02-even-or-odd/) | Modulo operator (`%`), mutual exclusivity (`if/else`), `scanf(" %c")` buffer handling, interactive `do...while` loop. |
+| 03 | **Academic Grade Evaluator** | [`src/03-grade-evaluator/`](src/03-grade-evaluator/) | Arithmetic mean calculation, variable reuse, nested conditionals (`if` inside `else`), retake exam routing (`retakeExam`). |
+| 04 | **One Item Shop - Discount Selector** | [`src/04-one-item-shop/`](src/04-one-item-shop/) | `else if` conditional ladder, case-insensitive character comparison (`'a' \|\| 'A'`), escaped literal percentages (`%%`), structured flow without premature `return`. |
+| 05 | **Dessert Shop - Switch & Fallthrough** | [`src/05-dessert-shop/`](src/05-dessert-shop/) | Multi-branching `switch/case`, `break` flow control, deliberate fallthrough for additive option pricing, `default` fallback. |
+| 06 | **Consolidated Menu - Exercise Suite** | [`src/06-consolidated-menu/`](src/06-consolidated-menu/) | Modular console dashboard uniting laboratory exercises, interactive menu routing, scope isolation, clean exit handling. |
 
 ---
 
@@ -72,8 +77,28 @@ Practical coursework and laboratory exercises for the **Introduction to the C Pr
 ```text
 .
 ├── src/
-│   └── 01-primitive-types-and-io/
-│       ├── primitive_types_and_io.c
+│   ├── 01-primitive-types-and-io/
+│   │   ├── primitive_types_and_io.c
+│   │   ├── README.md
+│   │   └── README.pt-BR.md
+│   ├── 02-even-or-odd/
+│   │   ├── even_or_odd.c
+│   │   ├── README.md
+│   │   └── README.pt-BR.md
+│   ├── 03-grade-evaluator/
+│   │   ├── grade_evaluator.c
+│   │   ├── README.md
+│   │   └── README.pt-BR.md
+│   ├── 04-one-item-shop/
+│   │   ├── one_item_shop.c
+│   │   ├── README.md
+│   │   └── README.pt-BR.md
+│   ├── 05-dessert-shop/
+│   │   ├── dessert_shop.c
+│   │   ├── README.md
+│   │   └── README.pt-BR.md
+│   └── 06-consolidated-menu/
+│       ├── consolidated_menu.c
 │       ├── README.md
 │       └── README.pt-BR.md
 │
@@ -93,11 +118,23 @@ Practical coursework and laboratory exercises for the **Introduction to the C Pr
 Compile and execute directly from the project root:
 
 ```bash
-# Exercise 1: Basic Types, I/O & Memory Sizing (GCC)
-mkdir -p dist && gcc -Wall -O2 src/01-primitive-types-and-io/primitive_types_and_io.c -o dist/primitive_types_and_io && ./dist/primitive_types_and_io
-
-# Exercise 1: Basic Types, I/O & Memory Sizing (Clang on macOS)
+# Exercise 1: Basic Types, I/O & Memory Sizing
 mkdir -p dist && clang -Wall -O2 src/01-primitive-types-and-io/primitive_types_and_io.c -o dist/primitive_types_and_io && ./dist/primitive_types_and_io
+
+# Exercise 2: Even or Odd Checker
+mkdir -p dist && clang -Wall -O2 src/02-even-or-odd/even_or_odd.c -o dist/even_or_odd && ./dist/even_or_odd
+
+# Exercise 3: Academic Grade Evaluator
+mkdir -p dist && clang -Wall -O2 src/03-grade-evaluator/grade_evaluator.c -o dist/grade_evaluator && ./dist/grade_evaluator
+
+# Exercise 4: One Item Shop - Discount Selector
+mkdir -p dist && clang -Wall -O2 src/04-one-item-shop/one_item_shop.c -o dist/one_item_shop && ./dist/one_item_shop
+
+# Exercise 5: Dessert Shop - Switch & Fallthrough
+mkdir -p dist && clang -Wall -O2 src/05-dessert-shop/dessert_shop.c -o dist/dessert_shop && ./dist/dessert_shop
+
+# Exercise 6: Consolidated Menu - Exercise Suite
+mkdir -p dist && clang -Wall -O2 src/06-consolidated-menu/consolidated_menu.c -o dist/consolidated_menu && ./dist/consolidated_menu
 ```
 
 ---
