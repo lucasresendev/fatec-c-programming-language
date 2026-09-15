@@ -26,15 +26,15 @@ int main(void) {
     char letter;        // 1 byte (character)
     int number;         // 4 bytes (standard integer)
     float real;         // 4 bytes (single-precision floating point)
-    long longNumber;    // 4 or 8 bytes depending on OS/architecture
-    double doubleReal;  // 8 bytes (double-precision floating point)
+    long long_number;    // 4 or 8 bytes depending on OS/architecture
+    double double_real;  // 8 bytes (double-precision floating point)
 
     // 2. Initial Assignments
     letter = 'a';
     number = 10;
     real = 0.5010f;
-    longNumber = 999999999L;
-    doubleReal = -0.912083;
+    long_number = 999999999L;
+    double_real = -0.912083;
 
     // 3. Display Initial Values and Type Sizes (%zu for size_t)
     printf("--- Default Values ---\n"
@@ -46,8 +46,8 @@ int main(void) {
            letter, sizeof(letter), 
            number, sizeof(number), 
            real, sizeof(real), 
-           longNumber, sizeof(longNumber), 
-           doubleReal, sizeof(doubleReal));
+           long_number, sizeof(long_number), 
+           double_real, sizeof(double_real));
 
     // 4. User Input (Interactive I/O)
     printf("Enter a letter: ");
@@ -60,10 +60,10 @@ int main(void) {
     scanf("%f", &real);
 
     printf("Enter a long integer: ");
-    scanf("%ld", &longNumber);
+    scanf("%ld", &long_number);
 
     printf("Enter a double: ");
-    scanf("%lf", &doubleReal);
+    scanf("%lf", &double_real);
 
     // 5. Display User Input
     printf("\n--- User Input ---\n"
@@ -75,8 +75,8 @@ int main(void) {
            letter, sizeof(letter), 
            number, sizeof(number), 
            real, sizeof(real), 
-           longNumber, sizeof(longNumber), 
-           doubleReal, sizeof(doubleReal));
+           long_number, sizeof(long_number), 
+           double_real, sizeof(double_real));
 
     return 0;
 }
