@@ -40,9 +40,9 @@ Repositório dedicado ao registro de práticas laboratoriais e exercícios do cu
 | 02 | Declaração de Variáveis e Constantes, Tipos Primitivos e Entrada/Saída | ✅ Concluído |
 | 03 | Estruturas de Decisão: Parte 1 (`if`, `else`, verdade numérica, operadores) | ✅ Concluído |
 | 04 | Estruturas de Decisão: Parte 2 (`else if`, condicionais aninhadas, menu) | ✅ Concluído |
-| 05 | Estruturas de Decisão: Parte 3 (`switch`, fallthrough, suíte unificada) | ✅ Concluído |
-| 06 | Estruturas de Repetição: Parte 2 (`do-while`, `for`) | ⏳ Em breve |
-| 07 | Estruturas de Repetição: Parte 3 (laços aninhados e controle de fluxo) | ⏳ Em breve |
+| 05 | Estruturas de Decisão: Parte 3 (`switch`, fallthrough, menu consolidado) | ✅ Concluído |
+| 06 | Estruturas de Repetição: Parte 1 (`do-while`, `while`, exercícios de repetição) | ✅ Concluído |
+| 07 | Estruturas de Repetição: Parte 2 (laços aninhados, loop `for`, controle de fluxo) | ⏳ Em breve |
 | 08 | Trabalho Prático 1 | ⏳ Em breve |
 | 09 | Vetores (Arrays Unidimensionais) | ⏳ Em breve |
 | 10 | Manipulação de Strings | ⏳ Em breve |
@@ -63,12 +63,14 @@ Repositório dedicado ao registro de práticas laboratoriais e exercícios do cu
 
 | # | Exercício | Código & Documentação | Conceitos Principais |
 | :-: | :--- | :--- | :--- |
+| 00 | **Menu Consolidado - Exercícios do Curso** | [`src/00-consolidated-menu/`](src/00-consolidated-menu/) | Menu interativo unificando os exercícios práticos do semestre em um único programa executável com repetição contínua em `do...while`. |
 | 01 | **Tipos Básicos, E/S e Tamanho de Memória** | [`src/01-primitive-types-and-io/`](src/01-primitive-types-and-io/) | Tipos primitivos (`char`, `int`, `float`, `long`, `double`), operador `sizeof()`, `%zu`, `printf()` e `scanf()` formatados. |
 | 02 | **Verificador de Par ou Ímpar** | [`src/02-even-or-odd/`](src/02-even-or-odd/) | Operador módulo (`%`), exclusividade mútua (`if/else`), limpeza do buffer de entrada (`scanf(" %c")`), repetição com `do...while`. |
 | 03 | **Avaliador de Notas Acadêmicas** | [`src/03-grade-evaluator/`](src/03-grade-evaluator/) | Cálculo de média aritmética, reaproveitamento de variáveis, condicionais aninhadas (`if` dentro de `else`), recuperação (`retakeExam`). |
 | 04 | **One Item Shop - Seletor de Descontos** | [`src/04-one-item-shop/`](src/04-one-item-shop/) | Cadeia `else if`, comparação de caracteres (`'a' \|\| 'A'`), escape de porcentagem literal (`%%`), fluxo estruturado sem `return` prematuro. |
 | 05 | **Loja de Sobremesas - Switch & Fallthrough** | [`src/05-dessert-shop/`](src/05-dessert-shop/) | Ramificação com `switch/case`, controle com `break`, *fallthrough* intencional para preços acumulados, tratamento com `default`. |
-| 06 | **Menu Consolidado - Suíte de Exercícios** | [`src/06-consolidated-menu/`](src/06-consolidated-menu/) | Painel unificado para terminal, roteamento interativo por menu, isolamento de escopo, saída controlada. |
+| 06 | **Calculador de Fatorial** | [`src/06-factorial-calculator/`](src/06-factorial-calculator/) | Acumulador de produto fatorial ($n!$), formatação do desenvolvimento multiplicativo (`5 x 4 x 3 x 2 x 1 = 120`), submenu comparativo de laços `while` e `do...while`. |
+| 07 | **Sequência de Fibonacci** | [`src/07-fibonacci-sequence/`](src/07-fibonacci-sequence/) | Recorrência com janela deslizante ($F_n = F_{n-1} + F_{n-2}$), decomposição de somas, limite por valor vs. quantidade de termos, laço de validação defensiva de entrada (`limit > 0`). |
 
 ---
 
@@ -77,6 +79,10 @@ Repositório dedicado ao registro de práticas laboratoriais e exercícios do cu
 ```text
 .
 ├── src/
+│   ├── 00-consolidated-menu/
+│   │   ├── consolidated_menu.c
+│   │   ├── README.md
+│   │   └── README.pt-BR.md
 │   ├── 01-primitive-types-and-io/
 │   │   ├── primitive_types_and_io.c
 │   │   ├── README.md
@@ -97,8 +103,12 @@ Repositório dedicado ao registro de práticas laboratoriais e exercícios do cu
 │   │   ├── dessert_shop.c
 │   │   ├── README.md
 │   │   └── README.pt-BR.md
-│   └── 06-consolidated-menu/
-│       ├── consolidated_menu.c
+│   ├── 06-factorial-calculator/
+│   │   ├── factorial_calculator.c
+│   │   ├── README.md
+│   │   └── README.pt-BR.md
+│   └── 07-fibonacci-sequence/
+│       ├── fibonacci_sequence.c
 │       ├── README.md
 │       └── README.pt-BR.md
 │
@@ -118,6 +128,9 @@ Repositório dedicado ao registro de práticas laboratoriais e exercícios do cu
 Compile e execute diretamente a partir da raiz do repositório:
 
 ```bash
+# Menu Consolidado de Exercícios
+mkdir -p dist && clang -Wall -O2 src/00-consolidated-menu/consolidated_menu.c -o dist/consolidated_menu && ./dist/consolidated_menu
+
 # Exercício 1: Tipos Básicos, E/S e Tamanho de Memória
 mkdir -p dist && clang -Wall -O2 src/01-primitive-types-and-io/primitive_types_and_io.c -o dist/primitive_types_and_io && ./dist/primitive_types_and_io
 
@@ -133,8 +146,11 @@ mkdir -p dist && clang -Wall -O2 src/04-one-item-shop/one_item_shop.c -o dist/on
 # Exercício 5: Loja de Sobremesas - Switch & Fallthrough
 mkdir -p dist && clang -Wall -O2 src/05-dessert-shop/dessert_shop.c -o dist/dessert_shop && ./dist/dessert_shop
 
-# Exercício 6: Menu Consolidado - Suíte de Exercícios
-mkdir -p dist && clang -Wall -O2 src/06-consolidated-menu/consolidated_menu.c -o dist/consolidated_menu && ./dist/consolidated_menu
+# Exercício 6: Calculador de Fatorial
+mkdir -p dist && clang -Wall -O2 src/06-factorial-calculator/factorial_calculator.c -o dist/factorial_calculator && ./dist/factorial_calculator
+
+# Exercício 7: Sequência de Fibonacci
+mkdir -p dist && clang -Wall -O2 src/07-fibonacci-sequence/fibonacci_sequence.c -o dist/fibonacci_sequence && ./dist/fibonacci_sequence
 ```
 
 ---

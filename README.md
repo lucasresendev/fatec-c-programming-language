@@ -40,9 +40,9 @@ Practical coursework and laboratory exercises for the **Introduction to the C Pr
 | 02 | Variable & Constant Declarations, Primitive Types, and Formatted I/O | ✅ Done |
 | 03 | Decision Structures: Part 1 (`if`, `else`, numeric truth, operators) | ✅ Done |
 | 04 | Decision Structures: Part 2 (`else if`, nested conditionals, discount menu) | ✅ Done |
-| 05 | Decision Structures: Part 3 (`switch`, fallthrough, consolidated suite) | ✅ Done |
-| 06 | Repetition Structures: Part 2 (`do-while`, `for`) | ⏳ Upcoming |
-| 07 | Repetition Structures: Part 3 (nested loops, loop control) | ⏳ Upcoming |
+| 05 | Decision Structures: Part 3 (`switch`, fallthrough, consolidated menu) | ✅ Done |
+| 06 | Repetition Structures: Part 1 (`do-while`, `while`, repetition exercises) | ✅ Done |
+| 07 | Repetition Structures: Part 2 (nested loops, `for` loop, loop control) | ⏳ Upcoming |
 | 08 | Practical Assignment 1 | ⏳ Upcoming |
 | 09 | Arrays and Vectors | ⏳ Upcoming |
 | 10 | String Manipulation | ⏳ Upcoming |
@@ -63,12 +63,14 @@ Practical coursework and laboratory exercises for the **Introduction to the C Pr
 
 | # | Exercise | Code & Documentation | Core Concepts |
 | :-: | :--- | :--- | :--- |
+| 00 | **Consolidated Menu - Coursework Exercises** | [`src/00-consolidated-menu/`](src/00-consolidated-menu/) | Interactive console menu uniting all laboratory exercises across the semester into a single program with `do...while` navigation. |
 | 01 | **Basic Types, I/O & Memory Sizing** | [`src/01-primitive-types-and-io/`](src/01-primitive-types-and-io/) | Primitive types (`char`, `int`, `float`, `long`, `double`), `sizeof()` operator, `%zu`, formatted `printf()` and `scanf()`. |
 | 02 | **Even or Odd Checker** | [`src/02-even-or-odd/`](src/02-even-or-odd/) | Modulo operator (`%`), mutual exclusivity (`if/else`), `scanf(" %c")` buffer handling, interactive `do...while` loop. |
 | 03 | **Academic Grade Evaluator** | [`src/03-grade-evaluator/`](src/03-grade-evaluator/) | Arithmetic mean calculation, variable reuse, nested conditionals (`if` inside `else`), retake exam routing (`retakeExam`). |
 | 04 | **One Item Shop - Discount Selector** | [`src/04-one-item-shop/`](src/04-one-item-shop/) | `else if` conditional ladder, case-insensitive character comparison (`'a' \|\| 'A'`), escaped literal percentages (`%%`), structured flow without premature `return`. |
 | 05 | **Dessert Shop - Switch & Fallthrough** | [`src/05-dessert-shop/`](src/05-dessert-shop/) | Multi-branching `switch/case`, `break` flow control, deliberate fallthrough for additive option pricing, `default` fallback. |
-| 06 | **Consolidated Menu - Exercise Suite** | [`src/06-consolidated-menu/`](src/06-consolidated-menu/) | Modular console dashboard uniting laboratory exercises, interactive menu routing, scope isolation, clean exit handling. |
+| 06 | **Factorial Calculator** | [`src/06-factorial-calculator/`](src/06-factorial-calculator/) | Factorial product accumulator ($n!$), formatted multiplication expansion (`5 x 4 x 3 x 2 x 1 = 120`), comparative `while` and `do...while` sub-menu. |
+| 07 | **Fibonacci Sequence** | [`src/07-fibonacci-sequence/`](src/07-fibonacci-sequence/) | Sliding window recurrence ($F_n = F_{n-1} + F_{n-2}$), pairwise addition breakdown, value limit vs. term count, defensive input validation loop (`limit > 0`). |
 
 ---
 
@@ -77,6 +79,10 @@ Practical coursework and laboratory exercises for the **Introduction to the C Pr
 ```text
 .
 ├── src/
+│   ├── 00-consolidated-menu/
+│   │   ├── consolidated_menu.c
+│   │   ├── README.md
+│   │   └── README.pt-BR.md
 │   ├── 01-primitive-types-and-io/
 │   │   ├── primitive_types_and_io.c
 │   │   ├── README.md
@@ -97,8 +103,12 @@ Practical coursework and laboratory exercises for the **Introduction to the C Pr
 │   │   ├── dessert_shop.c
 │   │   ├── README.md
 │   │   └── README.pt-BR.md
-│   └── 06-consolidated-menu/
-│       ├── consolidated_menu.c
+│   ├── 06-factorial-calculator/
+│   │   ├── factorial_calculator.c
+│   │   ├── README.md
+│   │   └── README.pt-BR.md
+│   └── 07-fibonacci-sequence/
+│       ├── fibonacci_sequence.c
 │       ├── README.md
 │       └── README.pt-BR.md
 │
@@ -118,6 +128,9 @@ Practical coursework and laboratory exercises for the **Introduction to the C Pr
 Compile and execute directly from the project root:
 
 ```bash
+# Consolidated Exercises Menu
+mkdir -p dist && clang -Wall -O2 src/00-consolidated-menu/consolidated_menu.c -o dist/consolidated_menu && ./dist/consolidated_menu
+
 # Exercise 1: Basic Types, I/O & Memory Sizing
 mkdir -p dist && clang -Wall -O2 src/01-primitive-types-and-io/primitive_types_and_io.c -o dist/primitive_types_and_io && ./dist/primitive_types_and_io
 
@@ -133,8 +146,11 @@ mkdir -p dist && clang -Wall -O2 src/04-one-item-shop/one_item_shop.c -o dist/on
 # Exercise 5: Dessert Shop - Switch & Fallthrough
 mkdir -p dist && clang -Wall -O2 src/05-dessert-shop/dessert_shop.c -o dist/dessert_shop && ./dist/dessert_shop
 
-# Exercise 6: Consolidated Menu - Exercise Suite
-mkdir -p dist && clang -Wall -O2 src/06-consolidated-menu/consolidated_menu.c -o dist/consolidated_menu && ./dist/consolidated_menu
+# Exercise 6: Factorial Calculator
+mkdir -p dist && clang -Wall -O2 src/06-factorial-calculator/factorial_calculator.c -o dist/factorial_calculator && ./dist/factorial_calculator
+
+# Exercise 7: Fibonacci Sequence
+mkdir -p dist && clang -Wall -O2 src/07-fibonacci-sequence/fibonacci_sequence.c -o dist/fibonacci_sequence && ./dist/fibonacci_sequence
 ```
 
 ---
