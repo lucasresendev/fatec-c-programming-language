@@ -42,7 +42,7 @@ Repositório dedicado ao registro de práticas laboratoriais e exercícios do cu
 | 04 | Estruturas de Decisão: Parte 2 (`else if`, condicionais aninhadas, menu) | ✅ Concluído |
 | 05 | Estruturas de Decisão: Parte 3 (`switch`, fallthrough, menu consolidado) | ✅ Concluído |
 | 06 | Estruturas de Repetição: Parte 1 (`do-while`, `while`, exercícios de repetição) | ✅ Concluído |
-| 07 | Estruturas de Repetição: Parte 2 (laços aninhados, loop `for`, controle de fluxo) | ⏳ Em breve |
+| 07 | Estruturas de Repetição: Parte 2 (loop `for`, arrays, bubble sort) | ✅ Concluído |
 | 08 | Trabalho Prático 1 | ⏳ Em breve |
 | 09 | Vetores (Arrays Unidimensionais) | ⏳ Em breve |
 | 10 | Manipulação de Strings | ⏳ Em breve |
@@ -69,8 +69,10 @@ Repositório dedicado ao registro de práticas laboratoriais e exercícios do cu
 | 03 | **Avaliador de Notas Acadêmicas** | [`src/03-grade-evaluator/`](src/03-grade-evaluator/) | Cálculo de média aritmética, reaproveitamento de variáveis, condicionais aninhadas (`if` dentro de `else`), recuperação (`retakeExam`). |
 | 04 | **One Item Shop - Seletor de Descontos** | [`src/04-one-item-shop/`](src/04-one-item-shop/) | Cadeia `else if`, comparação de caracteres (`'a' \|\| 'A'`), escape de porcentagem literal (`%%`), fluxo estruturado sem `return` prematuro. |
 | 05 | **Loja de Sobremesas - Switch & Fallthrough** | [`src/05-dessert-shop/`](src/05-dessert-shop/) | Ramificação com `switch/case`, controle com `break`, *fallthrough* intencional para preços acumulados, tratamento com `default`. |
-| 06 | **Calculador de Fatorial** | [`src/06-factorial-calculator/`](src/06-factorial-calculator/) | Acumulador de produto fatorial ($n!$), formatação do desenvolvimento multiplicativo (`5 x 4 x 3 x 2 x 1 = 120`), submenu comparativo de laços `while` e `do...while`. |
-| 07 | **Sequência de Fibonacci** | [`src/07-fibonacci-sequence/`](src/07-fibonacci-sequence/) | Recorrência com janela deslizante ($F_n = F_{n-1} + F_{n-2}$), decomposição de somas, limite por valor vs. quantidade de termos, laço de validação defensiva de entrada (`limit > 0`). |
+| 06 | **Calculador de Fatorial** | [`src/06-factorial-calculator/`](src/06-factorial-calculator/) | Acumulador de produto fatorial ($n!$), formatação do desenvolvimento multiplicativo (`5 x 4 x 3 x 2 x 1 = 120`), submenu comparativo com `while`, `do...while` e `for`. |
+| 07 | **Sequência de Fibonacci** | [`src/07-fibonacci-sequence/`](src/07-fibonacci-sequence/) | Recorrência com janela deslizante ($F_n = F_{n-1} + F_{n-2}$), decomposição de somas, limite por valor vs. quantidade de termos, repetição de validação defensiva de entrada (`limit > 0`), versões com `do...while`, `while` e `for`. |
+| 08 | **Caracteres em Ordem Reversa** | [`src/08-reverse-characters/`](src/08-reverse-characters/) | Arrays com tamanho em tempo de execução (VLA), índice começando em zero, `for` nos dois sentidos, limpeza do buffer com `scanf(" %c")`. |
+| 09 | **Maior e Menor Número** | [`src/09-lowest-highest-numbers/`](src/09-lowest-highest-numbers/) | Array de inteiros com entrada limitada (até 30), bubble sort em uma cópia do array, busca do menor e do maior valor, `for` aninhados. |
 
 ---
 
@@ -107,8 +109,16 @@ Repositório dedicado ao registro de práticas laboratoriais e exercícios do cu
 │   │   ├── factorial_calculator.c
 │   │   ├── README.md
 │   │   └── README.pt-BR.md
-│   └── 07-fibonacci-sequence/
-│       ├── fibonacci_sequence.c
+│   ├── 07-fibonacci-sequence/
+│   │   ├── fibonacci_sequence.c
+│   │   ├── README.md
+│   │   └── README.pt-BR.md
+│   ├── 08-reverse-characters/
+│   │   ├── reverse_characters.c
+│   │   ├── README.md
+│   │   └── README.pt-BR.md
+│   └── 09-lowest-highest-numbers/
+│       ├── lowest_highest_numbers.c
 │       ├── README.md
 │       └── README.pt-BR.md
 │
@@ -151,6 +161,12 @@ mkdir -p dist && clang -Wall -O2 src/06-factorial-calculator/factorial_calculato
 
 # Exercício 7: Sequência de Fibonacci
 mkdir -p dist && clang -Wall -O2 src/07-fibonacci-sequence/fibonacci_sequence.c -o dist/fibonacci_sequence && ./dist/fibonacci_sequence
+
+# Exercício 8: Caracteres em Ordem Reversa
+mkdir -p dist && clang -Wall -O2 src/08-reverse-characters/reverse_characters.c -o dist/reverse_characters && ./dist/reverse_characters
+
+# Exercício 9: Maior e Menor Número
+mkdir -p dist && clang -Wall -O2 src/09-lowest-highest-numbers/lowest_highest_numbers.c -o dist/lowest_highest_numbers && ./dist/lowest_highest_numbers
 ```
 
 ---

@@ -42,7 +42,7 @@ Practical coursework and laboratory exercises for the **Introduction to the C Pr
 | 04 | Decision Structures: Part 2 (`else if`, nested conditionals, discount menu) | ✅ Done |
 | 05 | Decision Structures: Part 3 (`switch`, fallthrough, consolidated menu) | ✅ Done |
 | 06 | Repetition Structures: Part 1 (`do-while`, `while`, repetition exercises) | ✅ Done |
-| 07 | Repetition Structures: Part 2 (nested loops, `for` loop, loop control) | ⏳ Upcoming |
+| 07 | Repetition Structures: Part 2 (`for` loop, arrays, bubble sort) | ✅ Done |
 | 08 | Practical Assignment 1 | ⏳ Upcoming |
 | 09 | Arrays and Vectors | ⏳ Upcoming |
 | 10 | String Manipulation | ⏳ Upcoming |
@@ -69,8 +69,10 @@ Practical coursework and laboratory exercises for the **Introduction to the C Pr
 | 03 | **Academic Grade Evaluator** | [`src/03-grade-evaluator/`](src/03-grade-evaluator/) | Arithmetic mean calculation, variable reuse, nested conditionals (`if` inside `else`), retake exam routing (`retakeExam`). |
 | 04 | **One Item Shop - Discount Selector** | [`src/04-one-item-shop/`](src/04-one-item-shop/) | `else if` conditional ladder, case-insensitive character comparison (`'a' \|\| 'A'`), escaped literal percentages (`%%`), structured flow without premature `return`. |
 | 05 | **Dessert Shop - Switch & Fallthrough** | [`src/05-dessert-shop/`](src/05-dessert-shop/) | Multi-branching `switch/case`, `break` flow control, deliberate fallthrough for additive option pricing, `default` fallback. |
-| 06 | **Factorial Calculator** | [`src/06-factorial-calculator/`](src/06-factorial-calculator/) | Factorial product accumulator ($n!$), formatted multiplication expansion (`5 x 4 x 3 x 2 x 1 = 120`), comparative `while` and `do...while` sub-menu. |
-| 07 | **Fibonacci Sequence** | [`src/07-fibonacci-sequence/`](src/07-fibonacci-sequence/) | Sliding window recurrence ($F_n = F_{n-1} + F_{n-2}$), pairwise addition breakdown, value limit vs. term count, defensive input validation loop (`limit > 0`). |
+| 06 | **Factorial Calculator** | [`src/06-factorial-calculator/`](src/06-factorial-calculator/) | Factorial product accumulator ($n!$), formatted multiplication expansion (`5 x 4 x 3 x 2 x 1 = 120`), comparative `while`, `do...while` and `for` sub-menu. |
+| 07 | **Fibonacci Sequence** | [`src/07-fibonacci-sequence/`](src/07-fibonacci-sequence/) | Sliding window recurrence ($F_n = F_{n-1} + F_{n-2}$), pairwise addition breakdown, value limit vs. term count, defensive input validation loop (`limit > 0`), `do...while`, `while` and `for` versions. |
+| 08 | **Reverse Characters** | [`src/08-reverse-characters/`](src/08-reverse-characters/) | Arrays with runtime size (VLA), zero-based index, `for` loops in both directions, `scanf(" %c")` buffer handling. |
+| 09 | **Lowest and Highest Numbers** | [`src/09-lowest-highest-numbers/`](src/09-lowest-highest-numbers/) | Integer array with bounded input (up to 30), bubble sort on a copy of the array, lowest and highest value scan, nested `for` loops. |
 
 ---
 
@@ -107,8 +109,16 @@ Practical coursework and laboratory exercises for the **Introduction to the C Pr
 │   │   ├── factorial_calculator.c
 │   │   ├── README.md
 │   │   └── README.pt-BR.md
-│   └── 07-fibonacci-sequence/
-│       ├── fibonacci_sequence.c
+│   ├── 07-fibonacci-sequence/
+│   │   ├── fibonacci_sequence.c
+│   │   ├── README.md
+│   │   └── README.pt-BR.md
+│   ├── 08-reverse-characters/
+│   │   ├── reverse_characters.c
+│   │   ├── README.md
+│   │   └── README.pt-BR.md
+│   └── 09-lowest-highest-numbers/
+│       ├── lowest_highest_numbers.c
 │       ├── README.md
 │       └── README.pt-BR.md
 │
@@ -151,6 +161,12 @@ mkdir -p dist && clang -Wall -O2 src/06-factorial-calculator/factorial_calculato
 
 # Exercise 7: Fibonacci Sequence
 mkdir -p dist && clang -Wall -O2 src/07-fibonacci-sequence/fibonacci_sequence.c -o dist/fibonacci_sequence && ./dist/fibonacci_sequence
+
+# Exercise 8: Reverse Characters
+mkdir -p dist && clang -Wall -O2 src/08-reverse-characters/reverse_characters.c -o dist/reverse_characters && ./dist/reverse_characters
+
+# Exercise 9: Lowest and Highest Numbers
+mkdir -p dist && clang -Wall -O2 src/09-lowest-highest-numbers/lowest_highest_numbers.c -o dist/lowest_highest_numbers && ./dist/lowest_highest_numbers
 ```
 
 ---
