@@ -11,10 +11,10 @@
 
 ## 🎯 Problem Statement
 
-Generate the Fibonacci sequence and display the step-by-step arithmetic addition pairs ($1 + 1 = 2$, $1 + 2 = 3$, $2 + 3 = 5$, etc.). The program features an interactive comparative submenu demonstrating both loop structures (`do...while` and `while`) across two problem formulations explored in class:
+Generate the Fibonacci sequence and display the step-by-step arithmetic addition pairs ($1 + 1 = 2$, $1 + 2 = 3$, $2 + 3 = 5$, etc.). In my solution, the program has an interactive comparative submenu demonstrating the three loop structures (`do...while`, `while` and `for`) across two problem formulations explored in class:
 
 1. **Value Ceiling Limit:** The sequence and sum operations terminate when values exceed a numeric threshold (`next <= limit`).
-2. **Term Count Limit (Corrected):** The user specifies the exact quantity of terms to generate. Input validation enforces `limit > 0`, generating $N$ sequence numbers and the corresponding pairwise additions.
+2. **Term Count Limit (Corrected):** The user specifies the exact quantity of terms to generate. Input validation enforces `limit > 0`, generating $N$ sequence numbers and the corresponding pairwise additions. This formulation is available with `do...while`, `while` and `for`.
 
 ---
 
@@ -34,10 +34,11 @@ The implementation is available directly in [`fibonacci_sequence.c`](fibonacci_s
 2 - while with Value Limit (Stops when number exceeds limit)
 3 - do...while with Term Count Limit (Generates N terms, validated > 0)
 4 - while with Term Count Limit (Generates N terms, validated > 0)
-5 - Exit
+5 - for with Term Count Limit (Generates N terms, validated > 0)
+6 - Exit
 ================================================================
 
-Choice (1-5): 3
+Choice (1-6): 3
 
 ================================================================
           Fibonacci (do...while - Term Count Limit)
@@ -65,10 +66,11 @@ Sums:
 2 - while with Value Limit (Stops when number exceeds limit)
 3 - do...while with Term Count Limit (Generates N terms, validated > 0)
 4 - while with Term Count Limit (Generates N terms, validated > 0)
-5 - Exit
+5 - for with Term Count Limit (Generates N terms, validated > 0)
+6 - Exit
 ================================================================
 
-Choice (1-5): 4
+Choice (1-6): 4
 
 ================================================================
             Fibonacci (while - Term Count Limit)
@@ -96,10 +98,11 @@ Sums:
 2 - while with Value Limit (Stops when number exceeds limit)
 3 - do...while with Term Count Limit (Generates N terms, validated > 0)
 4 - while with Term Count Limit (Generates N terms, validated > 0)
-5 - Exit
+5 - for with Term Count Limit (Generates N terms, validated > 0)
+6 - Exit
 ================================================================
 
-Choice (1-5): 5
+Choice (1-6): 6
 
 ================================================================
                    Exiting program. Goodbye!
@@ -117,7 +120,8 @@ Choice (1-5): 5
   current = next;
   next = sum;
   ```
-- **Input Validation Loop:** Guards against non-positive inputs using defensive re-prompting (`while (limit <= 0)` or `do...while (limit <= 0)`).
+- **Input Validation Loop:** Guards against non-positive inputs using defensive re-prompting (`while (limit <= 0)`, `do...while (limit <= 0)` or `for (; limit <= 0;)`).
+- **`for` With Optional Parts:** The `for` version leaves out the initialization (the counters are set before) and works as a `while` for the validation, while the term generation uses `for (; loop < limit; loop++)`.
 - **Algorithmic Refinement (Value Ceiling vs. Term Count):** Reflects the classroom evolution from stopping when values exceed a ceiling (`next <= limit`) to generating a precise count of items (`loop < limit`).
 - **Pairwise Sums Decomposition:** Displays the arithmetic operations that produce each subsequent term when $N > 2$.
 

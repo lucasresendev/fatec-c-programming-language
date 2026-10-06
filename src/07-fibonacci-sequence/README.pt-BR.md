@@ -11,10 +11,10 @@
 
 ## 🎯 Enunciado do Problema
 
-Gerar a sequência de Fibonacci e detalhar os pares de adição aritmética que formam cada novo termo ($1 + 1 = 2$, $1 + 2 = 3$, $2 + 3 = 5$, etc.). O programa disponibiliza um submenu comparativo demonstrando ambas as estruturas de repetição (`do...while` e `while`) nas duas abordagens exploradas em aula:
+Gerar a sequência de Fibonacci e detalhar os pares de adição aritmética que formam cada novo termo ($1 + 1 = 2$, $1 + 2 = 3$, $2 + 3 = 5$, etc.). Na minha solução, o programa tem um submenu comparativo demonstrando as três estruturas de repetição (`do...while`, `while` e `for`) nas duas abordagens exploradas em aula:
 
 1. **Limite por Teto Numérico:** A sequência e as somas são interrompidas assim que os valores ultrapassam um teto especificado (`next <= limit`).
-2. **Limite por Quantidade de Termos (Corrigido):** O usuário especifica a quantidade exata de termos a serem gerados. A validação de entrada assegura `limit > 0`, exibindo $N$ números da série e suas somas correspondentes.
+2. **Limite por Quantidade de Termos (Corrigido):** O usuário especifica a quantidade exata de termos a serem gerados. A validação de entrada assegura `limit > 0`, exibindo $N$ números da série e suas somas correspondentes. Essa abordagem está disponível com `do...while`, `while` e `for`.
 
 ---
 
@@ -34,10 +34,11 @@ A implementação completa está disponível diretamente em [`fibonacci_sequence
 2 - while with Value Limit (Stops when number exceeds limit)
 3 - do...while with Term Count Limit (Generates N terms, validated > 0)
 4 - while with Term Count Limit (Generates N terms, validated > 0)
-5 - Exit
+5 - for with Term Count Limit (Generates N terms, validated > 0)
+6 - Exit
 ================================================================
 
-Choice (1-5): 3
+Choice (1-6): 3
 
 ================================================================
           Fibonacci (do...while - Term Count Limit)
@@ -65,10 +66,11 @@ Sums:
 2 - while with Value Limit (Stops when number exceeds limit)
 3 - do...while with Term Count Limit (Generates N terms, validated > 0)
 4 - while with Term Count Limit (Generates N terms, validated > 0)
-5 - Exit
+5 - for with Term Count Limit (Generates N terms, validated > 0)
+6 - Exit
 ================================================================
 
-Choice (1-5): 4
+Choice (1-6): 4
 
 ================================================================
             Fibonacci (while - Term Count Limit)
@@ -96,10 +98,11 @@ Sums:
 2 - while with Value Limit (Stops when number exceeds limit)
 3 - do...while with Term Count Limit (Generates N terms, validated > 0)
 4 - while with Term Count Limit (Generates N terms, validated > 0)
-5 - Exit
+5 - for with Term Count Limit (Generates N terms, validated > 0)
+6 - Exit
 ================================================================
 
-Choice (1-5): 5
+Choice (1-6): 6
 
 ================================================================
                    Exiting program. Goodbye!
@@ -117,7 +120,8 @@ Choice (1-5): 5
   current = next;
   next = sum;
   ```
-- **Laço de Validação de Entrada:** Tratamento defensivo contra números não positivos através de repetição orientada (`while (limit <= 0)` ou `do...while (limit <= 0)`).
+- **Repetição de Validação de Entrada:** Tratamento defensivo contra números não positivos através de repetição orientada (`while (limit <= 0)`, `do...while (limit <= 0)` ou `for (; limit <= 0;)`).
+- **`for` com Partes Opcionais:** Na versão com `for`, a inicialização fica de fora (os contadores são definidos antes) e a validação funciona como um `while`, enquanto a geração dos termos usa `for (; loop < limit; loop++)`.
 - **Evolução Algorítmica (Limite por Valor vs. Quantidade de Termos):** Reflete a correção pós-aula onde o critério de parada migrou da verificação do valor (`next <= limit`) para a contagem exata de termos exibidos (`loop < limit`).
 - **Decomposição das Somas:** Demonstração didática das operações matemáticas individuais que originam os termos subsequentes quando $N > 2$.
 
