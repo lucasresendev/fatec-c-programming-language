@@ -11,7 +11,7 @@
 
 ## 🎯 Enunciado do Problema
 
-Ler um número inteiro informado pelo usuário e calcular o seu fatorial ($n!$), exibindo dinamicamente o desenvolvimento da cadeia de multiplicações intermediárias (ex.: `5 x 4 x 3 x 2 x 1 = 120`). O programa dispõe de um submenu interativo comparativo para que o usuário execute e compare as implementações com `do...while` e `while`.
+Ler um número inteiro informado pelo usuário e calcular o seu fatorial ($n!$), exibindo dinamicamente o desenvolvimento da cadeia de multiplicações intermediárias (ex.: `5 x 4 x 3 x 2 x 1 = 120`). Na minha solução, o programa tem um submenu interativo para eu executar e comparar as implementações com `do...while`, `while` e `for`.
 
 ---
 
@@ -29,10 +29,11 @@ A implementação completa está disponível diretamente em [`factorial_calculat
 ================================================================
 1 - Calculate Factorial using do...while
 2 - Calculate Factorial using while
-3 - Exit
+3 - Calculate Factorial using for
+4 - Exit
 ================================================================
 
-Choice (1-3): 1
+Choice (1-4): 1
 
 ================================================================
              Factorial Calculation (do...while)
@@ -49,13 +50,14 @@ For the number 5, the factorial is: 5 x 4 x 3 x 2 x 1 = 120
 ================================================================
 1 - Calculate Factorial using do...while
 2 - Calculate Factorial using while
-3 - Exit
+3 - Calculate Factorial using for
+4 - Exit
 ================================================================
 
-Choice (1-3): 2
+Choice (1-4): 3
 
 ================================================================
-               Factorial Calculation (while)
+                Factorial Calculation (for)
 ================================================================
 
 Insert a number to calculate its factorial: 4
@@ -69,10 +71,11 @@ For the number 4, the factorial is: 4 x 3 x 2 x 1 = 24
 ================================================================
 1 - Calculate Factorial using do...while
 2 - Calculate Factorial using while
-3 - Exit
+3 - Calculate Factorial using for
+4 - Exit
 ================================================================
 
-Choice (1-3): 3
+Choice (1-4): 4
 
 ================================================================
                    Exiting program. Goodbye!
@@ -86,7 +89,7 @@ Choice (1-3): 3
 - **Modelo Matemático do Fatorial:** Definido para inteiros não negativos como $n! = \prod_{k=1}^n k$, com a identidade $0! = 1$.
 - **Padrão Acumulador Multiplicativo:** Inicialização em `factorial_number = 1` e escala sucessiva dos fatores por atribuição composta (`factorial_number *= temporary_number`).
 - **Formatação Dinâmica de Expressões:** Diferenciação entre os fatores multiplicativos intermediários e o encerramento do cálculo com saída condicional (`if (temporary_number > 1) printf("x "); else printf("= ");`).
-- **Comparação de Laços (`while` vs. `do...while`):** Análise de como o momento da validação condicional afeta o comportamento do programa diante de valores de fronteira.
+- **Comparação de Repetições (`while`, `do...while` e `for`):** Análise de como o momento da validação condicional afeta o comportamento do programa diante de valores de fronteira. O `for` reúne inicialização, condição e decremento em um único cabeçalho (`for (temporary_number = selected_number; temporary_number >= 1; temporary_number--)`), sendo o mais indicado quando se sabe quantas vezes a repetição vai rodar.
 - **Higiene do Buffer de Entrada:** Uso de `scanf(" %i")` com espaço à esquerda para descartar quebras de linha pendentes em `stdin`.
 
 ---
