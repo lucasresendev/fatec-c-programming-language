@@ -23,17 +23,25 @@ int main(void) {
     int dessert_choice = 0;
     float dessert_price = 0.0;
 
-    // Variables for 5 & 6 - Factorial
+    // Variables for 5, 6 & 7 - Factorial
     int fact_number = 0;
     int fact_temp = 0;
     int fact_result = 1;
 
-    // Variables for 7 & 8 - Fibonacci
+    // Variables for 8, 9 & 10 - Fibonacci
     int fib_limit = 0;
     int fib_sum = 0;
     int fib_current = 1;
     int fib_next = 1;
     int fib_loop = 1;
+
+    // Variables for 11 - Reverse Characters
+    int char_count = 0;
+
+    // Variables for 12 - Lowest and Highest Numbers
+    int value_count = 0;
+    int lowest_number = 0;
+    int highest_number = 0;
 
     do {
         printf("\n================================================================\n");
@@ -45,11 +53,15 @@ int main(void) {
         printf("4 - Dessert Shop\n");
         printf("5 - Factorial (do while)\n");
         printf("6 - Factorial (while)\n");
-        printf("7 - Fibonacci Sequence (do while)\n");
-        printf("8 - Fibonacci Sequence (while)\n");
-        printf("9 - Exit\n");
+        printf("7 - Factorial (for)\n");
+        printf("8 - Fibonacci Sequence (do while)\n");
+        printf("9 - Fibonacci Sequence (while)\n");
+        printf("10 - Fibonacci Sequence (for)\n");
+        printf("11 - Reverse Characters\n");
+        printf("12 - Lowest and Highest Numbers\n");
+        printf("13 - Exit\n");
         printf("================================================================\n\n");
-        printf("Choice (1-9): ");
+        printf("Choice (1-13): ");
 
         scanf(" %i", &exercise_choice);
 
@@ -231,6 +243,29 @@ int main(void) {
             printf("\n================================================================\n\n");
         } else if (exercise_choice == 7) {
             printf("\n================================================================\n");
+            printf("                       Factorial (for)\n");
+            printf("================================================================\n\n");
+
+            printf("Insert a number to calculate its factorial: ");
+            scanf(" %i", &fact_number);
+
+            fact_result = 1;
+
+            printf("For the number %i, the factorial is: ", fact_number);
+            for (fact_temp = fact_number; fact_temp >= 1; fact_temp--) {
+                printf("%i ", fact_temp);
+                if (fact_temp > 1) {
+                    printf("x ");
+                } else {
+                    printf("= ");
+                }
+                fact_result *= fact_temp;
+            }
+
+            printf("%i\n", fact_result);
+            printf("\n================================================================\n\n");
+        } else if (exercise_choice == 8) {
+            printf("\n================================================================\n");
             printf("                  Fibonacci Sequence (do while)\n");
             printf("================================================================\n\n");
 
@@ -271,7 +306,7 @@ int main(void) {
             }
 
             printf("\n\n================================================================\n\n");
-        } else if (exercise_choice == 8) {
+        } else if (exercise_choice == 9) {
             printf("\n================================================================\n");
             printf("                    Fibonacci Sequence (while)\n");
             printf("================================================================\n\n");
@@ -316,17 +351,162 @@ int main(void) {
             }
 
             printf("\n\n================================================================\n\n");
-        } else if (exercise_choice == 9) {
+        } else if (exercise_choice == 10) {
+            printf("\n================================================================\n");
+            printf("                    Fibonacci Sequence (for)\n");
+            printf("================================================================\n\n");
+
+            fib_current = 1;
+            fib_next = 1;
+            fib_loop = 1;
+
+            printf("Insert a limit number greater than 0 for the fibonacci sequence: ");
+            scanf(" %i", &fib_limit);
+
+            for (; fib_limit <= 0;) {
+                printf("You didn't input a valid number! Please, insert again: ");
+                scanf(" %i", &fib_limit);
+            }
+
+            printf("\nSequence:\n%i ", fib_current);
+
+            if (fib_limit > 1) {
+                for (; fib_loop < fib_limit; fib_loop++) {
+                    printf("%i ", fib_next);
+                    fib_sum = fib_current + fib_next;
+                    fib_current = fib_next;
+                    fib_next = fib_sum;
+                }
+
+                fib_current = 1;
+                fib_next = 1;
+                fib_loop = 1;
+
+                if (fib_limit > 2) {
+                    printf("\n\nSums:\n");
+                    for (; fib_loop < fib_limit - 1; fib_loop++) {
+                        fib_sum = fib_current + fib_next;
+                        printf("%i + %i = %i\n", fib_current, fib_next, fib_sum);
+                        fib_current = fib_next;
+                        fib_next = fib_sum;
+                    }
+                }
+            }
+
+            printf("\n\n================================================================\n\n");
+        } else if (exercise_choice == 11) {
+            printf("\n================================================================\n");
+            printf("                      Reverse Characters\n");
+            printf("================================================================\n\n");
+
+            char_count = 0;
+
+            while (char_count <= 0) {
+                printf("How many characters do you want to write? ");
+                scanf(" %i", &char_count);
+            }
+
+            printf("\n");
+            char character[char_count];
+
+            for (int i = 0; i < char_count; i++) {
+                printf("Character %i: ", i + 1);
+                scanf(" %c", &character[i]);
+            }
+
+            printf("\nCharacters in order: ");
+
+            for (int i = 0; i < char_count; i++) {
+                printf("%c ", character[i]);
+            }
+            printf("\n");
+
+            printf("Characters in inverted order: ");
+
+            for (int i = char_count - 1; i >= 0; i--) {
+                printf("%c ", character[i]);
+            }
+            printf("\n");
+
+            printf("\n================================================================\n\n");
+        } else if (exercise_choice == 12) {
+            printf("\n================================================================\n");
+            printf("                  Lowest and Highest Numbers\n");
+            printf("================================================================\n\n");
+
+            value_count = 0;
+
+            do {
+                printf("How many integer values do you want to store?\n(You can only store up to 30 values.)\nAnswer: ");
+                scanf(" %i", &value_count);
+            } while (value_count <= 0 || value_count > 30);
+
+            int numbers[value_count];
+            int sorted_numbers[value_count];
+
+            printf("\nEnter the integer values below:\n");
+
+            for (int i = 0; i < value_count; i++) {
+                printf("Number %i: ", i + 1);
+                scanf(" %i", &numbers[i]);
+                sorted_numbers[i] = numbers[i];
+            }
+
+            // Ascending order via bubble sort in a separate array
+            for (int i = 0; i < value_count; i++) {
+                for (int j = 0, tmp = 0; j < value_count - 1; j++) {
+                    if (sorted_numbers[j] > sorted_numbers[j + 1]) {
+                        tmp = sorted_numbers[j];
+                        sorted_numbers[j] = sorted_numbers[j + 1];
+                        sorted_numbers[j + 1] = tmp;
+                    }
+                }
+            }
+
+            lowest_number = numbers[0];
+            highest_number = numbers[0];
+
+            // An unnecessary algorithm since we already have sorted_numbers
+            // Implemented just for learning purposes
+            for (int i = 0; i < value_count; i++) {
+                if (numbers[i] < lowest_number)
+                    lowest_number = numbers[i];
+                if (numbers[i] > highest_number)
+                    highest_number = numbers[i];
+            }
+
+            printf("\nNumbers in original order:\n");
+
+            for (int i = 0; i < value_count; i++) {
+                printf("%i", numbers[i]);
+                if (i < value_count - 1) {
+                    printf(" - ");
+                }
+            }
+
+            printf("\nNumbers in ascending order:\n");
+
+            for (int i = 0; i < value_count; i++) {
+                printf("%i", sorted_numbers[i]);
+                if (i < value_count - 1) {
+                    printf(" - ");
+                }
+            }
+
+            printf("\n\nLowest number: %i. Highest number: %i.\n", lowest_number, highest_number);
+
+            printf("\n================================================================\n\n");
+        } else if (exercise_choice == 13) {
             printf("\n================================================================\n");
             printf("                   Exiting program. Goodbye!\n");
             printf("================================================================\n\n");
         } else {
             printf("\n================================================================\n");
-            printf("         Invalid selection! Please enter a number 1 to 9.\n");
+            printf("        Invalid selection! Please enter a number 1 to 13.\n");
             printf("================================================================\n\n");
         }
 
-    } while (exercise_choice != 9);
+    } while (exercise_choice != 13);
 
     return 0;
 }
