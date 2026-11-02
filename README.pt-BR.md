@@ -11,7 +11,7 @@
   [![GCC](https://img.shields.io/badge/GCC-00599C?style=for-the-badge&logo=gnu&logoColor=white)](https://gcc.gnu.org/)
   [![Clang](https://img.shields.io/badge/Clang-000000?style=for-the-badge&logo=llvm&logoColor=white)](https://clang.llvm.org/)
   [![ARInter - CPS](https://img.shields.io/badge/ARInter-CPS-003366?style=for-the-badge)](https://arinter.cps.sp.gov.br/)
-  [![Fatec Taubaté](https://img.shields.io/badge/Fatec-Taubaté-B22222?style=for-the-badge)](https://fatectaubate.edu.br/)
+  [![Fatec](https://img.shields.io/badge/Fatec-CEETEPS-B22222?style=for-the-badge)](https://www.cps.sp.gov.br/)
 
 </div>
 
@@ -19,13 +19,12 @@
 
 ## 🎯 Sobre o Curso
 
-Repositório dedicado ao registro de práticas laboratoriais e exercícios do curso **Introduction to the C Programming Language**, iniciativa de internacionalização promovida pela **Assessoria de Relações Internacionais (ARInter - CEETEPS)** em parceria com a **Fatec Taubaté**.
+Repositório dedicado ao registro de exercícios e práticas de programação do curso **Introduction to the C Programming Language**, iniciativa de internacionalização promovida pela **Assessoria de Relações Internacionais (ARInter - CEETEPS)** na rede **Fatec**.
 
 - **Idioma de Ensino:** 100% em Língua Inglesa (EMI - English as a Medium of Instruction), em sessões síncronas conjuntas com estudantes de intercâmbio internacional.
-- **Instituição e Edital:** ARInter - CEETEPS / Fatec Taubaté via **EDITAL ARI nº 027/2026**.
-- **Docente:** Luciano Gonçalves de Carvalho (`luciano.carvalho@cps.sp.gov.br`).
+- **Instituição:** ARInter - CEETEPS / Fatec.
+- **Docente:** Luciano Gonçalves de Carvalho.
 - **Carga Horária:** 40 horas no total (15 sessões síncronas semanais de 2 h/a = 30h ao vivo às terças-feiras, 17h00 - 18h40 via MS Teams + 10h de atividades e práticas assíncronas).
-- **Documentos Oficiais de Referência:** Course Schedule oficial (`IntroductionC.pdf` - calendário executivo de 15 sessões síncronas) complementando o EDITAL ARI nº 027/2026 (desenho pedagógico preliminar).
 - **Critérios de Aprovação:** Frequência mínima de 70% e Média Final $\ge$ 6,0.
 
 ### Frentes de Estudo
@@ -39,21 +38,21 @@ Repositório dedicado ao registro de práticas laboratoriais e exercícios do cu
 
 | Aula | Título / Tema da Aula | Status | Módulos Práticos & Código-Fonte |
 | :---: | :--- | :---: | :--- |
-| 01 | Introdução à Programação em C e Pipeline de Compilação | ✅ Concluído | Pipeline de compilação GCC (`-Wall -O2`), configuração do ambiente |
-| 02 | Declaração de Variáveis e Constantes, Tipos Primitivos e Entrada/Saída | ✅ Concluído | [`src/01-primitive-types-and-io/`](src/01-primitive-types-and-io/) |
-| 03 | Estruturas de Decisão: Parte 1 (`if`, `else`, verdade numérica, operadores) | ✅ Concluído | [`src/02-even-or-odd/`](src/02-even-or-odd/), [`src/03-grade-evaluator/`](src/03-grade-evaluator/) (inicial) |
-| 04 | Estruturas de Decisão: Parte 2 (`else if`, condicionais aninhadas, menu) | ✅ Concluído | [`src/03-grade-evaluator/`](src/03-grade-evaluator/) (recuperação), [`src/04-one-item-shop/`](src/04-one-item-shop/) |
-| 05 | Estruturas de Decisão: Parte 3 (`switch`, fallthrough, menu consolidado) | ✅ Concluído | [`src/05-dessert-shop/`](src/05-dessert-shop/), [`src/00-consolidated-menu/`](src/00-consolidated-menu/) (concepção) |
-| 06 | Estruturas de Repetição: Parte 1 (`do-while`, `while`, exercícios) | ✅ Concluído | [`src/06-factorial-calculator/`](src/06-factorial-calculator/) (`do-while`/`while`), [`src/07-fibonacci-sequence/`](src/07-fibonacci-sequence/) (`do-while`/`while`), [`src/00-consolidated-menu/`](src/00-consolidated-menu/) (loop de eventos) |
-| 07 | Estruturas de Repetição: Parte 2 (loop `for`, vetores, ordenação) | ✅ Concluído | [`src/06-factorial-calculator/`](src/06-factorial-calculator/) (`for`), [`src/07-fibonacci-sequence/`](src/07-fibonacci-sequence/) (`for`), [`src/08-reverse-characters/`](src/08-reverse-characters/), [`src/09-lowest-highest-numbers/`](src/09-lowest-highest-numbers/) |
-| 08 | Strings, Biblioteca string.h e Matrizes (Arrays 2D) | ✅ Concluído | [`src/10-string-manipulation/`](src/10-string-manipulation/), [`src/11-matrix-addition/`](src/11-matrix-addition/) |
-| 09 | Funções, Modularização e Biblioteca `<math.h>` | ✅ Concluído | [`src/06-factorial-calculator/`](src/06-factorial-calculator/) (modular), [`src/12-square-root-calculator/`](src/12-square-root-calculator/) |
-| 10 | Recursividade e Pilha de Execução | ✅ Concluído | [`src/13-recursive-factorial/`](src/13-recursive-factorial/), [`src/14-recursive-fibonacci/`](src/14-recursive-fibonacci/) |
-| 11 | Tipos Definidos pelo Usuário (`struct`, `typedef`) | ✅ Concluído | [`src/15-academic-management-system/`](src/15-academic-management-system/) |
-| 12 | Ponteiros: Parte 1 (Conceitos, Endereçamento e Operadores `&` e `*`) | ⏳ Em breve | Endereçamento de memória e desreferenciação |
-| 13 | Ponteiros: Parte 2 (Aritmética de Ponteiros, Vetores e Strings) | ⏳ Em breve | Varredura de ponteiros e equivalência com vetores |
-| 14 | Alocação Dinâmica de Memória (`malloc`, `free`) e Manipulação de Arquivos | ⏳ Em breve | Gerenciamento de heap e streams de arquivos |
-| 15 | Avaliação Prática Final e Encerramento | ⏳ Em breve | Revisão geral e consolidação do curso |
+| 01 | Introdução ao C: lógica, algoritmos, labirinto Hour of Code (Code.org), papel do compilador e primeiro Hello World | ✅ Concluído | Compilador OnlineGDB na nuvem (e meu ambiente local de estudos no VS Code / GCC) |
+| 02 | Declaração de Variáveis e Constantes, Tipos Primitivos e Entrada/Saída (`printf`, `scanf`, `sizeof`) | ✅ Concluído | [`src/01-primitive-types-and-io/`](src/01-primitive-types-and-io/) |
+| 03 | Estruturas de Decisão: Parte 1 (`if`, `else`, verdade numérica, operadores relacionais e lógicos) | ✅ Concluído | [`src/02-even-or-odd/`](src/02-even-or-odd/), [`src/03-grade-evaluator/`](src/03-grade-evaluator/) (inicial) |
+| 04 | Estruturas de Decisão: Parte 2 (`else if`, condicionais aninhadas, recuperação, menu de descontos) | ✅ Concluído | [`src/03-grade-evaluator/`](src/03-grade-evaluator/) (recuperação), [`src/04-one-item-shop/`](src/04-one-item-shop/) |
+| 05 | Estruturas de Decisão: Parte 3 (`switch`, `break`, fallthrough intencional, loja de sobremesas) | ✅ Concluído | [`src/05-dessert-shop/`](src/05-dessert-shop/), [`src/00-consolidated-menu/`](src/00-consolidated-menu/) (concepção) |
+| 06 | Estruturas de Repetição: Parte 1 (`do-while` pós-teste vs. `while` pré-teste, menus, fatorial e Fibonacci) | ✅ Concluído | [`src/06-factorial-calculator/`](src/06-factorial-calculator/) (`do-while`/`while`), [`src/07-fibonacci-sequence/`](src/07-fibonacci-sequence/) (`do-while`/`while`), [`src/00-consolidated-menu/`](src/00-consolidated-menu/) (loop de repetição) |
+| 07 | *Suspensão de aula: docente em evento institucional do CPS* | ⏸️ Sem aula | *(Conteúdo continuou na Aula 08 sem prejuízo à ementa)* |
+| 08 | Estruturas de Repetição: Parte 2 (`for`, vetores unidimensionais/arrays, inversão e busca de valores) | ✅ Concluído | [`src/06-factorial-calculator/`](src/06-factorial-calculator/) (`for`), [`src/07-fibonacci-sequence/`](src/07-fibonacci-sequence/) (`for`), [`src/08-reverse-characters/`](src/08-reverse-characters/), [`src/09-lowest-highest-numbers/`](src/09-lowest-highest-numbers/) |
+| 09 | Strings, Biblioteca string.h e Matrizes 2D (terminador `\0`, funções de texto, soma de matrizes) | ✅ Concluído | [`src/10-string-manipulation/`](src/10-string-manipulation/), [`src/11-matrix-addition/`](src/11-matrix-addition/) |
+| 10 | Funções, Modularização e `<math.h>` (assinaturas, `void`, funções matemáticas, fatorial modular) | ✅ Concluído | [`src/06-factorial-calculator/`](src/06-factorial-calculator/) (função modular), [`src/12-square-root-calculator/`](src/12-square-root-calculator/) |
+| 11 | Recursividade e Pilha de Execução (caso base, fatorial recursivo e Fibonacci recursivo) | ✅ Concluído | [`src/13-recursive-factorial/`](src/13-recursive-factorial/), [`src/14-recursive-fibonacci/`](src/14-recursive-fibonacci/) |
+| 12 | Tipos Definidos pelo Usuário (`struct`, `typedef`, substituição de vetores paralelos por registros) | ✅ Concluído | [`src/15-academic-management-system/`](src/15-academic-management-system/) |
+| 13 | Ponteiros: Parte 1 (Conceitos, endereços de memória, operadores `&` e `*`) | ⏳ Prevista | Endereçamento de memória e desreferenciação de ponteiros |
+| 14 | Ponteiros: Parte 2 (Aritmética de ponteiros, relação entre vetores e ponteiros) | ⏳ Prevista | Varredura de ponteiros e equivalência com vetores |
+| 15 | Revisão Prática Geral e Encerramento | ⏳ Prevista | Revisão prática e consolidação dos exercícios (17/11) |
 
 ---
 
@@ -63,19 +62,19 @@ Ao longo do semestre, problemas computacionais fundamentais foram revisitados e 
 
 ### 1. Progressão do Fatorial ($n!$)
 - **Aula 06 (Estruturas de Repetição):** Implementado inicialmente de forma iterativa com acumuladores em `do...while` (pós-teste) e `while` (pré-teste), exibindo a cadeia de multiplicações em [`src/06-factorial-calculator/`](src/06-factorial-calculator/).
-- **Aula 07 (Loop Contado):** Refatorado com o comando `for`, reunindo inicialização, condição de parada e decremento no cabeçalho.
-- **Aula 09 (Decomposição Modular):** Encapsulado em função procedural dedicada (`calculate_factorial_modular`) recebendo `selected_number` por valor.
-- **Aula 10 (Salto para o Paradigma Recursivo):** Reconstruído com chamadas auto-referenciais, guarda de caso base ($N < 1$) e passagem de acumulador na pilha de execução em [`src/13-recursive-factorial/`](src/13-recursive-factorial/). Na exploração preliminar (preservada em notas), experimentei também alocação dinâmica com `malloc`/`free` e ponteiros inspirados no CS50x antes de fechar a solução canônica.
+- **Aula 08 (Loop Contado):** Reescrito com o comando `for`, reunindo inicialização, condição de parada e decremento no cabeçalho.
+- **Aula 10 (Funções Modulares):** Isolado em função dedicada (`calculate_factorial_modular`) recebendo o número como argumento.
+- **Aula 11 (Recursão):** Reconstruído com chamadas recursivas e caso base ($N < 1$) em [`src/13-recursive-factorial/`](src/13-recursive-factorial/). (Nos testes iniciais anotados nos meus estudos, cheguei a experimentar alocação com `malloc` e ponteiros do CS50 antes de manter a versão recursiva canônica).
 
 ### 2. Progressão da Sequência de Fibonacci
-- **Aula 06 (Limites Numéricos e Contagem de Termos):** Desenvolvido com `do...while` e `while` em dois modos: interrupção por teto de valor e contagem exata de termos com decomposição passo a passo das somas ($1+1=2, 1+2=3, \dots$) em [`src/07-fibonacci-sequence/`](src/07-fibonacci-sequence/).
-- **Aula 07 (Geração Contada com `for`):** Reestruturado com o comando `for` e validação defensiva de entrada estritamente positiva (`limit > 0`).
-- **Aula 10 (Recorrência Recursiva):** Decomposto em duas funções recursivas complementares (`make_fibonacci_sequence` e `make_fibonacci_sum`) em [`src/14-recursive-fibonacci/`](src/14-recursive-fibonacci/), substituindo variáveis de estado pelo empilhamento de parâmetros.
+- **Aula 06 (Estruturas de Repetição):** Desenvolvido com `do...while` e `while` em dois modos: interrupção por teto de valor e contagem exata de termos com decomposição passo a passo das somas ($1+1=2, 1+2=3, \dots$) em [`src/07-fibonacci-sequence/`](src/07-fibonacci-sequence/).
+- **Aula 08 (Loop Contado com `for`):** Reestruturado com o comando `for` e validação defensiva de entrada estritamente positiva (`limit > 0`).
+- **Aula 11 (Recorrência Recursiva):** Separado em duas funções recursivas em [`src/14-recursive-fibonacci/`](src/14-recursive-fibonacci/): uma para imprimir a sequência de termos e outra para detalhar os passos de soma.
 
 ### 3. Evolução do Menu Consolidado
-- **Aula 05:** Idealizado inicialmente como um seletor de opções com `switch-case`.
-- **Aula 06:** Transformado em aplicação interativa encapsulada em um loop de eventos `do...while`.
-- **Aulas 07 a 11:** Expandido semanalmente para integrar vetores, strings, matrizes, funções matemáticas modulares, rotinas recursivas e estruturas heterogêneas (`struct`), totalizando 18 opções em [`src/00-consolidated-menu/`](src/00-consolidated-menu/).
+- **Aula 05:** Criado inicialmente como um seletor simples de opções com `switch-case`.
+- **Aula 06:** Transformado em aplicação interativa com repetição contínua em `do...while`.
+- **Aulas 08 a 12:** Expandido semanalmente para integrar vetores, strings, matrizes, funções matemáticas modulares, rotinas recursivas e estruturas heterogêneas (`struct`), totalizando 18 opções em [`src/00-consolidated-menu/`](src/00-consolidated-menu/).
 
 ---
 
@@ -83,22 +82,22 @@ Ao longo do semestre, problemas computacionais fundamentais foram revisitados e 
 
 | # | Exercício | Aula de Origem | Código & Documentação | Conceitos Principais |
 | :-: | :--- | :---: | :--- | :--- |
-| 00 | **Menu Consolidado - Exercícios do Curso** | Aulas 05-11 | [`src/00-consolidated-menu/`](src/00-consolidated-menu/) | Menu interativo unificando os exercícios práticos do semestre em um único programa executável com repetição contínua em `do...while`. |
+| 00 | **Menu Consolidado - Exercícios do Curso** | Aulas 05-12 | [`src/00-consolidated-menu/`](src/00-consolidated-menu/) | Menu interativo unificando os exercícios práticos do semestre em um único programa executável com repetição contínua em `do...while`. |
 | 01 | **Tipos Básicos, E/S e Tamanho de Memória** | Aula 02 | [`src/01-primitive-types-and-io/`](src/01-primitive-types-and-io/) | Tipos primitivos (`char`, `int`, `float`, `long`, `double`), operador `sizeof()`, `%zu`, `printf()` e `scanf()` formatados. |
 | 02 | **Verificador de Par ou Ímpar** | Aula 03 | [`src/02-even-or-odd/`](src/02-even-or-odd/) | Operador módulo (`%`), exclusividade mútua (`if/else`), limpeza do buffer de entrada (`scanf(" %c")`), repetição com `do...while`. |
 | 03 | **Avaliador de Notas Acadêmicas** | Aulas 03 e 04 | [`src/03-grade-evaluator/`](src/03-grade-evaluator/) | Cálculo de média aritmética, reaproveitamento de variáveis, condicionais aninhadas (`if` dentro de `else`), recuperação (`retakeExam`). |
 | 04 | **One Item Shop - Seletor de Descontos** | Aula 04 | [`src/04-one-item-shop/`](src/04-one-item-shop/) | Cadeia `else if`, comparação de caracteres (`'a' \|\| 'A'`), escape de porcentagem literal (`%%`), fluxo estruturado sem `return` prematuro. |
 | 05 | **Loja de Sobremesas - Switch & Fallthrough** | Aula 05 | [`src/05-dessert-shop/`](src/05-dessert-shop/) | Ramificação com `switch/case`, controle com `break`, *fallthrough* intencional para preços acumulados, tratamento com `default`. |
-| 06 | **Calculador de Fatorial** | Aulas 06, 07, 09 | [`src/06-factorial-calculator/`](src/06-factorial-calculator/) | Acumulador de produto fatorial ($n!$), formatação do desenvolvimento multiplicativo (`5 x 4 x 3 x 2 x 1 = 120`), submenu comparativo com `while`, `do...while`, `for` e função modular. |
-| 07 | **Sequência de Fibonacci** | Aulas 06 e 07 | [`src/07-fibonacci-sequence/`](src/07-fibonacci-sequence/) | Recorrência com janela deslizante ($F_n = F_{n-1} + F_{n-2}$), decomposição de somas, limite por valor vs. quantidade de termos, repetição de validação defensiva de entrada (`limit > 0`), versões com `do...while`, `while` e `for`. |
-| 08 | **Caracteres em Ordem Reversa** | Aula 07 | [`src/08-reverse-characters/`](src/08-reverse-characters/) | Arrays com tamanho em tempo de execução (VLA), índice começando em zero, `for` nos dois sentidos, limpeza do buffer com `scanf(" %c")`. |
-| 09 | **Maior e Menor Número** | Aula 07 | [`src/09-lowest-highest-numbers/`](src/09-lowest-highest-numbers/) | Array de inteiros com entrada limitada (até 30), bubble sort em uma cópia do array, busca do menor e do maior valor, `for` aninhados. |
-| 10 | **Manipulação de Strings** | Aula 08 | [`src/10-string-manipulation/`](src/10-string-manipulation/) | Vetores de caracteres, terminador nulo `\0`, loop de cópia manual, cópia com `strcpy()`, comparação com `strcmp()` e concatenação com `strcat()`. |
-| 11 | **Soma de Matrizes** | Aula 08 | [`src/11-matrix-addition/`](src/11-matrix-addition/) | Matrizes bidimensionais, disposição contígua na memória RAM (row-major), validação defensiva de dimensões, loops `for` aninhados e soma termo a termo. |
-| 12 | **Calculadora de Raiz Quadrada** | Aula 09 | [`src/12-square-root-calculator/`](src/12-square-root-calculator/) | Funções modulares, `<math.h>` (`sqrt`), retenção em vetores de entradas e saídas, validação de reais negativos, flag `-lm`. |
-| 13 | **Fatorial Recursivo** | Aula 10 | [`src/13-recursive-factorial/`](src/13-recursive-factorial/) | Acumulador recursivo, caso base ($N < 1$), expansão aritmética ($N \times \dots \times 1 = \text{resultado}$), análise de Heap (CS50x) vs. Stack. |
-| 14 | **Fibonacci Recursivo** | Aula 10 | [`src/14-recursive-fibonacci/`](src/14-recursive-fibonacci/) | Recorrência em cauda ($F_n = F_{n-1} + F_{n-2}$), complexidade espacial linear, decomposição em sequência e passos de soma. |
-| 15 | **Sistema de Gerenciamento Acadêmico** | Aula 11 | [`src/15-academic-management-system/`](src/15-academic-management-system/) | Estruturas heterogêneas compostas (`struct`), pseudônimos com `typedef`, vetor de registros, repetição contínua com confirmação `(y/n)`. |
+| 06 | **Calculador de Fatorial** | Aulas 06, 08, 10 | [`src/06-factorial-calculator/`](src/06-factorial-calculator/) | Acumulador de produto fatorial ($n!$), formatação do desenvolvimento multiplicativo (`5 x 4 x 3 x 2 x 1 = 120`), submenu comparativo com `while`, `do...while`, `for` e função modular. |
+| 07 | **Sequência de Fibonacci** | Aulas 06 e 08 | [`src/07-fibonacci-sequence/`](src/07-fibonacci-sequence/) | Recorrência com janela deslizante ($F_n = F_{n-1} + F_{n-2}$), decomposição de somas, limite por valor vs. quantidade de termos, repetição de validação defensiva de entrada (`limit > 0`), versões com `do...while`, `while` e `for`. |
+| 08 | **Caracteres em Ordem Reversa** | Aula 08 | [`src/08-reverse-characters/`](src/08-reverse-characters/) | Arrays com tamanho em tempo de execução (VLA), índice começando em zero, `for` nos dois sentidos, limpeza do buffer com `scanf(" %c")`. |
+| 09 | **Maior e Menor Número** | Aula 08 | [`src/09-lowest-highest-numbers/`](src/09-lowest-highest-numbers/) | Array de inteiros com entrada limitada (até 30), bubble sort em uma cópia do array, busca do menor e do maior valor, `for` aninhados. |
+| 10 | **Manipulação de Strings** | Aula 09 | [`src/10-string-manipulation/`](src/10-string-manipulation/) | Vetores de caracteres, terminador nulo `\0`, loop de cópia manual, cópia com `strcpy()`, comparação com `strcmp()` e concatenação com `strcat()`. |
+| 11 | **Soma de Matrizes** | Aula 09 | [`src/11-matrix-addition/`](src/11-matrix-addition/) | Matrizes bidimensionais (arrays 2D), validação de dimensões, loops `for` aninhados e soma termo a termo. |
+| 12 | **Calculadora de Raiz Quadrada** | Aula 10 | [`src/12-square-root-calculator/`](src/12-square-root-calculator/) | Funções modulares, `<math.h>` (`sqrt`), retenção em vetores de entradas e saídas, validação de reais negativos, flag `-lm`. |
+| 13 | **Fatorial Recursivo** | Aula 11 | [`src/13-recursive-factorial/`](src/13-recursive-factorial/) | Acumulador recursivo, caso base ($N < 1$), exibição do passo a passo da multiplicação ($N \times \dots \times 1 = \text{resultado}$) e comparação com as versões iterativas. |
+| 14 | **Fibonacci Recursivo** | Aula 11 | [`src/14-recursive-fibonacci/`](src/14-recursive-fibonacci/) | Funções recursivas para gerar os termos de Fibonacci ($F_n = F_{n-1} + F_{n-2}$) e detalhar as somas passo a passo. |
+| 15 | **Sistema de Gerenciamento Acadêmico** | Aula 12 | [`src/15-academic-management-system/`](src/15-academic-management-system/) | Estruturas compostas (`struct`), apelidos com `typedef`, vetor de registros e repetição de cadastro contínuo com `(y/n)`. |
 
 ---
 

@@ -11,7 +11,7 @@
   [![GCC](https://img.shields.io/badge/GCC-00599C?style=for-the-badge&logo=gnu&logoColor=white)](https://gcc.gnu.org/)
   [![Clang](https://img.shields.io/badge/Clang-000000?style=for-the-badge&logo=llvm&logoColor=white)](https://clang.llvm.org/)
   [![ARInter - CPS](https://img.shields.io/badge/ARInter-CPS-003366?style=for-the-badge)](https://arinter.cps.sp.gov.br/)
-  [![Fatec Taubaté](https://img.shields.io/badge/Fatec-Taubaté-B22222?style=for-the-badge)](https://fatectaubate.edu.br/)
+  [![Fatec](https://img.shields.io/badge/Fatec-CEETEPS-B22222?style=for-the-badge)](https://www.cps.sp.gov.br/)
 
 </div>
 
@@ -19,13 +19,12 @@
 
 ## 🎯 About the Course
 
-Practical coursework and laboratory exercises for the **Introduction to the C Programming Language** course, an internationalization program offered by the **International Relations Office (ARInter - CEETEPS)** in partnership with **Fatec Taubaté**.
+Practical coursework and laboratory exercises for the **Introduction to the C Programming Language** course, an internationalization program offered by the **International Relations Office (ARInter - CEETEPS)** across **Fatec** institutions.
 
 - **Medium of Instruction:** 100% English (synchronous lectures and collaboration with international exchange peers).
-- **Institution & Notice:** ARInter - CEETEPS / Fatec Taubaté via **EDITAL ARI nº 027/2026**.
-- **Instructor:** Luciano Gonçalves de Carvalho (`luciano.carvalho@cps.sp.gov.br`).
+- **Institution:** ARInter - CEETEPS / Fatec.
+- **Instructor:** Luciano Gonçalves de Carvalho.
 - **Workload:** 40 hours total (15 synchronous weekly sessions of 2 h/a = 30h live on MS Teams, Tuesdays 17:00-18:40 + 10h asynchronous practical activities).
-- **Official Schedule Documents:** Course Schedule (`IntroductionC.pdf` - executive calendar of 15 live sessions) alongside EDITAL ARI nº 027/2026 (preliminary curricular proposal).
 - **Passing Criteria:** Attendance $\ge$ 70% and Final Grade $\ge$ 6.0.
 
 ### Core Focus Areas
@@ -35,47 +34,47 @@ Practical coursework and laboratory exercises for the **Introduction to the C Pr
 
 ---
 
-## 🗺️ Course Syllabus & Laboratory Roadmap
+## 🗺️ Course Syllabus & Practical Roadmap
 
-| Class | Syllabus Topic | Status | Laboratory Modules & Source Code |
+| Class | Syllabus Topic & Authentic Scope | Status | Practical Exercises & Modules |
 | :---: | :--- | :---: | :--- |
-| 01 | Introduction to Programming in C & Compilation Pipeline | ✅ Done | GCC compilation pipeline (`-Wall -O2`), toolchain setup |
-| 02 | Variable & Constant Declarations, Primitive Types, and Formatted I/O | ✅ Done | [`src/01-primitive-types-and-io/`](src/01-primitive-types-and-io/) |
-| 03 | Decision Structures: Part 1 (`if`, `else`, numeric truth, operators) | ✅ Done | [`src/02-even-or-odd/`](src/02-even-or-odd/), [`src/03-grade-evaluator/`](src/03-grade-evaluator/) (initial) |
-| 04 | Decision Structures: Part 2 (`else if`, nested conditionals, discount menu) | ✅ Done | [`src/03-grade-evaluator/`](src/03-grade-evaluator/) (retake), [`src/04-one-item-shop/`](src/04-one-item-shop/) |
-| 05 | Decision Structures: Part 3 (`switch`, fallthrough, interactive menu) | ✅ Done | [`src/05-dessert-shop/`](src/05-dessert-shop/), [`src/00-consolidated-menu/`](src/00-consolidated-menu/) (conception) |
-| 06 | Repetition Structures: Part 1 (`do-while`, `while`, repetition exercises) | ✅ Done | [`src/06-factorial-calculator/`](src/06-factorial-calculator/) (`do-while`/`while`), [`src/07-fibonacci-sequence/`](src/07-fibonacci-sequence/) (`do-while`/`while`), [`src/00-consolidated-menu/`](src/00-consolidated-menu/) (event loop) |
-| 07 | Repetition Structures: Part 2 (`for` loop, arrays, bubble sort) | ✅ Done | [`src/06-factorial-calculator/`](src/06-factorial-calculator/) (`for`), [`src/07-fibonacci-sequence/`](src/07-fibonacci-sequence/) (`for`), [`src/08-reverse-characters/`](src/08-reverse-characters/), [`src/09-lowest-highest-numbers/`](src/09-lowest-highest-numbers/) |
-| 08 | Strings, string.h Library & Matrices (2D Arrays) | ✅ Done | [`src/10-string-manipulation/`](src/10-string-manipulation/), [`src/11-matrix-addition/`](src/11-matrix-addition/) |
-| 09 | Functions, Modular Programming & `<math.h>` | ✅ Done | [`src/06-factorial-calculator/`](src/06-factorial-calculator/) (modular), [`src/12-square-root-calculator/`](src/12-square-root-calculator/) |
-| 10 | Recursion & Call Stack | ✅ Done | [`src/13-recursive-factorial/`](src/13-recursive-factorial/), [`src/14-recursive-fibonacci/`](src/14-recursive-fibonacci/) |
-| 11 | User-Defined Types (`struct`, `typedef`) | ✅ Done | [`src/15-academic-management-system/`](src/15-academic-management-system/) |
-| 12 | Pointers: Part 1 (Concepts, Addressing, Operators `&` and `*`) | ⏳ Upcoming | Memory addresses and pointer dereferencing |
-| 13 | Pointers: Part 2 (Pointer Arithmetic, Arrays and Strings) | ⏳ Upcoming | Pointer traversal and array equivalence |
-| 14 | Dynamic Memory Allocation (`malloc`, `free`) & File Streams | ⏳ Upcoming | Heap allocation and persistent file I/O |
-| 15 | Final Practical Assessment & Course Wrap-up | ⏳ Upcoming | Final coursework review and consolidation |
+| 01 | Introduction to C: logic, algorithms, Code.org Hour of Code maze, role of the compiler & first Hello World program | ✅ Done | OnlineGDB cloud setup (plus personal local VS Code / GCC environment) |
+| 02 | Variables, Primitive Types & Formatted I/O (`printf`, `scanf`, `sizeof`) | ✅ Done | [`src/01-primitive-types-and-io/`](src/01-primitive-types-and-io/) |
+| 03 | Decision Structures: Part 1 (`if`, `else`, numeric truth, relational and logical operators) | ✅ Done | [`src/02-even-or-odd/`](src/02-even-or-odd/), [`src/03-grade-evaluator/`](src/03-grade-evaluator/) (initial) |
+| 04 | Decision Structures: Part 2 (`else if` chains, nested conditionals, retake exam, discount menu) | ✅ Done | [`src/03-grade-evaluator/`](src/03-grade-evaluator/) (retake), [`src/04-one-item-shop/`](src/04-one-item-shop/) |
+| 05 | Decision Structures: Part 3 (`switch`, `break`, deliberate fallthrough, dessert shop) | ✅ Done | [`src/05-dessert-shop/`](src/05-dessert-shop/), [`src/00-consolidated-menu/`](src/00-consolidated-menu/) (conception) |
+| 06 | Repetition Structures: Part 1 (`do-while` post-test vs. `while` pre-test, menus, factorial & Fibonacci) | ✅ Done | [`src/06-factorial-calculator/`](src/06-factorial-calculator/) (`do-while`/`while`), [`src/07-fibonacci-sequence/`](src/07-fibonacci-sequence/) (`do-while`/`while`), [`src/00-consolidated-menu/`](src/00-consolidated-menu/) (event loop) |
+| 07 | *Class suspension: instructor attending institutional CPS event* | ⏸️ No class | *(Content continues in Class 08 without syllabus loss)* |
+| 08 | Repetition Structures: Part 2 (`for` counted loops, 1D arrays, reverse order & value scanning) | ✅ Done | [`src/06-factorial-calculator/`](src/06-factorial-calculator/) (`for`), [`src/07-fibonacci-sequence/`](src/07-fibonacci-sequence/) (`for`), [`src/08-reverse-characters/`](src/08-reverse-characters/), [`src/09-lowest-highest-numbers/`](src/09-lowest-highest-numbers/) |
+| 09 | Strings, string.h Library & 2D Arrays (`\0` terminator, string functions, matrix addition) | ✅ Done | [`src/10-string-manipulation/`](src/10-string-manipulation/), [`src/11-matrix-addition/`](src/11-matrix-addition/) |
+| 10 | Functions, Modular Programming & `<math.h>` (signatures, `void`, math functions, modular factorial) | ✅ Done | [`src/06-factorial-calculator/`](src/06-factorial-calculator/) (modular function), [`src/12-square-root-calculator/`](src/12-square-root-calculator/) |
+| 11 | Recursion & Call Stack (base case, recursive factorial and recursive Fibonacci) | ✅ Done | [`src/13-recursive-factorial/`](src/13-recursive-factorial/), [`src/14-recursive-fibonacci/`](src/14-recursive-fibonacci/) |
+| 12 | User-Defined Types (`struct`, `typedef`, replacing parallel arrays with composite records) | ✅ Done | [`src/15-academic-management-system/`](src/15-academic-management-system/) |
+| 13 | Pointers: Part 1 (Concepts, memory addresses, operators `&` and `*`) | ⏳ Upcoming | Memory addresses and pointer dereferencing |
+| 14 | Pointers: Part 2 (Pointer arithmetic, relationship between arrays and pointers) | ⏳ Upcoming | Pointer traversal and array equivalence |
+| 15 | Practical Coursework Review & Final Assessment | ⏳ Upcoming | Final coursework review and consolidation (Nov 17) |
 
 ---
 
-## 🔄 Algorithmic Evolution Across Classes
+## 🔄 How Algorithms Evolved Across Classes
 
-Throughout the semester, foundational computational problems were revisited and refactored across different classes as new programming paradigms and language features were introduced:
+In several classes, the professor returned to the same problems to show how new language features make code cleaner and more modular:
 
-### 1. Factorial ($n!$) Progression
-- **Class 06 (Iterative Loops):** Implemented iteratively using `do...while` (post-test) and `while` (pre-test) accumulators with formatted expression printing in [`src/06-factorial-calculator/`](src/06-factorial-calculator/).
-- **Class 07 (Counted Loop):** Refactored using the `for` statement, consolidating loop variable initialization, guard condition, and decrement into a single statement header.
-- **Class 09 (Modular Decomposition):** Encapsulated into a standalone procedural function (`calculate_factorial_modular`) accepting `selected_number` by value.
-- **Class 10 (Recursive Paradigm Leap):** Re-engineered using self-referential stack frames, an explicit base case guard ($N < 1$), and forward accumulator passing in [`src/13-recursive-factorial/`](src/13-recursive-factorial/). In my preparatory exploration, I also experimented with CS50x-inspired heap allocation (`malloc`/`free`) and pointer dereferencing before standardizing the clean recursive solution.
+### 1. Factorial ($n!$) Evolution
+- **Class 06 (Loops):** First built with `do...while` and `while` accumulators in [`src/06-factorial-calculator/`](src/06-factorial-calculator/), printing each multiplication step (`5 x 4 x 3 x 2 x 1 = 120`).
+- **Class 08 (Counted Loop):** Rebuilt using a `for` loop, bringing initialization, condition, and decrement together in one clean header.
+- **Class 10 (Functions):** Moved into a standalone function (`calculate_factorial_modular`) taking the number as an argument.
+- **Class 11 (Recursion):** Rebuilt using recursive calls with a base case ($N < 1$) in [`src/13-recursive-factorial/`](src/13-recursive-factorial/). (In my study notes, I also tested `malloc` and pointers from CS50 before sticking to the clean recursive solution).
 
-### 2. Fibonacci Sequence Progression
-- **Class 06 (Iterative Thresholds & Term Counts):** Formulated with `do...while` and `while` loops under two formulations: stopping when values exceed a numeric ceiling limit, and generating an exact count of $N$ terms alongside step-by-step addition traces ($1+1=2, 1+2=3, \dots$) in [`src/07-fibonacci-sequence/`](src/07-fibonacci-sequence/).
-- **Class 07 (Counted Generation):** Re-architected with `for` loops and defensive input validation (`limit > 0`).
-- **Class 10 (Recursive Recurrence):** Decomposed into two complementary recursive subroutines (`make_fibonacci_sequence` and `make_fibonacci_sum`) in [`src/14-recursive-fibonacci/`](src/14-recursive-fibonacci/), replacing state variables with call stack parameter propagation.
+### 2. Fibonacci Sequence Evolution
+- **Class 06 (Loops):** Built with `do...while` and `while` under two tests: stopping at a value ceiling or generating an exact count of terms with step-by-step additions ($1+1=2, 1+2=3, \dots$) in [`src/07-fibonacci-sequence/`](src/07-fibonacci-sequence/).
+- **Class 08 (Counted Loop):** Rebuilt using `for` with positive input validation (`limit > 0`).
+- **Class 11 (Recursion):** Separated into two recursive routines in [`src/14-recursive-fibonacci/`](src/14-recursive-fibonacci/): one for printing the sequence terms and one for printing the addition steps.
 
 ### 3. Consolidated Interactive Menu
-- **Class 05:** Conceived as a multi-branching `switch-case` selector.
-- **Class 06:** Turned into an interactive program wrapped inside a `do...while` event loop.
-- **Classes 07 to 11:** Cumulatively expanded week by week to integrate arrays, strings, matrices, modular math functions, recursive routines, and composite structs, culminating in 18 selectable options in [`src/00-consolidated-menu/`](src/00-consolidated-menu/).
+- **Class 05:** Started as a simple `switch-case` demo.
+- **Class 06:** Turned into an interactive menu running inside a `do...while` loop.
+- **Classes 08 to 12:** Expanded every week with new exercises (arrays, strings, matrices, functions, recursion, and structs), growing into 18 options in [`src/00-consolidated-menu/`](src/00-consolidated-menu/).
 
 ---
 
@@ -83,22 +82,22 @@ Throughout the semester, foundational computational problems were revisited and 
 
 | # | Exercise | Origin Class | Code & Documentation | Core Concepts |
 | :-: | :--- | :---: | :--- | :--- |
-| 00 | **Consolidated Menu - Coursework Exercises** | Classes 05-11 | [`src/00-consolidated-menu/`](src/00-consolidated-menu/) | Interactive console menu uniting all coursework exercises across the semester into a single program with `do...while` navigation. |
+| 00 | **Consolidated Menu - Coursework Exercises** | Classes 05-12 | [`src/00-consolidated-menu/`](src/00-consolidated-menu/) | Interactive console menu uniting all coursework exercises across the semester into a single program with `do...while` navigation. |
 | 01 | **Basic Types, I/O & Memory Sizing** | Class 02 | [`src/01-primitive-types-and-io/`](src/01-primitive-types-and-io/) | Primitive types (`char`, `int`, `float`, `long`, `double`), `sizeof()` operator, `%zu`, formatted `printf()` and `scanf()`. |
 | 02 | **Even or Odd Checker** | Class 03 | [`src/02-even-or-odd/`](src/02-even-or-odd/) | Modulo operator (`%`), mutual exclusivity (`if/else`), `scanf(" %c")` buffer handling, interactive `do...while` loop. |
 | 03 | **Academic Grade Evaluator** | Classes 03 & 04 | [`src/03-grade-evaluator/`](src/03-grade-evaluator/) | Arithmetic mean calculation, variable reuse, nested conditionals (`if` inside `else`), retake exam routing (`retakeExam`). |
 | 04 | **One Item Shop - Discount Selector** | Class 04 | [`src/04-one-item-shop/`](src/04-one-item-shop/) | `else if` conditional ladder, case-insensitive character comparison (`'a' \|\| 'A'`), escaped literal percentages (`%%`), structured flow without premature `return`. |
 | 05 | **Dessert Shop - Switch & Fallthrough** | Class 05 | [`src/05-dessert-shop/`](src/05-dessert-shop/) | Multi-branching `switch/case`, `break` flow control, deliberate fallthrough for additive option pricing, `default` fallback. |
-| 06 | **Factorial Calculator** | Classes 06, 07, 09 | [`src/06-factorial-calculator/`](src/06-factorial-calculator/) | Factorial product accumulator ($n!$), formatted multiplication expansion (`5 x 4 x 3 x 2 x 1 = 120`), comparative `while`, `do...while`, `for`, and modular function sub-menu. |
-| 07 | **Fibonacci Sequence** | Classes 06 & 07 | [`src/07-fibonacci-sequence/`](src/07-fibonacci-sequence/) | Sliding window recurrence ($F_n = F_{n-1} + F_{n-2}$), pairwise addition breakdown, value limit vs. term count, defensive input validation loop (`limit > 0`), `do...while`, `while` and `for` versions. |
-| 08 | **Reverse Characters** | Class 07 | [`src/08-reverse-characters/`](src/08-reverse-characters/) | Arrays with runtime size (VLA), zero-based index, `for` loops in both directions, `scanf(" %c")` buffer handling. |
-| 09 | **Lowest and Highest Numbers** | Class 07 | [`src/09-lowest-highest-numbers/`](src/09-lowest-highest-numbers/) | Integer array with bounded input (up to 30), bubble sort on a copy of the array, lowest and highest value scan, nested `for` loops. |
-| 10 | **String Manipulation** | Class 08 | [`src/10-string-manipulation/`](src/10-string-manipulation/) | String arrays, `\0` null terminator, manual copy loop, `strcpy()`, `strcmp()` comparison, `strcat()` concatenation. |
-| 11 | **Matrix Addition** | Class 08 | [`src/11-matrix-addition/`](src/11-matrix-addition/) | Two-dimensional arrays (matrices), row-major order, dynamic dimension validation, nested `for` loops, element-by-element matrix addition. |
-| 12 | **Square Root Calculator** | Class 09 | [`src/12-square-root-calculator/`](src/12-square-root-calculator/) | Modular functions, `<math.h>` (`sqrt`), array retention of inputs and results, negative real number handling, `-lm` linker flag. |
-| 13 | **Recursive Factorial** | Class 10 | [`src/13-recursive-factorial/`](src/13-recursive-factorial/) | Recursive accumulator pattern, base case ($N < 1$), step-by-step arithmetic expansion ($N \times \dots \times 1 = \text{result}$), CS50x dynamic heap allocation vs. stack frame analysis. |
-| 14 | **Recursive Fibonacci** | Class 10 | [`src/14-recursive-fibonacci/`](src/14-recursive-fibonacci/) | Tail-recursive recurrence ($F_n = F_{n-1} + F_{n-2}$), linear space complexity, modular decomposition into sequence generation and pairwise additions breakdown. |
-| 15 | **Academic Management System** | Class 11 | [`src/15-academic-management-system/`](src/15-academic-management-system/) | User-defined composite structures (`struct`), type aliasing (`typedef`), contiguous array of records, interactive batch enrollment with `(y/n)` loop. |
+| 06 | **Factorial Calculator** | Classes 06, 08, 10 | [`src/06-factorial-calculator/`](src/06-factorial-calculator/) | Factorial product accumulator ($n!$), formatted multiplication expansion (`5 x 4 x 3 x 2 x 1 = 120`), comparative `while`, `do...while`, `for`, and modular function sub-menu. |
+| 07 | **Fibonacci Sequence** | Classes 06 & 08 | [`src/07-fibonacci-sequence/`](src/07-fibonacci-sequence/) | Sliding window recurrence ($F_n = F_{n-1} + F_{n-2}$), pairwise addition breakdown, value limit vs. term count, defensive input validation loop (`limit > 0`), `do...while`, `while` and `for` versions. |
+| 08 | **Reverse Characters** | Class 08 | [`src/08-reverse-characters/`](src/08-reverse-characters/) | Arrays with runtime size (VLA), zero-based index, `for` loops in both directions, `scanf(" %c")` buffer handling. |
+| 09 | **Lowest and Highest Numbers** | Class 08 | [`src/09-lowest-highest-numbers/`](src/09-lowest-highest-numbers/) | Integer array with bounded input (up to 30), bubble sort on a copy of the array, lowest and highest value scan, nested `for` loops. |
+| 10 | **String Manipulation** | Class 09 | [`src/10-string-manipulation/`](src/10-string-manipulation/) | String arrays, `\0` null terminator, manual copy loop, `strcpy()`, `strcmp()` comparison, `strcat()` concatenation. |
+| 11 | **Matrix Addition** | Class 09 | [`src/11-matrix-addition/`](src/11-matrix-addition/) | Two-dimensional arrays (matrices), dimension validation, nested `for` loops, and element-by-element matrix addition. |
+| 12 | **Square Root Calculator** | Class 10 | [`src/12-square-root-calculator/`](src/12-square-root-calculator/) | Modular functions, `<math.h>` (`sqrt`), array retention of inputs and results, negative real number handling, `-lm` linker flag. |
+| 13 | **Recursive Factorial** | Class 11 | [`src/13-recursive-factorial/`](src/13-recursive-factorial/) | Recursive accumulator, base case ($N < 1$), step-by-step multiplication output ($N \times \dots \times 1 = \text{result}$), and comparison with iterative loops. |
+| 14 | **Recursive Fibonacci** | Class 11 | [`src/14-recursive-fibonacci/`](src/14-recursive-fibonacci/) | Recursive functions to generate Fibonacci sequence terms ($F_n = F_{n-1} + F_{n-2}$) and break down pairwise additions step by step. |
+| 15 | **Academic Management System** | Class 12 | [`src/15-academic-management-system/`](src/15-academic-management-system/) | User-defined structures (`struct`), type aliases with `typedef`, array of records, and continuous student enrollment loop. |
 
 ---
 
