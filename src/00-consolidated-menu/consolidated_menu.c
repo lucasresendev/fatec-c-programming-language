@@ -1,5 +1,55 @@
 // Consolidated Menu: Coursework Exercises
 #include <stdio.h>
+#include <string.h>
+#include <math.h>
+
+static void menu_recursive_factorial(int temporary_number, int factorial_number) {
+    if (temporary_number < 1) {
+        printf("%i.\n", factorial_number);
+        return;
+    }
+
+    printf("%i ", temporary_number);
+
+    if (temporary_number > 1) {
+        printf("x ");
+    } else {
+        printf("= ");
+    }
+
+    factorial_number *= temporary_number;
+    temporary_number--;
+
+    menu_recursive_factorial(temporary_number, factorial_number);
+}
+
+static void menu_fibonacci_sequence(int limit, int loop, int current, int next) {
+    if (loop > limit) {
+        return;
+    }
+
+    printf("%i ", current);
+    menu_fibonacci_sequence(limit, loop + 1, next, current + next);
+}
+
+static void menu_fibonacci_sum(int limit, int loop, int current, int next) {
+    if (loop >= limit - 1) {
+        return;
+    }
+
+    int sum = current + next;
+    printf("%i + %i = %i\n", current, next, sum);
+    menu_fibonacci_sum(limit, loop + 1, next, sum);
+}
+
+#define MENU_MAX_STUDENTS 100
+
+struct MENU_STUDENT {
+    char name[50];
+    int id;
+};
+
+typedef struct MENU_STUDENT MENU_STUDENT;
 
 int main(void) {
     // Menu selection
@@ -43,6 +93,17 @@ int main(void) {
     int lowest_number = 0;
     int highest_number = 0;
 
+    // Variables for 13 - String Manipulation
+    char first_name[30];
+    char second_name[30];
+    char copied_name[30];
+    char concatenated_names[60];
+    int char_index = 0;
+
+    // Variables for 14 - Matrix Addition
+    int matrix_rows = 0;
+    int matrix_columns = 0;
+
     do {
         printf("\n================================================================\n");
         printf("              Welcome! Please, select an exercise:\n");
@@ -59,11 +120,17 @@ int main(void) {
         printf("10 - Fibonacci Sequence (for)\n");
         printf("11 - Reverse Characters\n");
         printf("12 - Lowest and Highest Numbers\n");
-        printf("13 - Exit\n");
+        printf("13 - String Manipulation\n");
+        printf("14 - Matrix Addition\n");
+        printf("15 - Square Root Calculator\n");
+        printf("16 - Recursive Factorial\n");
+        printf("17 - Recursive Fibonacci\n");
+        printf("18 - Academic Management System\n");
+        printf("19 - Exit\n");
         printf("================================================================\n\n");
-        printf("Choice (1-13): ");
+        printf("Choice (1-19): ");
 
-        scanf(" %i", &exercise_choice);
+        scanf("%i", &exercise_choice);
 
         if (exercise_choice == 1) {
             printf("\n================================================================\n");
@@ -71,7 +138,7 @@ int main(void) {
             printf("================================================================\n\n");
 
             printf("Enter a number: ");
-            scanf(" %i", &number);
+            scanf("%i", &number);
 
             if (number % 2 == 0) {
                 printf("\nEven!\n");
@@ -86,10 +153,10 @@ int main(void) {
             printf("================================================================\n\n");
 
             printf("Enter your first grade: ");
-            scanf(" %f", &first_grade);
+            scanf("%f", &first_grade);
 
             printf("Enter your second grade: ");
-            scanf(" %f", &second_grade);
+            scanf("%f", &second_grade);
 
             average_grade = (first_grade + second_grade) / 2;
 
@@ -98,7 +165,7 @@ int main(void) {
             } else {
                 printf("\nYou'll have a retake exam.\n");
                 printf("Retake exam grade: ");
-                scanf(" %f", &retake_exam);
+                scanf("%f", &retake_exam);
 
                 average_grade = (average_grade + retake_exam) / 2;
 
@@ -117,7 +184,7 @@ int main(void) {
 
             printf("***** ADM MODE *****\n");
             printf("Insert an Initial Price: ");
-            scanf(" %f", &initial_price);
+            scanf("%f", &initial_price);
 
             printf("\nWelcome! We have 4 Discount Options today!\n\n");
             printf("Please, choose one:\n");
@@ -159,7 +226,7 @@ int main(void) {
             printf("3 - Complete: ice cream with chocolate syrup and M&M's (plus $5)\n\n");
 
             printf("Choice (1, 2 or 3): ");
-            scanf(" %i", &dessert_choice);
+            scanf("%i", &dessert_choice);
 
             switch (dessert_choice) {
                 case 1:
@@ -197,7 +264,7 @@ int main(void) {
             printf("================================================================\n\n");
 
             printf("Insert a number to calculate its factorial: ");
-            scanf(" %i", &fact_number);
+            scanf("%i", &fact_number);
 
             fact_temp = fact_number;
             fact_result = 1;
@@ -222,7 +289,7 @@ int main(void) {
             printf("================================================================\n\n");
 
             printf("Insert a number to calculate its factorial: ");
-            scanf(" %i", &fact_number);
+            scanf("%i", &fact_number);
 
             fact_temp = fact_number;
             fact_result = 1;
@@ -247,7 +314,7 @@ int main(void) {
             printf("================================================================\n\n");
 
             printf("Insert a number to calculate its factorial: ");
-            scanf(" %i", &fact_number);
+            scanf("%i", &fact_number);
 
             fact_result = 1;
 
@@ -275,7 +342,7 @@ int main(void) {
 
             do {
                 printf("Insert a limit number greater than 0 for the fibonacci sequence: ");
-                scanf(" %i", &fib_limit);
+                scanf("%i", &fib_limit);
             } while (fib_limit <= 0);
 
             printf("\nSequence:\n%i ", fib_current);
@@ -316,11 +383,11 @@ int main(void) {
             fib_loop = 1;
 
             printf("Insert a limit number greater than 0 for the fibonacci sequence: ");
-            scanf(" %i", &fib_limit);
+            scanf("%i", &fib_limit);
 
             while (fib_limit <= 0) {
                 printf("You didn't input a valid number! Please, insert again: ");
-                scanf(" %i", &fib_limit);
+                scanf("%i", &fib_limit);
             }
 
             printf("\nSequence:\n%i ", fib_current);
@@ -361,11 +428,11 @@ int main(void) {
             fib_loop = 1;
 
             printf("Insert a limit number greater than 0 for the fibonacci sequence: ");
-            scanf(" %i", &fib_limit);
+            scanf("%i", &fib_limit);
 
             for (; fib_limit <= 0;) {
                 printf("You didn't input a valid number! Please, insert again: ");
-                scanf(" %i", &fib_limit);
+                scanf("%i", &fib_limit);
             }
 
             printf("\nSequence:\n%i ", fib_current);
@@ -403,7 +470,7 @@ int main(void) {
 
             while (char_count <= 0) {
                 printf("How many characters do you want to write? ");
-                scanf(" %i", &char_count);
+                scanf("%i", &char_count);
             }
 
             printf("\n");
@@ -438,7 +505,7 @@ int main(void) {
 
             do {
                 printf("How many integer values do you want to store?\n(You can only store up to 30 values.)\nAnswer: ");
-                scanf(" %i", &value_count);
+                scanf("%i", &value_count);
             } while (value_count <= 0 || value_count > 30);
 
             int numbers[value_count];
@@ -448,7 +515,7 @@ int main(void) {
 
             for (int i = 0; i < value_count; i++) {
                 printf("Number %i: ", i + 1);
-                scanf(" %i", &numbers[i]);
+                scanf("%i", &numbers[i]);
                 sorted_numbers[i] = numbers[i];
             }
 
@@ -498,15 +565,249 @@ int main(void) {
             printf("\n================================================================\n\n");
         } else if (exercise_choice == 13) {
             printf("\n================================================================\n");
+            printf("                     String Manipulation\n");
+            printf("================================================================\n\n");
+
+            printf("Insert one name: ");
+            scanf("%s", first_name);
+
+            printf("Insert another name: ");
+            scanf("%s", second_name);
+
+            for (char_index = 0; first_name[char_index] != '\0'; char_index++) {
+                copied_name[char_index] = first_name[char_index];
+            }
+            copied_name[char_index] = '\0';
+
+            printf("\nFirst letter of 1st name: %c\n", first_name[0]);
+            printf("Manual copy of 1st name: %s\n", copied_name);
+
+            if (strcmp(first_name, second_name) == 0) {
+                printf("The names are equal!\n");
+            } else {
+                printf("The names are not equal!\n");
+            }
+
+            concatenated_names[0] = '\0';
+            strcat(concatenated_names, first_name);
+            strcat(concatenated_names, second_name);
+
+            printf("Concatenated names: %s\n", concatenated_names);
+
+            printf("\n================================================================\n\n");
+        } else if (exercise_choice == 14) {
+            printf("\n================================================================\n");
+            printf("                       Matrix Addition\n");
+            printf("================================================================\n\n");
+
+            matrix_rows = 0;
+            matrix_columns = 0;
+
+            printf("Enter row size: ");
+            scanf("%i", &matrix_rows);
+
+            printf("Enter column size: ");
+            scanf("%i", &matrix_columns);
+
+            int first_matrix[matrix_rows][matrix_columns];
+            int second_matrix[matrix_rows][matrix_columns];
+            int sum_matrix[matrix_rows][matrix_columns];
+
+            printf("\nEnter the values for the first matrix:\n");
+            for (int row = 0; row < matrix_rows; row++) {
+                for (int column = 0; column < matrix_columns; column++) {
+                    printf("Value of [%i][%i]: ", row, column);
+                    scanf("%i", &first_matrix[row][column]);
+                }
+            }
+
+            printf("\nEnter the values for the second matrix:\n");
+            for (int row = 0; row < matrix_rows; row++) {
+                for (int column = 0; column < matrix_columns; column++) {
+                    printf("Value of [%i][%i]: ", row, column);
+                    scanf("%i", &second_matrix[row][column]);
+                }
+            }
+
+            printf("\nFirst Matrix:");
+            for (int row = 0; row < matrix_rows; row++) {
+                printf("\n");
+                for (int column = 0; column < matrix_columns; column++) {
+                    printf("%i ", first_matrix[row][column]);
+                }
+            }
+
+            printf("\n\nSecond Matrix:");
+            for (int row = 0; row < matrix_rows; row++) {
+                printf("\n");
+                for (int column = 0; column < matrix_columns; column++) {
+                    printf("%i ", second_matrix[row][column]);
+                }
+            }
+
+            for (int row = 0; row < matrix_rows; row++) {
+                for (int column = 0; column < matrix_columns; column++) {
+                    sum_matrix[row][column] = first_matrix[row][column] + second_matrix[row][column];
+                }
+            }
+
+            printf("\n\nSum Matrix:");
+            for (int row = 0; row < matrix_rows; row++) {
+                printf("\n");
+                for (int column = 0; column < matrix_columns; column++) {
+                    printf("%i ", sum_matrix[row][column]);
+                }
+            }
+            printf("\n");
+
+            printf("\n================================================================\n\n");
+        } else if (exercise_choice == 15) {
+            printf("\n================================================================\n");
+            printf("                   Square Root Calculator\n");
+            printf("================================================================\n\n");
+
+            int sqrt_values_count = 0;
+            printf("How many values do you want to add? ");
+            scanf("%i", &sqrt_values_count);
+
+            while (sqrt_values_count <= 0) {
+                printf("Please enter a positive quantity: ");
+                scanf("%i", &sqrt_values_count);
+            }
+
+            double sqrt_vals[sqrt_values_count];
+            double sqrt_roots[sqrt_values_count];
+
+            printf("\nPlease, insert the values:\n");
+            for (int i = 0; i < sqrt_values_count; i++) {
+                printf("Value %i: ", i + 1);
+                scanf("%lf", &sqrt_vals[i]);
+
+                if (sqrt_vals[i] < 0.0) {
+                    printf(" -> Square root is not defined for negative real numbers. Using 0.0.\n");
+                    sqrt_roots[i] = 0.0;
+                } else {
+                    sqrt_roots[i] = sqrt(sqrt_vals[i]);
+                }
+            }
+
+            printf("\n--- Results ---\n");
+            for (int i = 0; i < sqrt_values_count; i++) {
+                printf("Square root of %.2f is %.2f\n", sqrt_vals[i], sqrt_roots[i]);
+            }
+
+            printf("\n================================================================\n\n");
+        } else if (exercise_choice == 16) {
+            printf("\n================================================================\n");
+            printf("                    Recursive Factorial\n");
+            printf("================================================================\n\n");
+
+            int rec_fact_input = 0;
+            printf("Enter a number between 1 and 10 to calculate its factorial: ");
+            scanf("%i", &rec_fact_input);
+
+            while (rec_fact_input < 1 || rec_fact_input > 10) {
+                printf("Invalid input. Please enter a number between 1 and 10: ");
+                scanf("%i", &rec_fact_input);
+            }
+
+            printf("Factorial of %i: ", rec_fact_input);
+            menu_recursive_factorial(rec_fact_input, 1);
+
+            printf("\n================================================================\n\n");
+        } else if (exercise_choice == 17) {
+            printf("\n================================================================\n");
+            printf("                    Recursive Fibonacci\n");
+            printf("================================================================\n\n");
+
+            int rec_fib_input = 0;
+            printf("Insert a limit number greater than 0 for the fibonacci sequence: ");
+            scanf("%i", &rec_fib_input);
+
+            while (rec_fib_input <= 0) {
+                printf("You didn't input a valid number! Please, insert again: ");
+                scanf("%i", &rec_fib_input);
+            }
+
+            printf("\nSequence:\n");
+            menu_fibonacci_sequence(rec_fib_input, 1, 1, 1);
+
+            if (rec_fib_input > 1) {
+                printf("\n\nSums:\n");
+                menu_fibonacci_sum(rec_fib_input, 1, 1, 1);
+            }
+            printf("\n");
+
+            printf("\n================================================================\n\n");
+        } else if (exercise_choice == 18) {
+            printf("\n================================================================\n");
+            printf("                Academic Management System\n");
+            printf("================================================================\n\n");
+
+            int student_option = 0;
+            int current_student_count = 0;
+            char continue_reg = ' ';
+            MENU_STUDENT local_students[MENU_MAX_STUDENTS];
+
+            do {
+                printf("--- Academic Management System ---\n");
+                printf("1 - Register students\n");
+                printf("2 - Show all students\n");
+                printf("3 - Return to main menu\n");
+                printf("Select an option (1-3): ");
+                scanf("%i", &student_option);
+
+                if (student_option == 1) {
+                    while (current_student_count < MENU_MAX_STUDENTS) {
+                        printf("\n--- Student %i ---\n", current_student_count + 1);
+                        printf("ID: ");
+                        scanf("%i", &local_students[current_student_count].id);
+                        printf("Name: ");
+                        scanf("%s", local_students[current_student_count].name);
+
+                        current_student_count++;
+
+                        if (current_student_count >= MENU_MAX_STUDENTS) {
+                            printf("Capacity reached (%i students).\n", MENU_MAX_STUDENTS);
+                            break;
+                        }
+
+                        printf("Do you want to continue adding students? (y/n): ");
+                        scanf(" %c", &continue_reg);
+                        if (continue_reg == 'n' || continue_reg == 'N') {
+                            printf("Returning to submenu...\n\n");
+                            break;
+                        }
+                    }
+                } else if (student_option == 2) {
+                    printf("\n--- Student List ---\n");
+                    if (current_student_count == 0) {
+                        printf("No students registered yet.\n\n");
+                    } else {
+                        for (int i = 0; i < current_student_count; i++) {
+                            printf("Student %i: ID = %i | Name = %s\n", i + 1, local_students[i].id, local_students[i].name);
+                        }
+                        printf("\n");
+                    }
+                } else if (student_option == 3) {
+                    printf("Returning to main menu...\n");
+                } else {
+                    printf("Invalid option! Please enter 1, 2, or 3.\n\n");
+                }
+            } while (student_option != 3);
+
+            printf("\n================================================================\n\n");
+        } else if (exercise_choice == 19) {
+            printf("\n================================================================\n");
             printf("                   Exiting program. Goodbye!\n");
             printf("================================================================\n\n");
         } else {
             printf("\n================================================================\n");
-            printf("        Invalid selection! Please enter a number 1 to 13.\n");
+            printf("        Invalid selection! Please enter a number 1 to 19.\n");
             printf("================================================================\n\n");
         }
 
-    } while (exercise_choice != 13);
+    } while (exercise_choice != 19);
 
     return 0;
 }

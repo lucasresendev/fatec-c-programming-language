@@ -11,9 +11,9 @@
 
 ## 🎯 Problem Statement
 
-Unify all practical exercises developed throughout the semester into an interactive console menu (`00-consolidated-menu`). The program executes continuously inside a `do...while` repetition loop, dispatching to each specific problem routine and returning to the main menu until the user explicitly enters Option 13 to terminate.
+Unify all practical exercises developed throughout the semester into an interactive console menu (`00-consolidated-menu`). The program executes continuously inside a `do...while` repetition loop, dispatching to each specific problem routine and returning to the main menu until the user explicitly enters Option 19 to terminate.
 
-The menu includes 12 integrated exercises:
+The menu includes 18 integrated exercises:
 1. **Even or Odd Checker**
 2. **Academic Grade Evaluator** (with Retake Exam)
 3. **One Item Shop** (Tiered Discount Ladder)
@@ -26,7 +26,13 @@ The menu includes 12 integrated exercises:
 10. **Fibonacci Sequence** (`for` with input validation)
 11. **Reverse Characters** (array traversed backwards)
 12. **Lowest and Highest Numbers** (array with bubble sort)
-13. **Exit**
+13. **String Manipulation** (`string.h`, manual copy, comparison, concatenation)
+14. **Matrix Addition** (2D arrays with element-by-element sum)
+15. **Square Root Calculator** (`<math.h>`, array storage and batch reporting)
+16. **Recursive Factorial** (tail-recursive accumulator with expansion)
+17. **Recursive Fibonacci** (sequence terms and arithmetic additions)
+18. **Academic Management System** (`struct` and `typedef` records)
+19. **Exit**
 
 ---
 
@@ -54,10 +60,16 @@ The implementation is available directly in [`consolidated_menu.c`](consolidated
 10 - Fibonacci Sequence (for)
 11 - Reverse Characters
 12 - Lowest and Highest Numbers
-13 - Exit
+13 - String Manipulation
+14 - Matrix Addition
+15 - Square Root Calculator
+16 - Recursive Factorial
+17 - Recursive Fibonacci
+18 - Academic Management System
+19 - Exit
 ================================================================
 
-Choice (1-13): 7
+Choice (1-19): 7
 
 ================================================================
                        Factorial (for)
@@ -84,10 +96,16 @@ For the number 5, the factorial is: 5 x 4 x 3 x 2 x 1 = 120
 10 - Fibonacci Sequence (for)
 11 - Reverse Characters
 12 - Lowest and Highest Numbers
-13 - Exit
+13 - String Manipulation
+14 - Matrix Addition
+15 - Square Root Calculator
+16 - Recursive Factorial
+17 - Recursive Fibonacci
+18 - Academic Management System
+19 - Exit
 ================================================================
 
-Choice (1-13): 13
+Choice (1-19): 19
 
 ================================================================
                    Exiting program. Goodbye!
@@ -99,9 +117,9 @@ Choice (1-13): 13
 ## 💡 Key Concepts Applied
 
 - **Consolidated Exercises Menu (`00`):** Acts as the primary consolidated entry point for the repository, continually updated as new programming assignments and algorithmic challenges are completed.
-- **Continuous Execution via `do...while`:** Guarantees that the main menu renders at least once and keeps running until the sentinel condition `exercise_choice != 13` evaluates to false.
-- **Top-Level Declarations:** The scalar variables across all problem domains are declared at the beginning of `main(void)`, demonstrating classic structured C scoping. The two array exercises declare their arrays inside their own branches, since the size depends on what the user types.
-- **Input Buffer Hygiene:** Prepending a leading space in format strings (`scanf(" %i")`, `scanf(" %c")`) cleans lingering newlines and whitespace characters from `stdin`.
+- **Continuous Execution via `do...while`:** Guarantees that the main menu renders at least once and keeps running until the sentinel condition `exercise_choice != 19` evaluates to false.
+- **Top-Level Declarations:** The scalar variables across all problem domains are declared at the beginning of `main(void)`, demonstrating classic structured C scoping. The array and matrix exercises declare their dynamic collections inside their own branches, since their dimensions depend on user input.
+- **Input Buffer Handling:** While numeric and string format specifiers (`%i`, `%f`, `%s`) discard whitespace and newlines automatically, single character inputs use `scanf(" %c")` with an intentional leading space to prevent capturing leftover newline (`\n`) bytes.
 - **Consistent UI Framing:** Standardized 64-character `=` divider bars keep the same look across all sub-modules.
 
 ---
