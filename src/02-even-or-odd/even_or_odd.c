@@ -19,7 +19,7 @@ int main(void) {
 
         printf("Do you want to continue? Y or N: ");
         scanf(" %c", &yes_or_no);
-        // The leading space before %c consumes the leftover newline (\n) in the input buffer
+        // Space before %c is necessary: unlike %i, %c does not skip whitespace and would otherwise read the leftover '\n'
 
     } while (yes_or_no == 'y' || yes_or_no == 'Y');
 

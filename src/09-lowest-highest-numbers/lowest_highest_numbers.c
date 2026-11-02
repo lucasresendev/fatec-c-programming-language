@@ -8,7 +8,7 @@ int main(void) {
 
     do {
         printf("How many integer values do you want to store?\n(You can only store up to 30 values.)\nAnswer: ");
-        scanf(" %i", &count);
+        scanf("%i", &count);
     } while (count <= 0 || count > 30);
 
     int numbers[count];
@@ -18,7 +18,7 @@ int main(void) {
 
     for (int i = 0; i < count; i++) {
         printf("Number %i: ", i + 1);
-        scanf(" %i", &numbers[i]);
+        scanf("%i", &numbers[i]);
         sorted_numbers[i] = numbers[i];
     }
 

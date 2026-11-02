@@ -55,7 +55,7 @@ You didn't pass the course.
 - **Reaproveitamento de Variáveis:** Em vez de recalcular `(first_grade + second_grade) / 2` em múltiplos ramos, armazenar o quociente em `average_grade` melhora a legibilidade e otimiza o processamento.
 - **Condicionais Aninhadas (`if` dentro de `else`):** Quando a média inicial é inferior a 6.0, o fluxo entra no bloco `else`, onde uma nova entrada de dados é solicitada e um `if` interno avalia a nova média composta.
 - **Aritmética de Ponto Flutuante:** As operações utilizam tipos `float` para preservar frações decimais das notas (como 7.5 ou 5.75).
-- **Nota de Exploração Pessoal:** Na anotação de aula `ICPL04`, foi explorada uma política alternativa em que alunos com média inicial estritamente inferior a 5.0 reprovam diretamente sem direito a exame de recuperação, reservando a recuperação apenas para médias no intervalo `[5.0, 6.0)`.
+- **Nota de Exploração Pessoal:** Em um estudo complementar de lógica condicional, foi explorada uma política alternativa em que alunos com média inicial estritamente inferior a 5.0 reprovam diretamente sem direito a exame de recuperação, reservando a recuperação apenas para médias no intervalo `[5.0, 6.0)`.
 
 ---
 

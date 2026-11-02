@@ -55,7 +55,7 @@ You didn't pass the course.
 - **Variable Reutilization:** Instead of repeatedly computing `(first_grade + second_grade) / 2` across multiple branches, storing the quotient in `average_grade` improves readability and optimizes computational overhead.
 - **Nested Conditionals (`if` inside `else`):** When the initial average falls below 6.0, execution branches into the `else` block, where a secondary input and an inner conditional evaluate the updated composite average against the passing threshold.
 - **Floating-Point Arithmetic:** Grading logic uses `float` types to preserve fractional grade components (such as 7.5 or 5.75).
-- **Personal Exploration Note:** In class note `ICPL04`, an alternative strict policy was explored where students with an initial average strictly below 5.0 fail immediately without access to a retake exam, reserving retakes only for students in the `[5.0, 6.0)` range.
+- **Personal Exploration Note:** In an alternative conditional logic study, a strict policy was explored where students with an initial average strictly below 5.0 fail immediately without access to a retake exam, reserving retakes only for students in the `[5.0, 6.0)` range.
 
 ---
 

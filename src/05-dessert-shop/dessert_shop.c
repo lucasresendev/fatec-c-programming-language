@@ -13,7 +13,7 @@ int main(void) {
     printf("================================================================\n\n");
     printf("Choice (1, 2 or 3): ");
 
-    scanf(" %i", &dessert_choice);
+    scanf("%i", &dessert_choice);
 
     switch (dessert_choice) {
         case 1:

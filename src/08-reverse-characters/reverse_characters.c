@@ -6,7 +6,7 @@ int main(void) {
 
     while (char_count <= 0) {
         printf("How many characters do you want to write? ");
-        scanf(" %i", &char_count);
+        scanf("%i", &char_count);
     }
 
     printf("\n");

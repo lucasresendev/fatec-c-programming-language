@@ -18,7 +18,7 @@ int main(void) {
         printf("================================================================\n\n");
         printf("Choice (1-4): ");
 
-        scanf(" %i", &menu_choice);
+        scanf("%i", &menu_choice);
 
         if (menu_choice == 1) {
             printf("\n================================================================\n");
@@ -26,7 +26,7 @@ int main(void) {
             printf("================================================================\n\n");
 
             printf("Insert a number to calculate its factorial: ");
-            scanf(" %i", &selected_number);
+            scanf("%i", &selected_number);
 
             temporary_number = selected_number;
             factorial_number = 1;
@@ -52,7 +52,7 @@ int main(void) {
             printf("================================================================\n\n");
 
             printf("Insert a number to calculate its factorial: ");
-            scanf(" %i", &selected_number);
+            scanf("%i", &selected_number);
 
             temporary_number = selected_number;
             factorial_number = 1;
@@ -78,7 +78,7 @@ int main(void) {
             printf("================================================================\n\n");
 
             printf("Insert a number to calculate its factorial: ");
-            scanf(" %i", &selected_number);
+            scanf("%i", &selected_number);
 
             factorial_number = 1;
 

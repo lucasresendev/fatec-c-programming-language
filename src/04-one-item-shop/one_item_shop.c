@@ -8,7 +8,7 @@ int main(void) {
 
     printf("\n***** ADM MODE *****\n");
     printf("Insert an Initial Price: ");
-    scanf(" %f", &initial_price);
+    scanf("%f", &initial_price);
 
     printf("\n\n=====================\n");
     printf("    One Item Shop\n");

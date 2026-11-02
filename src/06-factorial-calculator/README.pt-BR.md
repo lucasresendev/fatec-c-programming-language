@@ -90,7 +90,7 @@ Choice (1-4): 4
 - **Padrão Acumulador Multiplicativo:** Inicialização em `factorial_number = 1` e escala sucessiva dos fatores por atribuição composta (`factorial_number *= temporary_number`).
 - **Formatação Dinâmica de Expressões:** Diferenciação entre os fatores multiplicativos intermediários e o encerramento do cálculo com saída condicional (`if (temporary_number > 1) printf("x "); else printf("= ");`).
 - **Comparação de Repetições (`while`, `do...while` e `for`):** Análise de como o momento da validação condicional afeta o comportamento do programa diante de valores de fronteira. O `for` reúne inicialização, condição e decremento em um único cabeçalho (`for (temporary_number = selected_number; temporary_number >= 1; temporary_number--)`), sendo o mais indicado quando se sabe quantas vezes a repetição vai rodar.
-- **Higiene do Buffer de Entrada:** Uso de `scanf(" %i")` com espaço à esquerda para descartar quebras de linha pendentes em `stdin`.
+- **Entrada Formatada (`scanf`):** Captura números inteiros diretamente com `scanf("%i")`, que já descarta automaticamente espaços e quebras de linha precedentes de forma nativa.
 
 ---
 

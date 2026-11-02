@@ -22,7 +22,7 @@ int main(void) {
         printf("================================================================\n\n");
         printf("Choice (1-6): ");
 
-        scanf(" %i", &menu_choice);
+        scanf("%i", &menu_choice);
 
         if (menu_choice == 1) {
             printf("\n================================================================\n");
@@ -33,7 +33,7 @@ int main(void) {
             next = 1;
 
             printf("Insert a limit number for the fibonacci sequence: ");
-            scanf(" %i", &limit);
+            scanf("%i", &limit);
 
             printf("\nSequence:\n%i ", current);
 
@@ -67,7 +67,7 @@ int main(void) {
             next = 1;
 
             printf("Insert a limit number for the fibonacci sequence: ");
-            scanf(" %i", &limit);
+            scanf("%i", &limit);
 
             printf("\nSequence:\n%i ", current);
 
@@ -103,7 +103,7 @@ int main(void) {
 
             do {
                 printf("Insert a limit number greater than 0 for the fibonacci sequence: ");
-                scanf(" %i", &limit);
+                scanf("%i", &limit);
             } while (limit <= 0);
 
             printf("\nSequence:\n%i ", current);
@@ -144,11 +144,11 @@ int main(void) {
             loop = 1;
 
             printf("Insert a limit number greater than 0 for the fibonacci sequence: ");
-            scanf(" %i", &limit);
+            scanf("%i", &limit);
 
             while (limit <= 0) {
                 printf("You didn't input a valid number! Please, insert again: ");
-                scanf(" %i", &limit);
+                scanf("%i", &limit);
             }
 
             printf("\nSequence:\n%i ", current);
@@ -189,11 +189,11 @@ int main(void) {
             loop = 1;
 
             printf("Insert a limit number greater than 0 for the fibonacci sequence: ");
-            scanf(" %i", &limit);
+            scanf("%i", &limit);
 
             for (; limit <= 0;) {
                 printf("You didn't input a valid number! Please, insert again: ");
-                scanf(" %i", &limit);
+                scanf("%i", &limit);
             }
 
             printf("\nSequence:\n%i ", current);
