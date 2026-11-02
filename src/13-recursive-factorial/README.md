@@ -7,24 +7,23 @@
 
 </div>
 
-> **Origin:** Class 10 (Recursion & Call Stack)  
+> **Origin:** Class 11 (Recursion & Call Stack)  
 > **Topic:** Recursive Function Calls, Base Case & Call Stack Accumulation  
-> **Lineage:** Recursive leap from iterative implementations in [Classes 06, 07 & 09: Factorial Calculator](../06-factorial-calculator)
+> **Lineage:** Recursive leap from iterative implementations in [Classes 06, 08 & 10: Factorial Calculator](../06-factorial-calculator)
 
 ---
 
 ## 🎯 Problem Statement
 
-Compute the factorial of an integer $N$ ($1 \le N \le 10$) using recursive function calls instead of classical iteration loops. In this exercise, I validate the user input defensibly, initiate a tail-recursive function, and output each step of the arithmetic expansion ($N \times (N-1) \times \dots \times 1 = \text{result}$) as the execution progresses through the Call Stack.
+Calculate the factorial of an integer $N$ ($1 \le N \le 10$) using recursive function calls instead of iterative loops. In this exercise, I validate the user input (accepting only numbers from 1 to 10), call the recursive function, and print each multiplication step until reaching the final result.
 
 ### 🏛️ Classroom Scope vs. Autoral / CS50x Exploration
 
-- **Fatec Course Scope:** The classroom prompt was assigned as homework to solve the factorial problem using recursion rather than the iterative loops (`while`, `do-while`, `for`) introduced in previous weeks. The core expectation was establishing a proper base case ($N < 1$) and invoking the function recursively to accumulate the product.
-- **My CS50x-Inspired Exploration:** During my initial homework drafting (preserved in my notes and legacy drafts), I challenged myself to implement an advanced variant inspired by CS50x concepts before standardizing on the canonical recursive solution:
-  - Practicing explicit Heap memory management via `malloc()` and `free()` to handle multiple factorial requests without relying on Variable Length Arrays (VLAs).
-  - Defensive `NULL` pointer checks to handle memory exhaustion.
-  - Passing pointers (`int *factorial_number`) and dereferencing (`*factorial_number`) to practice simulated pass-by-reference.
-- **Canonical Coursework Submission:** For the final repository module, I selected the elegant recursive accumulator pattern that prints each factor during stack traversal and terminates with the final result at the base case.
+- **Fatec Course Scope:** Assigned as homework to solve the factorial problem using recursion rather than the iterative loops (`while`, `do-while`, `for`) introduced in previous weeks. The core goal was establishing a clean base case ($N < 1$) and using recursive calls to multiply the factors.
+- **My CS50x-Inspired Exploration:** In my initial study drafts (saved in my notes and legacy folder), I tried experimenting with ideas from CS50x before standardizing on the final recursive solution:
+  - Testing dynamic memory allocation with `malloc()` and `free()` to store results.
+  - Practicing pointers (`int *factorial_number`) and dereferencing (`*factorial_number`) to update values across function calls.
+- **Final Coursework Solution:** In this final version, I kept the clean recursive function with an accumulator parameter, printing each step (`4 x 3 x 2 x 1 = 24`) until reaching the base case.
 
 ---
 

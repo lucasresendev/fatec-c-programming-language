@@ -7,15 +7,15 @@
 
 </div>
 
-> **Origem:** Aula 06 (do-while e while), Aula 07 (for), Aula 09 (função modular)  
+> **Origem:** Aula 06 (do-while e while), Aula 08 (for), Aula 10 (função modular)  
 > **Tópico:** Estruturas de Repetição e Decomposição Procedural  
-> **Continuidade:** Precursor do paradigma recursivo em [Aula 10: Fatorial Recursivo](../13-recursive-factorial)
+> **Continuidade:** Precursor do paradigma recursivo em [Aula 11: Fatorial Recursivo](../13-recursive-factorial)
 
 ---
 
 ## 🎯 Enunciado do Problema
 
-Ler um número inteiro informado pelo usuário e calcular o seu fatorial ($n!$), exibindo dinamicamente o desenvolvimento da cadeia de multiplicações intermediárias (ex.: `5 x 4 x 3 x 2 x 1 = 120`). Na minha solução, o programa tem um submenu interativo para eu executar e comparar quatro abordagens progressivas: `do...while` (Aula 06), `while` (Aula 06), `for` (Aula 07) e uma função modular com passagem de parâmetro por valor (Aula 09).
+Ler um número inteiro informado pelo usuário e calcular o seu fatorial ($n!$), exibindo dinamicamente o desenvolvimento da cadeia de multiplicações intermediárias (ex.: `5 x 4 x 3 x 2 x 1 = 120`). Na minha solução, o programa tem um submenu interativo para eu executar e comparar quatro abordagens progressivas: `do...while` (Aula 06), `while` (Aula 06), `for` (Aula 08) e uma função modular com passagem de parâmetro por valor (Aula 10).
 
 ---
 
@@ -93,10 +93,10 @@ Choice (1-5): 5
 ## 💡 Principais Conceitos Aplicados
 
 - **Modelo Matemático do Fatorial:** Definido para inteiros não negativos como $n! = \prod_{k=1}^n k$, com a identidade $0! = 1$.
-- **Padrão Acumulador Multiplicativo:** Inicialização em `factorial_number = 1` e escala sucessiva dos fatores por atribuição composta (`factorial_number *= temporary_number`).
+- **Acumulador do Fatorial:** Começa em `factorial_number = 1` e multiplica os fatores a cada volta da repetição (`factorial_number *= temporary_number`).
 - **Formatação Dinâmica de Expressões:** Diferenciação entre os fatores multiplicativos intermediários e o encerramento do cálculo com saída condicional (`if (temporary_number > 1) printf("x "); else printf("= ");`).
 - **Comparação de Repetições (`while`, `do...while` e `for`):** Análise de como o momento da validação condicional afeta o comportamento do programa diante de valores de fronteira. O comando `for` reúne inicialização, condição e decremento em um único cabeçalho (`for (temporary_number = selected_number; temporary_number >= 1; temporary_number--)`), sendo o mais indicado quando se sabe quantas vezes a repetição vai rodar.
-- **Decomposição Modular (Aula 09):** Isolamento do cálculo em função auxiliar (`calculate_factorial_modular`) que recebe `selected_number` por valor, definindo escopo limpo de parâmetros.
+- **Decomposição Modular (Aula 10):** Isolamento do cálculo em função auxiliar (`calculate_factorial_modular`) que recebe `selected_number` por valor, definindo escopo limpo de parâmetros.
 - **Entrada Formatada (`scanf`):** Captura números inteiros diretamente com `scanf("%i")`, que já descarta automaticamente espaços e quebras de linha precedentes de forma nativa.
 
 ---

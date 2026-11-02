@@ -7,7 +7,7 @@
 
 </div>
 
-> **Origem:** Aula 09 (Funções, Modularização e Biblioteca `<math.h>`)  
+> **Origem:** Aula 10 (Funções, Modularização e Biblioteca `<math.h>`)  
 > **Tópico:** Modularização Procedural, Biblioteca Matemática (`-lm`) e Retenção em Vetores Paralelos
 
 ---
@@ -19,7 +19,7 @@ Calcular as raízes quadradas de uma série de números reais informada pelo usu
 ### 🏛️ Escopo de Aula vs. Abordagem Autoral / Externa
 
 - **Escopo do Curso na Fatec:** O objetivo proposto em sala concentrou-se na modularização de programas em funções (`void calculateSquareRoots()`) e no uso das funções matemáticas de `<math.h>` (`sqrt()`, `pow()`, `ceil()`, `floor()`). A demonstração de base feita em aula processava cada valor e imprimia a saída imediatamente em um único loop, sem reter os dados na memória.
-- **Minha Extensão Autoral:** Em vez de calcular e descartar os dados instantaneamente, optei por alocar dois vetores paralelos (`values[]` e `square_roots[]`), validando as entradas de forma defensiva (solicitando nova digitação caso a quantidade fosse menor ou igual a zero e tratando números negativos para os quais $\sqrt{x} \notin \mathbb{R}$). Isso permite ao programa exibir um relatório tabular organizado de todo o conjunto de dados após o término da digitação.
+- **Minha Extensão Autoral:** Em vez de calcular e descartar os dados na hora, preferi guardar tudo em dois vetores paralelos (`values[]` e `square_roots[]`), validando as entradas (pedindo para digitar de novo se a quantidade for menor ou igual a zero e tratando números negativos para colocar 0.0 na raiz). Com isso, o programa exibe uma tabela organizada de todos os resultados ao final.
 
 ---
 

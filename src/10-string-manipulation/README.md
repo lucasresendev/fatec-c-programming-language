@@ -7,14 +7,14 @@
 
 </div>
 
-> **Origin:** Class 08 (Strings, string.h Library & Matrices)  
-> **Topic:** Null-Terminated Character Arrays, String Operations (`<string.h>`), and `stdin` Buffer Hygiene
+> **Origin:** Class 09 (Strings, string.h Library & Matrices)  
+> **Topic:** Null-Terminated Character Arrays, String Operations (`<string.h>`), and Keyboard Buffer Clearing
 
 ---
 
 ## 🎯 Problem Statement
 
-Explore the representation and lifecycle of strings in standard C as null-terminated (`\0`) character arrays. In this exercise, I read two strings from the user with standard `scanf("%s")`, inspect individual characters by array indexing, perform a manual character-by-character copy ending with an explicit null terminator, compare the strings lexicographically using `strcmp`, and concatenate them into a destination buffer using `strcat` after initializing it safely.
+Learn how strings work in C as character arrays ending with the null terminator (`\0`). In this exercise, I read two strings with `scanf("%s")`, inspect characters by index, perform a manual copy loop (making sure to add `\0` at the end), compare if the strings are equal using `strcmp`, and combine both into a third string using `strcat`.
 
 ---
 

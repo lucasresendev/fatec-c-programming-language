@@ -7,14 +7,14 @@
 
 </div>
 
-> **Origem:** Aula 08 (Strings, Biblioteca string.h e Matrizes)  
-> **Tópico:** Vetores de Caracteres Terminados em Nulo, Operações com Strings (`<string.h>`) e Higienização de Buffer do `stdin`
+> **Origem:** Aula 09 (Strings, Biblioteca string.h e Matrizes)  
+> **Tópico:** Vetores de Caracteres, Terminador Nulo (`\0`), Biblioteca `<string.h>` e Limpeza de Buffer
 
 ---
 
 ## 🎯 Enunciado do Problema
 
-Explorar a representação e o ciclo de vida de strings no padrão C como vetores de caracteres terminados em caractere nulo (`\0`). Neste exercício, leio duas strings fornecidas pelo usuário com o `scanf("%s")` padrão de aula, inspeciono caracteres individuais por meio de índices, realizo uma cópia manual caractere por caractere finalizada com o terminador nulo explícito, comparo as cadeias de texto lexicograficamente com `strcmp` e realizo a concatenação em um terceiro vetor com `strcat` após sua inicialização segura.
+Entender como strings funcionam em C como vetores de caracteres terminados em `\0`. Neste exercício, leio duas palavras digitadas pelo usuário com `scanf("%s")`, mostro a primeira letra, faço uma cópia manual caractere por caractere (lembrando de colocar o `\0` no final para fechar o texto), comparo se as duas palavras são iguais usando `strcmp` e junto as duas em uma terceira variável com `strcat`.
 
 ---
 

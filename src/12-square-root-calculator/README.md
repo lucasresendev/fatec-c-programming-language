@@ -7,7 +7,7 @@
 
 </div>
 
-> **Origin:** Class 09 (Functions, Modular Programming & `<math.h>`)  
+> **Origin:** Class 10 (Functions, Modular Programming & `<math.h>`)  
 > **Topic:** Procedural Modularization, Math Library (`-lm`), and Parallel Array Retention
 
 ---
@@ -19,7 +19,7 @@ Calculate the square roots of a user-defined series of real numbers using modula
 ### 🏛️ Classroom Scope vs. Autoral / External Approach
 
 - **Fatec Course Scope:** The classroom prompt focused on modularizing C programs into standalone functions (`void calculateSquareRoots()`) and using standard `<math.h>` mathematical functions (`sqrt()`, `pow()`, `ceil()`, `floor()`). In class, the baseline student example processed inputs on the fly within a single loop without retaining them in memory.
-- **My Autoral Extension:** Instead of computing and discarding values instantaneously, I chose to allocate two parallel dynamic arrays (`values[]` and `square_roots[]`), validating user input defensively (re-prompting on non-positive element counts, and handling negative real numbers where $\sqrt{x} \notin \mathbb{R}$). This allows the program to present a clean, tabular batch report of the entire dataset after data entry is complete.
+- **My Autoral Extension:** Instead of computing and discarding values immediately, I chose to save them into two parallel arrays (`values[]` and `square_roots[]`), validating user input (re-prompting on non-positive counts, and setting square root to 0.0 for negative numbers). This allows the program to display an organized table of all results after data entry is complete.
 
 ---
 

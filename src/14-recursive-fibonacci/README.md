@@ -7,9 +7,9 @@
 
 </div>
 
-> **Origin:** Class 10 (Recursion & Call Stack)  
+> **Origin:** Class 11 (Recursion & Call Stack)  
 > **Topic:** Recursive Recurrence Relations & Pairwise Addition Decomposition  
-> **Lineage:** Recursive evolution from comparative iterative implementations in [Classes 06 & 07: Fibonacci Sequence](../07-fibonacci-sequence)
+> **Lineage:** Recursive evolution from comparative iterative implementations in [Classes 06 & 08: Fibonacci Sequence](../07-fibonacci-sequence)
 
 ---
 
@@ -23,7 +23,7 @@ Generate the terms of the Fibonacci sequence ($F_n = F_{n-1} + F_{n-2}$) and vis
 - **My Autoral Extension:** Rather than limiting the solution to a standard single recurrence, I structured the implementation into two modular recursive subroutines:
   - `make_fibonacci_sequence()`: advances a tail-recursive counter to output each sequence term in order.
   - `make_fibonacci_sum()`: recursively models the pairwise arithmetic transitions ($1 + 1 = 2, 1 + 2 = 3, \dots$), clearly detailing the mechanics of the recurrence relation.
-  - Defensive input sanitation: wrapped in a `while (limit <= 0)` loop to reject non-positive counts.
+  - Input validation: wrapped in a `while (limit <= 0)` loop to reject non-positive counts.
 
 ---
 

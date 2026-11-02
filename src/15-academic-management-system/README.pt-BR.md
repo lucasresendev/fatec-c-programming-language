@@ -7,23 +7,23 @@
 
 </div>
 
-> **Origem:** Aula 11 (Tipos Definidos pelo Usuário: struct e typedef)  
+> **Origem:** Aula 12 (Tipos Definidos pelo Usuário: struct e typedef)  
 > **Tópico:** Tipos de Dados Compostos (`struct`), Apelidos de Tipos (`typedef`) e Vetor de Registros
 
 ---
 
 ## 🎯 Enunciado do Problema
 
-Gerenciar registros acadêmicos de estudantes superando a fragilidade de vetores paralelos através do uso de tipos de dados compostos heterogêneos (`struct`) e definição de pseudônimos de tipos (`typedef`). Neste exercício, disponibilizo um console interativo que permite ao usuário cadastrar números de matrícula e nomes de estudantes em um vetor contíguo de estruturas, listar todos os registros gravados ou encerrar o programa.
+Gerenciar cadastros de estudantes utilizando estruturas compostas (`struct`) e apelidos de tipos (`typedef`) em vez de vetores paralelos separados. Neste exercício, criei um programa de console interativo onde o usuário pode cadastrar matrícula e nome dos alunos em um vetor de estruturas, listar todos os alunos cadastrados ou sair.
 
 ### 🏛️ Escopo de Aula vs. Abordagem Autoral / Externa
 
-- **Escopo do Curso na Fatec:** A progressão didática em sala começou demonstrando as deficiências de vetores paralelos desconexos (`int ids[10]` e `char names[10][15]`, que não possuem ligação formal na memória física). Em seguida, o docente introduziu `struct STUDENT { int id; char name[...]; }` para conferir coesão de entidade e `typedef struct STUDENT STUDENT;` para simplificar a sintaxe, mencionando como referência o uso de pseudônimos por Andrew Tanenbaum.
-- **Minha Extensão Autoral:** O código-base demonstrado em sala forçava o retorno ao menu principal após o cadastro de cada aluno individual e mantinha um limite rígido de 10 posições. Na minha versão:
-  - Desenvolvi uma repetição interna de cadastro contínuo perguntando `Do you want to continue adding students? (y/n): `, permitindo registrar múltiplos alunos em sequência sem retornar ao menu a cada entrada.
-  - Ampliei a capacidade máxima para `#define MAX_STUDENTS 100` com verificação de limites.
-  - Implementei tratamento de base vazia (`No students registered yet.`) ao listar os alunos, evitando a impressão de memória não inicializada.
-  - Tratei defensivamente a limpeza do buffer de entrada do teclado com `scanf(" %c", &continue_adding)`.
+- **Escopo do Curso na Fatec:** A aula começou mostrando por que guardar dados em vetores separados (`ids[10]` e `names[10]`) pode gerar confusão e perda de sincronismo. O professor então apresentou `struct STUDENT { int id; char name[50]; };` para agrupar as informações de cada aluno em um único registro, e usou `typedef struct STUDENT STUDENT;` para criar um apelido prático e evitar ter que digitar `struct STUDENT` o tempo todo.
+- **Minha Extensão Autoral:** No exemplo feito em sala, o programa voltava para o menu principal logo após cadastrar um único aluno e tinha um limite de 10 posições. Na minha versão:
+  - Criei uma repetição de cadastro contínuo perguntando `Do you want to continue adding students? (y/n): `, permitindo cadastrar vários alunos seguidos sem precisar voltar ao menu a cada um.
+  - Aumentei o limite para `#define MAX_STUDENTS 100` com verificação de capacidade.
+  - Adicionei verificação de lista vazia (`No students registered yet.`) antes de exibir os dados.
+  - Tratei a limpeza do buffer do teclado com `scanf(" %c", &continue_adding)`.
 
 ---
 

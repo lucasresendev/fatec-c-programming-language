@@ -7,7 +7,7 @@
 
 </div>
 
-> **Origem:** Aula 07 (Estruturas de Repetição: Parte 2)  
+> **Origem:** Aula 08 (Estruturas de Repetição: Parte 2 e Vetores)  
 > **Tópico:** Vetores Unidimensionais (Arrays), Dimensionamento em Execução e Varredura Reversa
 
 ---

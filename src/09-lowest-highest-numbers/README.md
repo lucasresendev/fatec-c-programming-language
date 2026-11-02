@@ -7,7 +7,7 @@
 
 </div>
 
-> **Origin:** Class 07 (Repetition Structures: Part 2 & Arrays)  
+> **Origin:** Class 08 (Repetition Structures: Part 2 & Arrays)  
 > **Topic:** 1D Arrays, Extremum Scanning, and Bubble Sort Integration (CS50x)
 
 ---

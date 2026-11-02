@@ -7,23 +7,23 @@
 
 </div>
 
-> **Origin:** Class 11 (User-Defined Types: struct & typedef)  
+> **Origin:** Class 12 (User-Defined Types: struct & typedef)  
 > **Topic:** Composite Data Types (`struct`), Type Aliasing (`typedef`), and Array of Records
 
 ---
 
 ## 🎯 Problem Statement
 
-Manage academic student records by migrating away from fragile parallel arrays to user-defined composite data structures (`struct`) and type aliasing (`typedef`). In this exercise, I provide an interactive console system allowing the user to register student identification numbers and names into a contiguous array of structures, with an option to display the complete roster or exit the program.
+Manage student records using user-defined composite data structures (`struct`) and type aliases (`typedef`) instead of separate parallel arrays. In this exercise, I build an interactive console program where the user can register student IDs and names into an array of structures, view the list of registered students, or exit.
 
 ### 🏛️ Classroom Scope vs. Autoral / External Approach
 
-- **Fatec Course Scope:** The classroom progression started by demonstrating the structural flaws of parallel arrays (`int ids[10]` and `char names[10][15]`, which have no formal memory relationship). The instructor introduced `struct STUDENT { int id; char name[...]; }` to establish entity cohesion, followed by `typedef struct STUDENT STUDENT;` to remove syntax boilerplate, citing Tanenbaum's use of typedef aliases.
-- **My Autoral Extension:** In the classroom code, the program forced the user back to the main menu after entering a single student, and held a small fixed limit of 10 records. In my implementation:
-  - I engineered a continuous registration loop asking `Do you want to continue adding students? (y/n): `, allowing batch enrollment without returning to the menu every time.
-  - Expanded array capacity to `#define MAX_STUDENTS 100` with boundary checks.
-  - Implemented empty state handling (`No students registered yet.`) to avoid printing garbage data.
-  - Defensively cleared the keyboard input buffer (`scanf(" %c", &continue_adding)`).
+- **Fatec Course Scope:** The lesson started by showing why parallel arrays (`ids[10]` and `names[10]`) can easily become disorganized. The professor then introduced `struct STUDENT { int id; char name[50]; };` to keep related data together in one record, and `typedef struct STUDENT STUDENT;` as a convenient alias so we don't need to write `struct STUDENT` every time.
+- **My Autoral Extension:** In the classroom example, the program returned to the main menu after each registered student, with a limit of 10 students. In my version:
+  - Added a continuous registration loop asking `Do you want to continue adding students? (y/n): `, allowing the user to enroll multiple students in a row.
+  - Increased array capacity to `#define MAX_STUDENTS 100` with boundary checks.
+  - Added an empty state check (`No students registered yet.`) before listing students.
+  - Cleared the keyboard buffer with `scanf(" %c", &continue_adding)`.
 
 ---
 

@@ -7,9 +7,9 @@
 
 </div>
 
-> **Origem:** Aula 10 (Recursividade e Pilha de Execução)  
+> **Origem:** Aula 11 (Recursividade e Pilha de Execução)  
 > **Tópico:** Relações de Recorrência Recursivas e Decomposição de Adições  
-> **Continuidade:** Evolução recursiva a partir das implementações iterativas em [Aulas 06 e 07: Sequência de Fibonacci](../07-fibonacci-sequence)
+> **Continuidade:** Evolução recursiva a partir das implementações iterativas em [Aulas 06 e 08: Sequência de Fibonacci](../07-fibonacci-sequence)
 
 ---
 

@@ -7,8 +7,8 @@
 
 </div>
 
-> **Origin:** Class 08 (Strings, string.h Library & Matrices)  
-> **Topic:** Two-Dimensional Arrays (2D Matrices), Row-Major Layout, and Grid Traversals
+> **Origin:** Class 09 (Strings, string.h Library & Matrices)  
+> **Topic:** Two-Dimensional Arrays (2D Matrices), Nested Loops & Grid Traversals
 
 ---
 

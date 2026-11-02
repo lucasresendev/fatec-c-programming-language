@@ -7,9 +7,9 @@
 
 </div>
 
-> **Origem:** Aula 06 (do-while e while) e Aula 07 (for)  
+> **Origem:** Aula 06 (do-while e while) e Aula 08 (for)  
 > **Tópico:** Recorrência com Janela Deslizante e Validação de Entrada  
-> **Continuidade:** Precursor da geração recursiva e decomposição de somas em [Aula 10: Fibonacci Recursivo](../14-recursive-fibonacci)
+> **Continuidade:** Precursor da geração recursiva e decomposição de somas em [Aula 11: Fibonacci Recursivo](../14-recursive-fibonacci)
 
 ---
 

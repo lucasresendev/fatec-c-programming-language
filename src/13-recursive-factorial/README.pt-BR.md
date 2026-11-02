@@ -7,24 +7,23 @@
 
 </div>
 
-> **Origem:** Aula 10 (Recursividade e Pilha de Execução)  
+> **Origem:** Aula 11 (Recursividade e Pilha de Execução)  
 > **Tópico:** Chamadas de Função Recursivas, Caso Base e Acúmulo no Call Stack  
-> **Continuidade:** Salto de paradigma a partir das versões iterativas e modulares em [Aulas 06, 07 e 09: Calculador de Fatorial](../06-factorial-calculator)
+> **Continuidade:** Salto de paradigma a partir das versões iterativas e modulares em [Aulas 06, 08 e 10: Calculador de Fatorial](../06-factorial-calculator)
 
 ---
 
 ## 🎯 Enunciado do Problema
 
-Calcular o fatorial de um número inteiro $N$ ($1 \le N \le 10$) utilizando chamadas recursivas de função em vez de repetições iterativas convencionais. Neste exercício, valido defensivamente a entrada do usuário, inicio uma função recursiva acumuladora e apresento cada etapa da expansão aritmética ($N \times (N-1) \times \dots \times 1 = \text{resultado}$) conforme o fluxo avança pelos quadros de ativação da pilha de execução (*Call Stack*).
+Calcular o fatorial de um número inteiro $N$ ($1 \le N \le 10$) utilizando chamadas recursivas em vez de repetições tradicionais. Neste exercício, valido a entrada do usuário (aceitando apenas números de 1 a 10), chamo a função recursiva e mostro o passo a passo da multiplicação até exibir o resultado final.
 
 ### 🏛️ Escopo de Aula vs. Exploração Autoral / CS50x
 
-- **Escopo do Curso na Fatec:** A proposta foi atribuída como tarefa extraclasse para solucionar o cálculo de fatorial através de recursividade, em contraponto às repetições iterativas (`while`, `do-while`, `for`) vistas nas semanas anteriores. A expectativa era definir um caso base consistente ($N < 1$) e invocar a própria função para acumular o produto.
-- **Minha Exploração Inspirada no CS50x:** Durante os rascunhos iniciais da tarefa (preservados nas minhas notas e na pasta de rascunhos de legado), resolvi ir além para exercitar conceitos que aprendi no CS50x antes de fechar a versão canônica:
-  - Prática de gerenciamento manual de memória na Heap com `malloc()` e `free()` para processar múltiplos fatoriais em lote sem depender de vetores de tamanho variável (VLAs).
-  - Verificação defensiva de ponteiro nulo (`NULL`) em caso de esgotamento de memória.
-  - Passagem explícita de ponteiros (`int *factorial_number`) e uso do operador de desreferenciação (`*factorial_number`) para simular passagem por referência.
-- **Versão Canônica Submetida:** Para o repositório oficial, adotei a implementação recursiva com acumulador, que imprime cada fator durante o empilhamento e encerra com o resultado formatado ao atingir o caso base.
+- **Escopo do Curso na Fatec:** A proposta foi dada como tarefa para calcular o fatorial usando recursividade em vez das repetições (`while`, `do-while`, `for`) vistas nas semanas anteriores. O objetivo principal era definir um caso base ($N < 1$) e fazer chamadas recursivas para multiplicar os números.
+- **Minha Exploração Inspirada no CS50x:** Nos primeiros rascunhos de estudo (guardados nas minhas notas e na pasta de legado), tentei experimentar coisas que aprendi no CS50x antes de fechar a solução final:
+  - Testei alocação dinâmica com `malloc()` e `free()` para guardar os resultados.
+  - Pratiquei o uso de ponteiros (`int *factorial_number`) e desreferenciação (`*factorial_number`) para atualizar valores entre chamadas.
+- **Versão Final dos Exercícios:** Para o módulo final do repositório, mantive a solução recursiva limpa com acumulador, que vai imprimindo cada passo da multiplicação (`4 x 3 x 2 x 1 = 24`) até atingir o caso base.
 
 ---
 
