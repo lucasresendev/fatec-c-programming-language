@@ -43,16 +43,16 @@ Repositório dedicado ao registro de práticas laboratoriais e exercícios do cu
 | 05 | Estruturas de Decisão: Parte 3 (`switch`, fallthrough, menu consolidado) | ✅ Concluído |
 | 06 | Estruturas de Repetição: Parte 1 (`do-while`, `while`, exercícios de repetição) | ✅ Concluído |
 | 07 | Estruturas de Repetição: Parte 2 (loop `for`, arrays, bubble sort) | ✅ Concluído |
-| 08 | Trabalho Prático 1 | ⏳ Em breve |
-| 09 | Vetores (Arrays Unidimensionais) | ⏳ Em breve |
-| 10 | Manipulação de Strings | ⏳ Em breve |
-| 11 | Matrizes (Arrays Multidimensionais) | ⏳ Em breve |
+| 08 | Strings, Biblioteca string.h e Matrizes (Arrays 2D) | ✅ Concluído |
+| 09 | Funções, Modularização e Biblioteca `<math.h>` | ✅ Concluído |
+| 10 | Recursividade e Pilha de Execução | ✅ Concluído |
+| 11 | Tipos Definidos pelo Usuário (`struct`, `typedef`) | ✅ Concluído |
 | 12 | Ponteiros: Parte 1 (Endereçamento e Desreferenciação) | ⏳ Em breve |
 | 13 | Ponteiros: Parte 2 (Ponteiros com Vetores e Funções) | ⏳ Em breve |
-| 14 | Funções e Modularização | ⏳ Em breve |
-| 15 | Recursividade | ⏳ Em breve |
-| 16 | Tipos Definidos pelo Usuário (`struct`, `typedef`) | ⏳ Em breve |
-| 17 | Manipulação de Arquivos e Streams | ⏳ Em breve |
+| 14 | Manipulação de Arquivos e Streams | ⏳ Em breve |
+| 15 | Alocação Dinâmica de Memória | ⏳ Em breve |
+| 16 | Tipos Abstratos de Dados e Coleções | ⏳ Em breve |
+| 17 | Trabalho Prático 1 | ⏳ Em breve |
 | 18 | Trabalho Prático 2 | ⏳ Em breve |
 | 19 | Revisão e Avaliação do Curso | ⏳ Em breve |
 | 20 | Vista de Provas e Feedback Final | ⏳ Em breve |
@@ -73,6 +73,12 @@ Repositório dedicado ao registro de práticas laboratoriais e exercícios do cu
 | 07 | **Sequência de Fibonacci** | [`src/07-fibonacci-sequence/`](src/07-fibonacci-sequence/) | Recorrência com janela deslizante ($F_n = F_{n-1} + F_{n-2}$), decomposição de somas, limite por valor vs. quantidade de termos, repetição de validação defensiva de entrada (`limit > 0`), versões com `do...while`, `while` e `for`. |
 | 08 | **Caracteres em Ordem Reversa** | [`src/08-reverse-characters/`](src/08-reverse-characters/) | Arrays com tamanho em tempo de execução (VLA), índice começando em zero, `for` nos dois sentidos, limpeza do buffer com `scanf(" %c")`. |
 | 09 | **Maior e Menor Número** | [`src/09-lowest-highest-numbers/`](src/09-lowest-highest-numbers/) | Array de inteiros com entrada limitada (até 30), bubble sort em uma cópia do array, busca do menor e do maior valor, `for` aninhados. |
+| 10 | **Manipulação de Strings** | [`src/10-string-manipulation/`](src/10-string-manipulation/) | Vetores de caracteres, terminador nulo `\0`, loop de cópia manual, cópia com `strcpy()`, comparação com `strcmp()` e concatenação com `strcat()`. |
+| 11 | **Soma de Matrizes** | [`src/11-matrix-addition/`](src/11-matrix-addition/) | Matrizes bidimensionais, disposição contígua na memória RAM (row-major), validação defensiva de dimensões, loops `for` aninhados e soma termo a termo. |
+| 12 | **Calculadora de Raiz Quadrada** | [`src/12-square-root-calculator/`](src/12-square-root-calculator/) | Funções modulares, `<math.h>` (`sqrt`), retenção em vetores de entradas e saídas, validação de reais negativos, flag `-lm`. |
+| 13 | **Fatorial Recursivo** | [`src/13-recursive-factorial/`](src/13-recursive-factorial/) | Acumulador recursivo, caso base ($N < 1$), expansão aritmética ($N \times \dots \times 1 = \text{resultado}$), análise de Heap (CS50x) vs. Stack. |
+| 14 | **Fibonacci Recursivo** | [`src/14-recursive-fibonacci/`](src/14-recursive-fibonacci/) | Recorrência em cauda ($F_n = F_{n-1} + F_{n-2}$), complexidade espacial linear, decomposição em sequência e passos de soma. |
+| 15 | **Sistema de Gerenciamento Acadêmico** | [`src/15-academic-management-system/`](src/15-academic-management-system/) | Estruturas heterogêneas compostas (`struct`), pseudônimos com `typedef`, vetor de registros, repetição contínua com confirmação `(y/n)`. |
 
 ---
 
@@ -117,8 +123,32 @@ Repositório dedicado ao registro de práticas laboratoriais e exercícios do cu
 │   │   ├── reverse_characters.c
 │   │   ├── README.md
 │   │   └── README.pt-BR.md
-│   └── 09-lowest-highest-numbers/
-│       ├── lowest_highest_numbers.c
+│   ├── 09-lowest-highest-numbers/
+│   │   ├── lowest_highest_numbers.c
+│   │   ├── README.md
+│   │   └── README.pt-BR.md
+│   ├── 10-string-manipulation/
+│   │   ├── string_manipulation.c
+│   │   ├── README.md
+│   │   └── README.pt-BR.md
+│   ├── 11-matrix-addition/
+│   │   ├── matrix_addition.c
+│   │   ├── README.md
+│   │   └── README.pt-BR.md
+│   ├── 12-square-root-calculator/
+│   │   ├── square_root_calculator.c
+│   │   ├── README.md
+│   │   └── README.pt-BR.md
+│   ├── 13-recursive-factorial/
+│   │   ├── recursive_factorial.c
+│   │   ├── README.md
+│   │   └── README.pt-BR.md
+│   ├── 14-recursive-fibonacci/
+│   │   ├── recursive_fibonacci.c
+│   │   ├── README.md
+│   │   └── README.pt-BR.md
+│   └── 15-academic-management-system/
+│       ├── academic_management_system.c
 │       ├── README.md
 │       └── README.pt-BR.md
 │
@@ -139,7 +169,7 @@ Compile e execute diretamente a partir da raiz do repositório:
 
 ```bash
 # Menu Consolidado de Exercícios
-mkdir -p dist && clang -Wall -O2 src/00-consolidated-menu/consolidated_menu.c -o dist/consolidated_menu && ./dist/consolidated_menu
+mkdir -p dist && clang -Wall -O2 src/00-consolidated-menu/consolidated_menu.c -o dist/consolidated_menu -lm && ./dist/consolidated_menu
 
 # Exercício 1: Tipos Básicos, E/S e Tamanho de Memória
 mkdir -p dist && clang -Wall -O2 src/01-primitive-types-and-io/primitive_types_and_io.c -o dist/primitive_types_and_io && ./dist/primitive_types_and_io
@@ -167,6 +197,24 @@ mkdir -p dist && clang -Wall -O2 src/08-reverse-characters/reverse_characters.c 
 
 # Exercício 9: Maior e Menor Número
 mkdir -p dist && clang -Wall -O2 src/09-lowest-highest-numbers/lowest_highest_numbers.c -o dist/lowest_highest_numbers && ./dist/lowest_highest_numbers
+
+# Exercício 10: Manipulação de Strings
+mkdir -p dist && clang -Wall -O2 src/10-string-manipulation/string_manipulation.c -o dist/string_manipulation && ./dist/string_manipulation
+
+# Exercício 11: Soma de Matrizes
+mkdir -p dist && clang -Wall -O2 src/11-matrix-addition/matrix_addition.c -o dist/matrix_addition && ./dist/matrix_addition
+
+# Exercício 12: Calculadora de Raiz Quadrada
+mkdir -p dist && clang -Wall -O2 src/12-square-root-calculator/square_root_calculator.c -o dist/square_root_calculator -lm && ./dist/square_root_calculator
+
+# Exercício 13: Fatorial Recursivo
+mkdir -p dist && clang -Wall -O2 src/13-recursive-factorial/recursive_factorial.c -o dist/recursive_factorial && ./dist/recursive_factorial
+
+# Exercício 14: Fibonacci Recursivo
+mkdir -p dist && clang -Wall -O2 src/14-recursive-fibonacci/recursive_fibonacci.c -o dist/recursive_fibonacci && ./dist/recursive_fibonacci
+
+# Exercício 15: Sistema de Gerenciamento Acadêmico
+mkdir -p dist && clang -Wall -O2 src/15-academic-management-system/academic_management_system.c -o dist/academic_management_system && ./dist/academic_management_system
 ```
 
 ---
