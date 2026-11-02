@@ -7,6 +7,9 @@
 
 </div>
 
+> **Origem:** Aula 09 (Funções, Modularização e Biblioteca `<math.h>`)  
+> **Tópico:** Modularização Procedural, Biblioteca Matemática (`-lm`) e Retenção em Vetores Paralelos
+
 ---
 
 ## 🎯 Enunciado do Problema

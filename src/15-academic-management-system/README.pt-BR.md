@@ -7,6 +7,9 @@
 
 </div>
 
+> **Origem:** Aula 11 (Tipos Definidos pelo Usuário: struct e typedef)  
+> **Tópico:** Tipos de Dados Compostos (`struct`), Apelidos de Tipos (`typedef`) e Vetor de Registros
+
 ---
 
 ## 🎯 Enunciado do Problema

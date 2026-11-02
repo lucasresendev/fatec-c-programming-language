@@ -7,6 +7,9 @@
 
 </div>
 
+> **Origin:** Class 02 (Variable & Constant Declarations, Primitive Types, and Formatted I/O)  
+> **Topic:** Primitive Data Types, `sizeof` Operator, and Standard I/O Formatting
+
 ---
 
 ## 🎯 Problem Statement

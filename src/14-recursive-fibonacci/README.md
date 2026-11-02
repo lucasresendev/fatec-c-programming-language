@@ -7,6 +7,10 @@
 
 </div>
 
+> **Origin:** Class 10 (Recursion & Call Stack)  
+> **Topic:** Recursive Recurrence Relations & Pairwise Addition Decomposition  
+> **Lineage:** Recursive evolution from comparative iterative implementations in [Classes 06 & 07: Fibonacci Sequence](../07-fibonacci-sequence)
+
 ---
 
 ## 🎯 Problem Statement

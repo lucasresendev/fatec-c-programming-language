@@ -7,6 +7,9 @@
 
 </div>
 
+> **Origem:** Aula 05 (Estruturas de Decisão: Parte 3)  
+> **Tópico:** Estrutura `switch/case`, Controle `break` e Acúmulo Deliberado via Fallthrough
+
 ---
 
 ## 🎯 Enunciado

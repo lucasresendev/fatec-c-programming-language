@@ -7,6 +7,9 @@
 
 </div>
 
+> **Origin:** Class 03 (Decision Structures: Part 1)  
+> **Topic:** Binary Conditionals (`if`/`else`), Modulo Operator (`%`), and Numeric Truth
+
 ---
 
 ## 🎯 Problem Statement

@@ -7,6 +7,9 @@
 
 </div>
 
+> **Origem:** Aula 03 (Avaliador Inicial) e Aula 04 (Ramificação de Recuperação Aninhada)  
+> **Tópico:** Condicionais Aninhadas (`if` dentro de `else`), Média Aritmética e Fluxo Acadêmico
+
 ---
 
 ## 🎯 Enunciado

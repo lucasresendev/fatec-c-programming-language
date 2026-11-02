@@ -7,6 +7,9 @@
 
 </div>
 
+> **Origin:** Class 07 (Repetition Structures: Part 2)  
+> **Topic:** 1D Arrays (Vectors), Dynamic Sizing at Runtime, and Reverse Index Traversal
+
 ---
 
 ## 🎯 Problem Statement

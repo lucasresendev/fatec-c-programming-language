@@ -7,6 +7,9 @@
 
 </div>
 
+> **Origem:** Aula 04 (Estruturas de Decisão: Parte 2)  
+> **Tópico:** Encadeamento `else if`, Ramificação por Caracteres e Limites de Entrada
+
 ---
 
 ## 🎯 Enunciado

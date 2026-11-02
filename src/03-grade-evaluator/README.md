@@ -7,6 +7,9 @@
 
 </div>
 
+> **Origin:** Class 03 (Initial Evaluator) & Class 04 (Nested Retake Branching)  
+> **Topic:** Nested Conditionals (`if` inside `else`), Arithmetic Mean & Academic Flow Routing
+
 ---
 
 ## 🎯 Problem Statement

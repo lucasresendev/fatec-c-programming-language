@@ -7,6 +7,9 @@
 
 </div>
 
+> **Origem:** Aula 02 (Declaração de Variáveis, Constantes, Tipos Primitivos e Entrada/Saída)  
+> **Tópico:** Tipos de Dados Primitivos, Operador `sizeof` e Formatação de I/O Padrão
+
 ---
 
 ## 🎯 Enunciado

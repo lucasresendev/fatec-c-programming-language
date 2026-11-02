@@ -7,6 +7,9 @@
 
 </div>
 
+> **Origem:** Aula 08 (Strings, Biblioteca string.h e Matrizes)  
+> **Tópico:** Vetores de Caracteres Terminados em Nulo, Operações com Strings (`<string.h>`) e Higienização de Buffer do `stdin`
+
 ---
 
 ## 🎯 Enunciado do Problema

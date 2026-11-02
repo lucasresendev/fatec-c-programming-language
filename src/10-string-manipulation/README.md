@@ -7,6 +7,9 @@
 
 </div>
 
+> **Origin:** Class 08 (Strings, string.h Library & Matrices)  
+> **Topic:** Null-Terminated Character Arrays, String Operations (`<string.h>`), and `stdin` Buffer Hygiene
+
 ---
 
 ## 🎯 Problem Statement

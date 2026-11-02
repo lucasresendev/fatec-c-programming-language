@@ -7,6 +7,9 @@
 
 </div>
 
+> **Origem:** Aula 07 (Estruturas de Repetição: Parte 2)  
+> **Tópico:** Vetores Unidimensionais (Arrays), Dimensionamento em Execução e Varredura Reversa
+
 ---
 
 ## 🎯 Enunciado do Problema

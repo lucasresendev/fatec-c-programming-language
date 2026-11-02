@@ -7,6 +7,10 @@
 
 </div>
 
+> **Origem:** Aulas 05 a 11 (Coleção Consolidada de Exercícios)  
+> **Tópico:** Arquitetura Orientada a Menu, Loop de Eventos com `do...while` e Integração Multi-Módulo  
+> **Continuidade:** Idealizado na Aula 05, tornado interativo na Aula 06, expandido progressivamente ao longo do semestre
+
 ---
 
 ## 🎯 Enunciado do Problema

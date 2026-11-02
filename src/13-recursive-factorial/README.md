@@ -7,6 +7,10 @@
 
 </div>
 
+> **Origin:** Class 10 (Recursion & Call Stack)  
+> **Topic:** Recursive Function Calls, Base Case & Call Stack Accumulation  
+> **Lineage:** Recursive leap from iterative implementations in [Classes 06, 07 & 09: Factorial Calculator](../06-factorial-calculator)
+
 ---
 
 ## 🎯 Problem Statement

@@ -7,6 +7,9 @@
 
 </div>
 
+> **Origem:** Aula 07 (Estruturas de Repetição: Parte 2 e Vetores)  
+> **Tópico:** Vetores Unidimensionais, Varredura de Extremos e Ordenação Bubble Sort (CS50x)
+
 ---
 
 ## 🎯 Enunciado do Problema

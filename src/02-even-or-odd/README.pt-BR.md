@@ -7,11 +7,14 @@
 
 </div>
 
+> **Origem:** Aula 03 (Estruturas de Decisão: Parte 1)  
+> **Tópico:** Condicionais Binárias (`if`/`else`), Operador Módulo (`%`) e Verdade Numérica
+
 ---
 
 ## 🎯 Enunciado
 
-Desenvolva um programa que leia um número inteiro, verifique se ele é par ou ímpar utilizando estruturas de decisão e pergunte ao usuário se ele deseja continuar testando novos números em um laço de repetição interativo.
+Desenvolva um programa que leia um número inteiro, verifique se ele é par ou ímpar utilizando estruturas de decisão e pergunte ao usuário se ele deseja continuar testando novos números em um loop de repetição interativo.
 
 ---
 

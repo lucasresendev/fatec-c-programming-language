@@ -7,6 +7,10 @@
 
 </div>
 
+> **Origin:** Classes 05 to 11 (Consolidated Coursework Collection)  
+> **Topic:** Menu-Driven Architecture, `do...while` Event Loop & Multi-Module Integration  
+> **Lineage:** Conceived in Class 05, operationalized in Class 06, continuously expanded across the semester
+
 ---
 
 ## 🎯 Problem Statement

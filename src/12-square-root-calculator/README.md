@@ -7,6 +7,9 @@
 
 </div>
 
+> **Origin:** Class 09 (Functions, Modular Programming & `<math.h>`)  
+> **Topic:** Procedural Modularization, Math Library (`-lm`), and Parallel Array Retention
+
 ---
 
 ## 🎯 Problem Statement

@@ -7,6 +7,9 @@
 
 </div>
 
+> **Origin:** Class 04 (Decision Structures: Part 2)  
+> **Topic:** `else if` Conditional Ladders, Character Branching & Input Bounding
+
 ---
 
 ## 🎯 Problem Statement

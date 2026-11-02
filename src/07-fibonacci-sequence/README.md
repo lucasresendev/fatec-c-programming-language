@@ -7,6 +7,10 @@
 
 </div>
 
+> **Origin:** Class 06 (do-while & while) & Class 07 (for)  
+> **Topic:** Sliding Window Recurrence & Input Validation  
+> **Lineage:** Precursor to recursive sequence generation and sum traces in [Class 10: Recursive Fibonacci](../14-recursive-fibonacci)
+
 ---
 
 ## 🎯 Problem Statement

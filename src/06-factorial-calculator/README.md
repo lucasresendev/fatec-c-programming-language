@@ -7,11 +7,15 @@
 
 </div>
 
+> **Origin:** Class 06 (do-while & while), Class 07 (for), Class 09 (modular function)  
+> **Topic:** Repetition Structures & Procedural Decomposition  
+> **Lineage:** Precursor to the recursive paradigm in [Class 10: Recursive Factorial](../13-recursive-factorial)
+
 ---
 
 ## 🎯 Problem Statement
 
-Read an integer provided by the user and calculate its factorial ($n!$) while dynamically displaying the step-by-step arithmetic multiplication chain (e.g. `5 x 4 x 3 x 2 x 1 = 120`). In my solution, the program has an interactive submenu so I can run and compare the `do...while`, `while` and `for` implementations.
+Read an integer provided by the user and calculate its factorial ($n!$) while dynamically displaying the step-by-step arithmetic multiplication chain (e.g. `5 x 4 x 3 x 2 x 1 = 120`). In my solution, the program has an interactive submenu so I can run and compare four progressive implementations: `do...while` (Class 06), `while` (Class 06), `for` (Class 07), and a modular function with parameter passing (Class 09).
 
 ---
 
@@ -30,10 +34,11 @@ The implementation is available directly in [`factorial_calculator.c`](factorial
 1 - Calculate Factorial using do...while
 2 - Calculate Factorial using while
 3 - Calculate Factorial using for
-4 - Exit
+4 - Calculate Factorial using Modular Function
+5 - Exit
 ================================================================
 
-Choice (1-4): 1
+Choice (1-5): 1
 
 ================================================================
              Factorial Calculation (do...while)
@@ -72,10 +77,11 @@ For the number 4, the factorial is: 4 x 3 x 2 x 1 = 24
 1 - Calculate Factorial using do...while
 2 - Calculate Factorial using while
 3 - Calculate Factorial using for
-4 - Exit
+4 - Calculate Factorial using Modular Function
+5 - Exit
 ================================================================
 
-Choice (1-4): 4
+Choice (1-5): 5
 
 ================================================================
                    Exiting program. Goodbye!
@@ -90,6 +96,7 @@ Choice (1-4): 4
 - **Multiplicative Accumulator Pattern:** Initializes `factorial_number = 1` and iteratively scales the product via compound assignment (`factorial_number *= temporary_number`).
 - **Dynamic Expression Formatting:** Distinguishes interior multiplication factors from the final reduction using conditional inline output (`if (temporary_number > 1) printf("x "); else printf("= ");`).
 - **Loop Comparison (`while`, `do...while` and `for`):** Demonstrates how loop design impacts edge cases. A `while` loop checks the condition before the first iteration, `do...while` executes unconditionally at least once, and `for` groups initialization, condition and decrement in a single header (`for (temporary_number = selected_number; temporary_number >= 1; temporary_number--)`), which is the best fit when the number of repetitions is known.
+- **Procedural Modularization (Class 09):** Isolates the calculation into a helper function (`calculate_factorial_modular`) accepting `selected_number` by value, establishing clean parameter scope.
 - **Formatted Input (`scanf`):** Captures integer choices and targets directly with `scanf("%i")`, which automatically skips leading whitespace and newlines natively.
 
 ---

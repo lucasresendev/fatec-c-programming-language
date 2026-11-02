@@ -7,6 +7,9 @@
 
 </div>
 
+> **Origin:** Class 11 (User-Defined Types: struct & typedef)  
+> **Topic:** Composite Data Types (`struct`), Type Aliasing (`typedef`), and Array of Records
+
 ---
 
 ## 🎯 Problem Statement

@@ -7,6 +7,10 @@
 
 </div>
 
+> **Origem:** Aula 10 (Recursividade e Pilha de Execução)  
+> **Tópico:** Chamadas de Função Recursivas, Caso Base e Acúmulo no Call Stack  
+> **Continuidade:** Salto de paradigma a partir das versões iterativas e modulares em [Aulas 06, 07 e 09: Calculador de Fatorial](../06-factorial-calculator)
+
 ---
 
 ## 🎯 Enunciado do Problema

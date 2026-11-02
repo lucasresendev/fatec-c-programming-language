@@ -7,6 +7,9 @@
 
 </div>
 
+> **Origin:** Class 05 (Decision Structures: Part 3)  
+> **Topic:** `switch/case` Statement, `break` Control & Intentional Fallthrough Accumulation
+
 ---
 
 ## 🎯 Problem Statement

@@ -7,6 +7,9 @@
 
 </div>
 
+> **Origem:** Aula 08 (Strings, Biblioteca string.h e Matrizes)  
+> **Tópico:** Matrizes Bidimensionais (Arrays 2D), Disposição em Linhas e Colunas e Varreduras em Grade
+
 ---
 
 ## 🎯 Enunciado do Problema
