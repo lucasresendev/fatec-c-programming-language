@@ -1,5 +1,21 @@
-// Factorial Calculator (do while vs while vs for)
+// Factorial Calculator (do while vs while vs for vs modular function)
 #include <stdio.h>
+
+static void calculate_factorial_modular(int selected_number) {
+    int factorial_number = 1;
+
+    printf("For the number %i, the factorial is: ", selected_number);
+    for (int count = selected_number; count >= 1; count--) {
+        printf("%i ", count);
+        if (count > 1) {
+            printf("x ");
+        } else {
+            printf("= ");
+        }
+        factorial_number *= count;
+    }
+    printf("%i\n", factorial_number);
+}
 
 int main(void) {
     int menu_choice = 0;
@@ -14,9 +30,10 @@ int main(void) {
         printf("1 - Calculate Factorial using do...while\n");
         printf("2 - Calculate Factorial using while\n");
         printf("3 - Calculate Factorial using for\n");
-        printf("4 - Exit\n");
+        printf("4 - Calculate Factorial using Modular Function\n");
+        printf("5 - Exit\n");
         printf("================================================================\n\n");
-        printf("Choice (1-4): ");
+        printf("Choice (1-5): ");
 
         scanf("%i", &menu_choice);
 
@@ -98,15 +115,26 @@ int main(void) {
             printf("\n================================================================\n\n");
         } else if (menu_choice == 4) {
             printf("\n================================================================\n");
+            printf("          Factorial Calculation (Modular Function)\n");
+            printf("================================================================\n\n");
+
+            printf("Insert a number to calculate its factorial: ");
+            scanf("%i", &selected_number);
+
+            calculate_factorial_modular(selected_number);
+
+            printf("\n================================================================\n\n");
+        } else if (menu_choice == 5) {
+            printf("\n================================================================\n");
             printf("                   Exiting program. Goodbye!\n");
             printf("================================================================\n\n");
         } else {
             printf("\n================================================================\n");
-            printf("       Invalid selection! Please enter a number 1 to 4.\n");
+            printf("       Invalid selection! Please enter a number 1 to 5.\n");
             printf("================================================================\n\n");
         }
 
-    } while (menu_choice != 4);
+    } while (menu_choice != 5);
 
     return 0;
 }
