@@ -21,9 +21,12 @@
 
 Repositório dedicado ao registro de práticas laboratoriais e exercícios do curso **Introduction to the C Programming Language**, iniciativa de internacionalização promovida pela **Assessoria de Relações Internacionais (ARInter - CEETEPS)** em parceria com a **Fatec Taubaté**.
 
-- **Idioma de Ensino:** 100% em Língua Inglesa (aulas síncronas e colaboração com estudantes internacionais).
-- **Carga Horária:** 40 horas no total (20 encontros síncronos semanais).
-- **Objetivo:** Solucionar problemas computacionais por meio da lógica de programação e do desenvolvimento de software em C de alto desempenho.
+- **Idioma de Ensino:** 100% em Língua Inglesa (EMI - English as a Medium of Instruction), em sessões síncronas conjuntas com estudantes de intercâmbio internacional.
+- **Instituição e Edital:** ARInter - CEETEPS / Fatec Taubaté via **EDITAL ARI nº 027/2026**.
+- **Docente:** Luciano Gonçalves de Carvalho (`luciano.carvalho@cps.sp.gov.br`).
+- **Carga Horária:** 40 horas no total (15 sessões síncronas semanais de 2 h/a = 30h ao vivo às terças-feiras, 17h00 - 18h40 via MS Teams + 10h de atividades e práticas assíncronas).
+- **Documentos Oficiais de Referência:** Course Schedule oficial (`IntroductionC.pdf` - calendário executivo de 15 sessões síncronas) complementando o EDITAL ARI nº 027/2026 (desenho pedagógico preliminar).
+- **Critérios de Aprovação:** Frequência mínima de 70% e Média Final $\ge$ 6,0.
 
 ### Frentes de Estudo
 - **Fundamentos de Memória e Hardware:** Representação de dados, tamanho em bytes (`sizeof`), endereçamento de memória e aritmética de ponteiros.
@@ -32,30 +35,29 @@ Repositório dedicado ao registro de práticas laboratoriais e exercícios do cu
 
 ---
 
-## 🗺️ Cronograma e Ementa do Curso
+## 🗺️ Cronograma Oficial e Acompanhamento das 15 Aulas
 
-| Aula | Conteúdo Programático | Status |
-| :---: | :--- | :---: |
-| 01 | Introdução à Programação em C e Pipeline de Compilação | ✅ Concluído |
-| 02 | Declaração de Variáveis e Constantes, Tipos Primitivos e Entrada/Saída | ✅ Concluído |
-| 03 | Estruturas de Decisão: Parte 1 (`if`, `else`, verdade numérica, operadores) | ✅ Concluído |
-| 04 | Estruturas de Decisão: Parte 2 (`else if`, condicionais aninhadas, menu) | ✅ Concluído |
-| 05 | Estruturas de Decisão: Parte 3 (`switch`, fallthrough, menu consolidado) | ✅ Concluído |
-| 06 | Estruturas de Repetição: Parte 1 (`do-while`, `while`, exercícios de repetição) | ✅ Concluído |
-| 07 | Estruturas de Repetição: Parte 2 (loop `for`, arrays, bubble sort) | ✅ Concluído |
-| 08 | Strings, Biblioteca string.h e Matrizes (Arrays 2D) | ✅ Concluído |
-| 09 | Funções, Modularização e Biblioteca `<math.h>` | ✅ Concluído |
-| 10 | Recursividade e Pilha de Execução | ✅ Concluído |
-| 11 | Tipos Definidos pelo Usuário (`struct`, `typedef`) | ✅ Concluído |
-| 12 | Ponteiros: Parte 1 (Endereçamento e Desreferenciação) | ⏳ Em breve |
-| 13 | Ponteiros: Parte 2 (Ponteiros com Vetores e Funções) | ⏳ Em breve |
-| 14 | Manipulação de Arquivos e Streams | ⏳ Em breve |
-| 15 | Alocação Dinâmica de Memória | ⏳ Em breve |
-| 16 | Tipos Abstratos de Dados e Coleções | ⏳ Em breve |
-| 17 | Trabalho Prático 1 | ⏳ Em breve |
-| 18 | Trabalho Prático 2 | ⏳ Em breve |
-| 19 | Revisão e Avaliação do Curso | ⏳ Em breve |
-| 20 | Vista de Provas e Feedback Final | ⏳ Em breve |
+> [!NOTE] Ajuste do Calendário Real (Ocorrência de 22/09/2026)
+> O desenho inicial previa a Aula 07 em 22/09/2026. Devido à participação do professor em evento institucional do Centro Paula Souza (CPS), **não houve aula em 22/09**. A Aula 07 foi realizada em 29/09, deslocando a sequência em 1 semana e prevendo o 15º encontro para 24/11/2026.
+
+| Nº | Data Prevista / Real | Título / Tema da Aula | Status |
+| :---: | :---: | :--- | :---: |
+| 01 | 11/08/26 | Introdução à Programação em C e Pipeline de Compilação | ✅ Concluído |
+| 02 | 18/08/26 | Declaração de Variáveis e Constantes, Tipos Primitivos e Entrada/Saída | ✅ Concluído |
+| 03 | 25/08/26 | Estruturas de Decisão: Parte 1 (`if`, `else`, verdade numérica, operadores) | ✅ Concluído |
+| 04 | 01/09/26 | Estruturas de Decisão: Parte 2 (`else if`, condicionais aninhadas, menu) | ✅ Concluído |
+| 05 | 08/09/26 | Estruturas de Decisão: Parte 3 (`switch`, fallthrough, menu consolidado) | ✅ Concluído |
+| 06 | 15/09/26 | Estruturas de Repetição: Parte 1 (`do-while`, `while`, exercícios de repetição) | ✅ Concluído |
+| - | 22/09/26 | *Suspensão: Professor em evento institucional do CPS* | ⏸️ Sem aula |
+| 07 | 29/09/26 | Estruturas de Repetição: Parte 2 (loop `for`, arrays, bubble sort) | ✅ Concluído |
+| 08 | 06/10/26 | Strings, Biblioteca string.h e Matrizes (Arrays 2D) | ✅ Concluído |
+| 09 | 13/10/26 | Funções, Modularização e Biblioteca `<math.h>` | ✅ Concluído |
+| 10 | 20/10/26 | Recursividade e Pilha de Execução | ✅ Concluído |
+| 11 | 27/10/26 | Tipos Definidos pelo Usuário (`struct`, `typedef`) | ✅ Concluído |
+| 12 | 03/11/26 | Ponteiros: Parte 1 (Conceitos, Endereçamento e Operadores `&` e `*`) | ⏳ Em breve |
+| 13 | 10/11/26 | Ponteiros: Parte 2 (Aritmética de Ponteiros, Vetores e Strings) | ⏳ Em breve |
+| 14 | 17/11/26 | Alocação Dinâmica de Memória (`malloc`, `free`) e Manipulação de Arquivos | ⏳ Em breve |
+| 15 | 24/11/26 | Avaliação Prática Final e Encerramento (Reposição CPS) | ⏳ Em breve |
 
 ---
 

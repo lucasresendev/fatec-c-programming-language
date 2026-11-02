@@ -22,8 +22,11 @@
 Practical coursework and laboratory exercises for the **Introduction to the C Programming Language** course, an internationalization program offered by the **International Relations Office (ARInter - CEETEPS)** in partnership with **Fatec Taubaté**.
 
 - **Medium of Instruction:** 100% English (synchronous lectures and collaboration with international exchange peers).
-- **Workload:** 40 hours total (20 weekly synchronous sessions).
-- **Objective:** Solve real-world engineering problems through programming logic and high-performance system programming in standard C.
+- **Institution & Notice:** ARInter - CEETEPS / Fatec Taubaté via **EDITAL ARI nº 027/2026**.
+- **Instructor:** Luciano Gonçalves de Carvalho (`luciano.carvalho@cps.sp.gov.br`).
+- **Workload:** 40 hours total (15 synchronous weekly sessions of 2 h/a = 30h live on MS Teams, Tuesdays 17:00-18:40 + 10h asynchronous practical activities).
+- **Official Schedule Documents:** Course Schedule (`IntroductionC.pdf` - executive calendar of 15 live sessions) alongside EDITAL ARI nº 027/2026 (preliminary curricular proposal).
+- **Passing Criteria:** Attendance $\ge$ 70% and Final Grade $\ge$ 6.0.
 
 ### Core Focus Areas
 - **Memory & Hardware Fundamentals:** Data representation, byte sizing (`sizeof`), memory addresses, and pointer arithmetic.
@@ -32,30 +35,29 @@ Practical coursework and laboratory exercises for the **Introduction to the C Pr
 
 ---
 
-## 🗺️ Course Roadmap & Syllabus
+## 🗺️ Course Roadmap & Official 15-Class Schedule
 
-| Class | Topic | Status |
-| :---: | :--- | :---: |
-| 01 | Introduction to Programming in C & Compilation Pipeline | ✅ Done |
-| 02 | Variable & Constant Declarations, Primitive Types, and Formatted I/O | ✅ Done |
-| 03 | Decision Structures: Part 1 (`if`, `else`, numeric truth, operators) | ✅ Done |
-| 04 | Decision Structures: Part 2 (`else if`, nested conditionals, discount menu) | ✅ Done |
-| 05 | Decision Structures: Part 3 (`switch`, fallthrough, consolidated menu) | ✅ Done |
-| 06 | Repetition Structures: Part 1 (`do-while`, `while`, repetition exercises) | ✅ Done |
-| 07 | Repetition Structures: Part 2 (`for` loop, arrays, bubble sort) | ✅ Done |
-| 08 | Strings, string.h Library & Matrices (2D Arrays) | ✅ Done |
-| 09 | Functions, Modular Programming & `<math.h>` | ✅ Done |
-| 10 | Recursion & Call Stack | ✅ Done |
-| 11 | User-Defined Types (`struct`, `typedef`) | ✅ Done |
-| 12 | Pointers: Part 1 (Addresses, Dereferencing) | ⏳ Upcoming |
-| 13 | Pointers: Part 2 (Pointers with Arrays & Functions) | ⏳ Upcoming |
-| 14 | File Manipulation & Streams | ⏳ Upcoming |
-| 15 | Dynamic Memory Allocation | ⏳ Upcoming |
-| 16 | Abstract Data Types & Collections | ⏳ Upcoming |
-| 17 | Practical Assignment 1 | ⏳ Upcoming |
-| 18 | Practical Assignment 2 | ⏳ Upcoming |
-| 19 | Review & Coursework Assessment | ⏳ Upcoming |
-| 20 | Final Review & Feedback | ⏳ Upcoming |
+> [!NOTE] Real Calendar Adjustment (September 22, 2026)
+> The preliminary schedule projected Class 07 on 22/09/2026. Due to the instructor's participation in an institutional Centro Paula Souza (CPS) event, **no lecture took place on 22/09**. Class 07 was held on 29/09, shifting subsequent sessions by one week and establishing the 15th session for 24/11/2026.
+
+| Class | Date | Topic | Status |
+| :---: | :---: | :--- | :---: |
+| 01 | 11/08/26 | Introduction to Programming in C & Compilation Pipeline | ✅ Done |
+| 02 | 18/08/26 | Variable & Constant Declarations, Primitive Types, and Formatted I/O | ✅ Done |
+| 03 | 25/08/26 | Decision Structures: Part 1 (`if`, `else`, numeric truth, operators) | ✅ Done |
+| 04 | 01/09/26 | Decision Structures: Part 2 (`else if`, nested conditionals, discount menu) | ✅ Done |
+| 05 | 08/09/26 | Decision Structures: Part 3 (`switch`, fallthrough, consolidated menu) | ✅ Done |
+| 06 | 15/09/26 | Repetition Structures: Part 1 (`do-while`, `while`, repetition exercises) | ✅ Done |
+| - | 22/09/26 | *Suspension: Instructor attending institutional CPS event* | ⏸️ No class |
+| 07 | 29/09/26 | Repetition Structures: Part 2 (`for` loop, arrays, bubble sort) | ✅ Done |
+| 08 | 06/10/26 | Strings, string.h Library & Matrices (2D Arrays) | ✅ Done |
+| 09 | 13/10/26 | Functions, Modular Programming & `<math.h>` | ✅ Done |
+| 10 | 20/10/26 | Recursion & Call Stack | ✅ Done |
+| 11 | 27/10/26 | User-Defined Types (`struct`, `typedef`) | ✅ Done |
+| 12 | 03/11/26 | Pointers: Part 1 (Concepts, Addressing and Operators `&` and `*`) | ⏳ Upcoming |
+| 13 | 10/11/26 | Pointers: Part 2 (Pointer Arithmetic, Arrays and Strings) | ⏳ Upcoming |
+| 14 | 17/11/26 | Dynamic Memory Allocation (`malloc`, `free`) & File Streams | ⏳ Upcoming |
+| 15 | 24/11/26 | Final Practical Assessment & Course Wrap-up (CPS Makeup Session) | ⏳ Upcoming |
 
 ---
 
