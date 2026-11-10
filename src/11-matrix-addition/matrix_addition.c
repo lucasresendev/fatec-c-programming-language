@@ -47,7 +47,7 @@ int main(void) {
         }
     }
 
-    // Element-by-element arithmetic matrix addition
+    // Add both matrices position by position
     for (int row = 0; row < total_rows; row++) {
         for (int column = 0; column < total_columns; column++) {
             sum_matrix[row][column] = first_matrix[row][column] + second_matrix[row][column];

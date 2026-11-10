@@ -3,29 +3,29 @@
   🇺🇸 **[English Version](README.md)**
   <br>
 
-  # ⚙️ Loja de Sobremesas - Switch/Case e Fallthrough (`dessert_shop.c`)
+  # ⚙️ Loja de Sobremesas: Switch/Case e Fallthrough (`dessert_shop.c`)
 
 </div>
 
 > **Origem:** Aula 05 (Estruturas de Decisão: Parte 3)  
-> **Tópico:** Estrutura `switch/case`, Controle `break` e Acúmulo Deliberado via Fallthrough
+> **Tópico:** Estrutura switch/case, Fallthrough sem break para Somar Preços e default
 
 ---
 
-## 🎯 Enunciado
+## 🎯 Enunciado do Problema
 
-Desenvolva uma aplicação de pedidos para terminal na qual o cliente escolhe uma combinação de sobremesa:
-1. Simples: apenas sorvete (R$ 10,00)
-2. Cobertura: sorvete com calda de chocolate (+ R$ 3,00, total R$ 13,00)
-3. Completo: sorvete com calda de chocolate e M&M's (+ R$ 2,00, total R$ 15,00)
+Neste exercício, criei um sistema de pedidos de sobremesa no terminal em que o usuário escolhe entre três opções de sorvete:
+1. Simples: apenas sorvete (`$10.00`)
+2. Cobertura: sorvete com calda de chocolate (+ `$3.00`, total `$13.00`)
+3. Completo: sorvete com calda de chocolate e M&M's (+ `$2.00`, total `$15.00`)
 
-Aplique a estrutura `switch/case` com `break` para confirmar o pedido na tela e utilize a técnica de *fallthrough* intencional em um segundo bloco `switch` para acumular o preço final.
+Utilizei uma estrutura `switch/case` com `break` para exibir a confirmação do item escolhido e apliquei a técnica de fallthrough em um segundo bloco `switch` para somar os valores da sobremesa.
 
 ---
 
 ## 💻 Código-Fonte
 
-A implementação completa está disponível diretamente em [`dessert_shop.c`](dessert_shop.c).
+O código completo está em [dessert_shop.c](dessert_shop.c).
 
 ---
 
@@ -66,10 +66,10 @@ Invalid option!
 
 ## 💡 Principais Conceitos Aplicados
 
-- **Ramificação Múltipla (`switch` / `case`):** Avalia expressões inteiras ou de caracteres contra rótulos constantes definidos, servindo como alternativa organizada a sequências longas de `if...else if`.
-- **Papel da Instrução `break`:** Interrompe a execução do `switch`. Na sua ausência, o fluxo de instruções continua em cascata (*fallthrough*) pelos rótulos seguintes.
-- **Fallthrough Intencional para Acúmulo:** No segundo `switch`, o `case 3` soma 2.00, cai sem interrupção para o `case 2` somando 3.00, e por fim cai no `case 1` somando os 10.00 base antes do `break`.
-- **Tratamento de Exceções com `default`:** Captura entradas fora da faixa esperada quando nenhum dos rótulos `case` coincide com o valor testado.
+- **Seleção Múltipla com `switch/case`:** Avalia variáveis inteiras ou caracteres contra rótulos constantes definidos, servindo como alternativa organizada a sequências longas de `if...else if`.
+- **Papel do Comando `break`:** Interrompe a execução do `switch`. Sem o `break`, o fluxo continua em cascata (fallthrough) pelos rótulos seguintes.
+- **Fallthrough sem break para Somar Preços:** No segundo `switch`, o `case 3` soma `$2.00` e desce para o `case 2` somando `$3.00`, que desce para o `case 1` somando os `$10.00` de base antes de encontrar o `break`.
+- **Tratamento de Opções com `default`:** Captura entradas fora da faixa esperada quando nenhum dos rótulos `case` coincide com o valor digitado.
 
 ---
 

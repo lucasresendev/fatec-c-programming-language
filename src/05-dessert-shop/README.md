@@ -3,29 +3,29 @@
   🇧🇷 **[Versão em Português](README.pt-BR.md)**
   <br>
 
-  # ⚙️ Dessert Shop - Switch/Case & Fallthrough (`dessert_shop.c`)
+  # ⚙️ Dessert Shop: Switch/Case & Fallthrough (`dessert_shop.c`)
 
 </div>
 
 > **Origin:** Class 05 (Decision Structures: Part 3)  
-> **Topic:** `switch/case` Statement, `break` Control & Intentional Fallthrough Accumulation
+> **Topic:** switch/case Statements, Intentional Fallthrough to Add Prices, and default
 
 ---
 
 ## 🎯 Problem Statement
 
-Build an interactive dessert ordering terminal application where the user selects an ice cream tier:
-1. Simple: ice cream only ($10.00)
-2. Topping: ice cream with chocolate syrup (adds $3.00, total $13.00)
-3. Complete: ice cream with chocolate syrup and M&M's (adds $2.00, total $15.00)
+In this exercise, I built an interactive dessert ordering program where the user picks an ice cream option:
+1. Simple: ice cream only (`$10.00`)
+2. Topping: ice cream with chocolate syrup (adds `$3.00`, total `$13.00`)
+3. Complete: ice cream with chocolate syrup and M&M's (adds `$2.00`, total `$15.00`)
 
-Apply `switch/case` with `break` to confirm user selection, and demonstrate intentional fallthrough in a secondary `switch` to calculate cumulative pricing.
+I used a `switch/case` with `break` to display the chosen order, and then used intentional fallthrough in a second `switch` to calculate the final price by adding up prices.
 
 ---
 
 ## 💻 Source Code
 
-The implementation is available directly in [`dessert_shop.c`](dessert_shop.c).
+The full implementation is available in [dessert_shop.c](dessert_shop.c).
 
 ---
 
@@ -66,10 +66,10 @@ Invalid option!
 
 ## 💡 Key Concepts Applied
 
-- **Multi-Branch Selection (`switch` / `case`):** Evaluates an integral or character expression against predefined constant labels, providing a clean alternative to repetitive `if...else if` equality chains.
-- **The Role of `break`:** Without `break`, execution continues sequentially into subsequent case labels regardless of whether their condition matches.
-- **Deliberate Fallthrough for Additive Logic:** In the second `switch`, case 3 adds $2.00, intentionally cascades into case 2 to add $3.00, and finally cascades into case 1 to add the $10.00 base price before hitting `break`.
-- **Default Fallback (`default`):** Catches all out-of-range user inputs gracefully when no `case` condition matches.
+- **Multi-Branch Selection with `switch/case`:** Evaluates an integer or character variable against constant labels, offering a clean alternative to long chains of `if...else if`.
+- **The Role of `break`:** Stops execution from continuing into subsequent cases. Without `break`, execution cascades down into the next label.
+- **Intentional Fallthrough to Add Prices:** In the second `switch`, case 3 adds `$2.00` and cascades directly into case 2 to add `$3.00`, which cascades into case 1 to add the `$10.00` base price before reaching `break`.
+- **Input Fallback with `default`:** Handles any unexpected user choices when no `case` label matches the input.
 
 ---
 

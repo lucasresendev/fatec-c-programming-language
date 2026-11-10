@@ -12,15 +12,15 @@
 
 ---
 
-## 🎯 Enunciado
+## 🎯 Enunciado do Problema
 
-Declarar variáveis utilizando os tipos de dados primitivos padrão da linguagem C (`char`, `int`, `float`, `long`, `double`), consultar o tamanho em bytes alocado em memória através do operador `sizeof`, imprimir os valores iniciais com formatação e capturar entradas interativas do usuário via `scanf`.
+Neste exercício, declarei variáveis usando os tipos primitivos da linguagem C (`char`, `int`, `float`, `long`, `double`), consultei o tamanho em bytes de cada uma na memória com o operador `sizeof`, exibi os valores iniciais formatados no terminal e capturei novos valores digitados pelo usuário com `scanf`.
 
 ---
 
 ## 💻 Código-Fonte
 
-A implementação completa está disponível diretamente em [`primitive_types_and_io.c`](primitive_types_and_io.c).
+O código completo está em [primitive_types_and_io.c](primitive_types_and_io.c).
 
 ---
 
@@ -50,19 +50,19 @@ The double real number is 2.718282, size: 8 byte(s)
 
 ---
 
-## 💡 Conceitos Aplicados
+## 💡 Principais Conceitos Aplicados
 
-- **Os 3 Pilares da Programação:** Uma linguagem se estabelece como linguagem de programação quando suporta **variáveis** (armazenar e alterar dados na memória), **estruturas de decisão** (ramificar fluxos) e **estruturas de repetição** (iterar processos).
-- **Regras de Identificadores em C:** Nomes de variáveis não podem iniciar com dígitos, não podem coincidir com palavras reservadas da linguagem (como `int`, `float`, `return`) e só aceitam letras, dígitos e sublinhado (`_`).
-- **Tipos Primitivos e Alocação de Memória:**
+- **Os Três Pilares da Programação:** Programar fica mais fácil de entender quando trabalhamos com **variáveis** (armazenar e alterar dados na memória), **estruturas de decisão** (ramificar fluxos) e **estruturas de repetição** (repetir comandos).
+- **Regras para Nomes de Variáveis:** Nomes de variáveis em C não podem começar com números, não podem coincidir com palavras reservadas da linguagem (como `int`, `float`, `return`) e aceitam apenas letras, números e sublinhado (`_`).
+- **Tipos Primitivos e Espaço em Memória:**
   - `char`: 1 byte (caractere único ou inteiro pequeno).
-  - `int`: 4 bytes (inteiro com sinal padrão).
+  - `int`: 4 bytes (número inteiro padrão).
   - `float`: 4 bytes (ponto flutuante de precisão simples).
-  - `long`: 4 ou 8 bytes (inteiro estendido, variando conforme a arquitetura do sistema operacional).
+  - `long`: 4 ou 8 bytes (inteiro estendido, dependendo do sistema operacional e do compilador).
   - `double`: 8 bytes (ponto flutuante de dupla precisão).
-- **Inspeção de Memória (`sizeof`):** O operador `sizeof` retorna o tamanho em bytes ocupado pelo tipo ou variável, impresso via especificador `%zu` (`size_t`).
-- **Saída Formatada (`printf`):** Exibição de variáveis com especificadores (`%c`, `%d`, `%ld`, `%lf`, `%zu`) e controle de casas decimais com `%.2f`.
-- **Entrada Formatada (`scanf`):** Captura de dados pelo teclado passando o endereço de memória com o operador `&`. O espaço no início do formato `" %c"` ignora caracteres de quebra de linha (`\n`) deixados no buffer de entrada.
+- **Consulta de Memória com `sizeof`:** O operador `sizeof` retorna o tamanho em bytes ocupado pelo tipo ou pela variável, exibido com o formato `%zu` (`size_t`).
+- **Saída Formatada (`printf`):** Impressão de dados usando formatos (`%c`, `%d`, `%ld`, `%lf`, `%zu`) e controle de casas decimais com `%.2f`.
+- **Entrada Formatada (`scanf`):** Leitura de dados pelo teclado passando o endereço da variável com o operador `&`. O espaço no início do formato `" %c"` limpa quebras de linha (`\n`) que sobraram no buffer de entrada.
 
 ---
 

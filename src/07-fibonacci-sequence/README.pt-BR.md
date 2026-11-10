@@ -1,6 +1,6 @@
 <div align="center">
 
-  🇬🇧 **[English Version](README.md)**
+  🇺🇸 **[English Version](README.md)**
   <br>
 
   # ⚙️ Sequência de Fibonacci (`fibonacci_sequence.c`)
@@ -8,23 +8,23 @@
 </div>
 
 > **Origem:** Aula 06 (do-while e while) e Aula 08 (for)  
-> **Tópico:** Recorrência com Janela Deslizante e Validação de Entrada  
-> **Continuidade:** Precursor da geração recursiva e decomposição de somas em [Aula 11: Fibonacci Recursivo](../14-recursive-fibonacci)
+> **Tópico:** Sequência de Fibonacci com Loops (do-while, while, for) e Validação de Entrada  
+> **Continuidade:** Base para a versão recursiva em [Aula 11: Fibonacci Recursivo](../14-recursive-fibonacci)
 
 ---
 
 ## 🎯 Enunciado do Problema
 
-Gerar a sequência de Fibonacci e detalhar os pares de adição aritmética que formam cada novo termo ($1 + 1 = 2$, $1 + 2 = 3$, $2 + 3 = 5$, etc.). Na minha solução, o programa tem um submenu comparativo demonstrando as três estruturas de repetição (`do...while`, `while` e `for`) nas duas abordagens exploradas em aula:
+Neste exercício, gerei a sequência de Fibonacci e mostrei as somas que formam cada novo termo (`1 + 1 = 2`, `1 + 2 = 3`, `2 + 3 = 5`, e assim por diante). Montei um submenu comparativo para demonstrar as três estruturas de repetição (`do...while`, `while` e `for`) em duas abordagens que exploramos em aula:
 
-1. **Limite por Teto Numérico:** A sequência e as somas são interrompidas assim que os valores ultrapassam um teto especificado (`next <= limit`).
-2. **Limite por Quantidade de Termos (Corrigido):** O usuário especifica a quantidade exata de termos a serem gerados. A validação de entrada assegura `limit > 0`, exibindo $N$ números da série e suas somas correspondentes. Essa abordagem está disponível com `do...while`, `while` e `for`.
+1. **Limite por Teto Numérico:** A sequência e as somas continuam até que o próximo número ultrapasse o teto informado (`next <= limit`).
+2. **Limite por Quantidade de Termos:** O usuário digita exatamente quantos termos deseja ver. Uma validação garante que `limit > 0`, gerando a quantidade de números pedida e detalhando suas somas. Essa opção está implementada com `do...while`, `while` e `for`.
 
 ---
 
 ## 💻 Código-Fonte
 
-A implementação completa está disponível diretamente em [`fibonacci_sequence.c`](fibonacci_sequence.c).
+O código completo está em [fibonacci_sequence.c](fibonacci_sequence.c).
 
 ---
 
@@ -117,17 +117,12 @@ Choice (1-6): 6
 
 ## 💡 Principais Conceitos Aplicados
 
-- **Relação de Recorrência de Fibonacci:** Definida como $F_1 = 1, F_2 = 1$ e $F_n = F_{n-1} + F_{n-2}$ para $n \ge 3$.
-- **Transição de Estados com Janela Deslizante:** Atualização progressiva das variáveis na memória sem necessidade de alocação de vetores:
-  ```c
-  sum = current + next;
-  current = next;
-  next = sum;
-  ```
-- **Repetição de Validação de Entrada:** Tratamento defensivo contra números não positivos através de repetição orientada (`while (limit <= 0)`, `do...while (limit <= 0)` ou `for (; limit <= 0;)`).
-- **`for` com Partes Opcionais:** Na versão com `for`, a inicialização fica de fora (os contadores são definidos antes) e a validação funciona como um `while`, enquanto a geração dos termos usa `for (; loop < limit; loop++)`.
-- **Evolução Algorítmica (Limite por Valor vs. Quantidade de Termos):** Reflete a correção pós-aula onde o critério de parada migrou da verificação do valor (`next <= limit`) para a contagem exata de termos exibidos (`loop < limit`).
-- **Decomposição das Somas:** Demonstração didática das operações matemáticas individuais que originam os termos subsequentes quando $N > 2$.
+- **Como a Sequência Funciona:** Na sequência de Fibonacci, os dois primeiros números são `1` e `1`, e cada próximo número é a soma dos dois anteriores.
+- **Atualização das Variáveis no Loop:** Usa três variáveis `current`, `next` e `sum` para avançar na sequência sem precisar de vetor: `sum = current + next`, `current = next`, `next = sum`.
+- **Repetição para Validação de Entrada:** Tratamento defensivo contra entradas inválidas ou menores que um através de repetição (`while (limit <= 0)`, `do...while (limit <= 0)` ou `for (; limit <= 0;)`).
+- **`for` com Partes Opcionais:** Na validação com `for`, a inicialização é omitida porque as variáveis já foram inicializadas antes, funcionando como um `while`, enquanto a geração dos termos usa `for (; loop < limit; loop++)`.
+- **Evolução de Teto Numérico para Quantidade de Termos:** Demonstra a transição pedagógica da verificação pelo valor do próximo termo (`next <= limit`) para a contagem exata de termos pedidos pelo usuário (`loop < limit`).
+- **Decomposição das Somas:** Exibição clara das operações aritméticas individuais que produzem os termos seguintes quando mais de dois termos são solicitados.
 
 ---
 

@@ -1,6 +1,6 @@
 <div align="center">
 
-  🇬🇧 **[English Version](README.md)**
+  🇺🇸 **[English Version](README.md)**
   <br>
 
   # ⚙️ Calculador de Fatorial (`factorial_calculator.c`)
@@ -8,20 +8,20 @@
 </div>
 
 > **Origem:** Aula 06 (do-while e while), Aula 08 (for), Aula 10 (função modular)  
-> **Tópico:** Estruturas de Repetição e Decomposição Procedural  
-> **Continuidade:** Precursor do paradigma recursivo em [Aula 11: Fatorial Recursivo](../13-recursive-factorial)
+> **Tópico:** Estruturas de Repetição (do-while, while, for) e Funções  
+> **Continuidade:** Base para a versão recursiva em [Aula 11: Fatorial Recursivo](../13-recursive-factorial)
 
 ---
 
 ## 🎯 Enunciado do Problema
 
-Ler um número inteiro informado pelo usuário e calcular o seu fatorial ($n!$), exibindo dinamicamente o desenvolvimento da cadeia de multiplicações intermediárias (ex.: `5 x 4 x 3 x 2 x 1 = 120`). Na minha solução, o programa tem um submenu interativo para eu executar e comparar quatro abordagens progressivas: `do...while` (Aula 06), `while` (Aula 06), `for` (Aula 08) e uma função modular com passagem de parâmetro por valor (Aula 10).
+Neste exercício, criei um programa que lê um número inteiro e calcula o seu fatorial, exibindo o passo a passo da multiplicação no terminal (como `5 x 4 x 3 x 2 x 1 = 120`). Montei um submenu interativo para comparar quatro abordagens práticas: `do...while`, `while`, `for` e uma função modular com passagem de parâmetro por valor.
 
 ---
 
 ## 💻 Código-Fonte
 
-A implementação completa está disponível diretamente em [`factorial_calculator.c`](factorial_calculator.c).
+O código completo está em [factorial_calculator.c](factorial_calculator.c).
 
 ---
 
@@ -56,10 +56,11 @@ For the number 5, the factorial is: 5 x 4 x 3 x 2 x 1 = 120
 1 - Calculate Factorial using do...while
 2 - Calculate Factorial using while
 3 - Calculate Factorial using for
-4 - Exit
+4 - Calculate Factorial using Modular Function
+5 - Exit
 ================================================================
 
-Choice (1-4): 3
+Choice (1-5): 3
 
 ================================================================
                 Factorial Calculation (for)
@@ -92,12 +93,12 @@ Choice (1-5): 5
 
 ## 💡 Principais Conceitos Aplicados
 
-- **Modelo Matemático do Fatorial:** Definido para inteiros não negativos como $n! = \prod_{k=1}^n k$, com a identidade $0! = 1$.
-- **Acumulador do Fatorial:** Começa em `factorial_number = 1` e multiplica os fatores a cada volta da repetição (`factorial_number *= temporary_number`).
-- **Formatação Dinâmica de Expressões:** Diferenciação entre os fatores multiplicativos intermediários e o encerramento do cálculo com saída condicional (`if (temporary_number > 1) printf("x "); else printf("= ");`).
-- **Comparação de Repetições (`while`, `do...while` e `for`):** Análise de como o momento da validação condicional afeta o comportamento do programa diante de valores de fronteira. O comando `for` reúne inicialização, condição e decremento em um único cabeçalho (`for (temporary_number = selected_number; temporary_number >= 1; temporary_number--)`), sendo o mais indicado quando se sabe quantas vezes a repetição vai rodar.
-- **Decomposição Modular (Aula 10):** Isolamento do cálculo em função auxiliar (`calculate_factorial_modular`) que recebe `selected_number` por valor, definindo escopo limpo de parâmetros.
-- **Entrada Formatada (`scanf`):** Captura números inteiros diretamente com `scanf("%i")`, que já descarta automaticamente espaços e quebras de linha precedentes de forma nativa.
+- **Como Funciona o Fatorial:** O fatorial multiplica o número escolhido por todos os inteiros positivos menores que ele até 1 (por exemplo, `5! = 5 x 4 x 3 x 2 x 1 = 120`). Por definição matemática, o fatorial de 0 e o de 1 valem `1`.
+- **Variável Acumuladora Começando em 1:** Começa com `factorial_number = 1` e multiplica os fatores a cada volta da repetição (`factorial_number *= temporary_number`).
+- **Impressão do Sinal x ou =:** Diferencia os fatores multiplicativos intermediários do encerramento da conta por meio de saída condicional (`if (temporary_number > 1) printf("x "); else printf("= ");`).
+- **Comparação entre Estruturas de Repetição (`while`, `do...while` e `for`):** O comando `while` testa a condição antes de iniciar o bloco, o `do...while` executa ao menos uma vez antes do teste e o `for` reúne inicialização, condição e decremento no mesmo cabeçalho (`for (temporary_number = selected_number; temporary_number >= 1; temporary_number--)`), sendo a escolha ideal quando sabemos o número de iterações.
+- **Separação em Função:** Isola o cálculo em uma função auxiliar (`calculate_factorial_modular`) que recebe `selected_number` por valor, mantendo o escopo de variáveis limpo.
+- **Entrada Formatada (`scanf`):** Captura números inteiros com `scanf("%i")`, que ignora espaços e quebras de linha anteriores de forma nativa.
 
 ---
 

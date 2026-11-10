@@ -3,24 +3,24 @@
   🇺🇸 **[English Version](README.md)**
   <br>
 
-  # ⚙️ One Item Shop - Seletor de Descontos (`one_item_shop.c`)
+  # ⚙️ One Item Shop: Seletor de Descontos (`one_item_shop.c`)
 
 </div>
 
 > **Origem:** Aula 04 (Estruturas de Decisão: Parte 2)  
-> **Tópico:** Encadeamento `else if`, Ramificação por Caracteres e Limites de Entrada
+> **Tópico:** Encadeamento else if, Leitura de char e Validação de Opções
 
 ---
 
-## 🎯 Enunciado
+## 🎯 Enunciado do Problema
 
-Desenvolva um sistema comercial para terminal que receba o preço inicial de um produto, apresente um menu com quatro opções de desconto (5%, 12%, 20% e 25%), solicite a escolha do usuário por letra (`a` a `d`) e calcule o valor com desconto utilizando uma cadeia `else if` sem interromper prematuramente a execução da função.
+Neste exercício, simulei uma venda de item único no terminal. O programa recebe o preço inicial de um produto, apresenta um menu com quatro opções de desconto (5%, 12%, 20% e 25%), lê a escolha do usuário por letra de `a` a `d` e calcula o valor final com desconto usando uma estrutura `else if` sem retornos antecipados.
 
 ---
 
 ## 💻 Código-Fonte
 
-A implementação completa está disponível diretamente em [`one_item_shop.c`](one_item_shop.c).
+O código completo está em [one_item_shop.c](one_item_shop.c).
 
 ---
 
@@ -70,11 +70,11 @@ Your final price = $100.00.
 
 ## 💡 Principais Conceitos Aplicados
 
-- **Cadeia de Decisão com Múltiplas Opções (`else if`):** Testada sequencialmente; no momento em que uma condição é atendida, as demais são ignoradas, com o `else` final capturando entradas não reconhecidas.
-- **Operador Lógico OU (`||`):** Permite aceitar caracteres maiúsculos e minúsculos (`'a' || 'A'`) de forma transparente sem necessidade de bibliotecas adicionais de conversão de caixa.
-- **Escape de Símbolo de Porcentagem (`%%`):** Na função `printf`, o caractere `%` introduz formatadores. Para imprimir o caractere `%` literal no terminal, utiliza-se a notação `%%`.
-- **Fluxo Estruturado sem `return` Prematuro:** Conforme orientação didática da aula, em vez de interromper o programa com `return` dentro do bloco de erro, o código preserva o estado em `final_price` e protege a mensagem de sucesso com `if (final_price > 0)`.
-- **Formatação Monetária (`%.2f`):** Limita a exibição do ponto flutuante a duas casas decimais, padrão para valores em dinheiro.
+- **Cadeia de Decisão com `else if`:** As condições são testadas em ordem. No momento em que uma opção é verdadeira, as seguintes são ignoradas, com o `else` final tratando qualquer letra fora do intervalo esperado.
+- **Operador Lógico OU (`||`):** Permite aceitar tanto letras maiúsculas quanto minúsculas (`'a' || 'A'`) de forma direta, sem depender de funções externas de conversão.
+- **Escape do Símbolo de Porcentagem (`%%`):** Na função `printf`, o caractere `%` serve para indicar especificadores de formato. Para imprimir o símbolo `%` como texto na tela, usa-se a notação `%%`.
+- **Controle de Fluxo sem `return` Prematuro:** Seguindo a orientação das aulas, em vez de interromper o programa com `return` no bloco de erro, o código guarda o resultado na variável `final_price` e protege a mensagem final com `if (final_price > 0)`.
+- **Formatação de Moeda (`%.2f`):** Exibe o valor de ponto flutuante com duas casas decimais, próprio para representar preços.
 
 ---
 

@@ -8,19 +8,19 @@
 </div>
 
 > **Origem:** Aula 03 (Estruturas de Decisão: Parte 1)  
-> **Tópico:** Condicionais Binárias (`if`/`else`), Operador Módulo (`%`) e Verdade Numérica
+> **Tópico:** Estrutura if/else, Verdadeiro/Falso em C (1 e 0) e Operador de Resto (%)
 
 ---
 
-## 🎯 Enunciado
+## 🎯 Enunciado do Problema
 
-Desenvolva um programa que leia um número inteiro, verifique se ele é par ou ímpar utilizando estruturas de decisão e pergunte ao usuário se ele deseja continuar testando novos números em um loop de repetição interativo.
+Neste exercício, criei um programa que lê um número inteiro, verifica se ele é par ou ímpar usando estruturas de decisão e pergunta se quero continuar avaliando novos números em um loop interativo.
 
 ---
 
 ## 💻 Código-Fonte
 
-A implementação completa está disponível diretamente em [`even_or_odd.c`](even_or_odd.c).
+O código completo está em [even_or_odd.c](even_or_odd.c).
 
 ---
 
@@ -44,11 +44,11 @@ Do you want to continue? Y or N: n
 
 ## 💡 Principais Conceitos Aplicados
 
-- **Operador Módulo (`%`):** Retorna o resto da divisão inteira. Quando `number % 2 == 0`, o resto é nulo, confirmando que o valor é par.
-- **Exclusividade Mútua (`if` vs `else`):** Em vez de executar dois blocos `if` independentes (`number % 2 == 0` e `number % 2 != 0`), o uso de `else` evita testes condicionais redundantes, já que um número não pode ser simultaneamente par e ímpar.
-- **Verdade Numérica em C:** Em C não há tipo booleano primitivo nativo tradicional; o valor zero representa falso e qualquer valor diferente de zero representa verdadeiro.
-- **Higiene do Buffer de Entrada (`scanf(" %c")`):** Inserir um espaço em branco antes do especificador `%c` faz o `scanf` ignorar caracteres em branco remanescentes no buffer de entrada, especialmente o caractere de quebra de linha (`\n`) deixado por leituras numéricas anteriores.
-- **Repetição Interativa (`do...while`):** Assegura pelo menos uma execução do bloco antes de verificar a condição de continuidade escolhida pelo usuário (`yes_or_no == 'y' || yes_or_no == 'Y'`).
+- **Operador de Resto (`%`):** Retorna o resto da divisão inteira. Quando `number % 2 == 0`, o resto é zero, confirmando que o valor digitado é par.
+- **Caminhos Alternativos com `if/else`:** Em vez de executar dois blocos `if` separados (`number % 2 == 0` e `number % 2 != 0`), o uso do `else` evita verificações redundantes, já que um número não pode ser par e ímpar ao mesmo tempo.
+- **Verdadeiro e Falso em C:** Em C não havia um tipo booleano próprio nas primeiras versões, de forma que o valor zero representa falso e qualquer valor diferente de zero representa verdadeiro.
+- **Limpeza do Buffer de Entrada (`scanf(" %c")`):** Colocar um espaço antes do `%c` faz o `scanf` ignorar espaços em branco e quebras de linha (`\n`) deixadas no buffer do teclado por leituras anteriores.
+- **Repetição Interativa (`do...while`):** Garante a execução do bloco ao menos uma vez antes de validar se o usuário deseja continuar testando novos números (`yes_or_no == 'y' || yes_or_no == 'Y'`).
 
 ---
 

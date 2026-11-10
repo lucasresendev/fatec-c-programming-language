@@ -8,20 +8,20 @@
 </div>
 
 > **Origin:** Class 06 (do-while & while), Class 08 (for), Class 10 (modular function)  
-> **Topic:** Repetition Structures & Procedural Decomposition  
-> **Lineage:** Precursor to the recursive paradigm in [Class 11: Recursive Factorial](../13-recursive-factorial)
+> **Topic:** Repetition Loops (do-while, while, for) and Functions  
+> **Lineage:** Base for the recursive version in [Class 11: Recursive Factorial](../13-recursive-factorial)
 
 ---
 
 ## 🎯 Problem Statement
 
-Read an integer provided by the user and calculate its factorial ($n!$) while dynamically displaying the step-by-step arithmetic multiplication chain (e.g. `5 x 4 x 3 x 2 x 1 = 120`). In my solution, the program has an interactive submenu so I can run and compare four progressive implementations: `do...while` (Class 06), `while` (Class 06), `for` (Class 08), and a modular function with parameter passing (Class 10).
+In this exercise, I wrote a program that reads an integer from the user and calculates its factorial, displaying the full step-by-step multiplication chain (such as `5 x 4 x 3 x 2 x 1 = 120`). I created an interactive submenu so I could run and compare four different approaches: `do...while`, `while`, `for`, and a separate modular function with parameter passing.
 
 ---
 
 ## 💻 Source Code
 
-The implementation is available directly in [`factorial_calculator.c`](factorial_calculator.c).
+The full implementation is available in [factorial_calculator.c](factorial_calculator.c).
 
 ---
 
@@ -56,10 +56,11 @@ For the number 5, the factorial is: 5 x 4 x 3 x 2 x 1 = 120
 1 - Calculate Factorial using do...while
 2 - Calculate Factorial using while
 3 - Calculate Factorial using for
-4 - Exit
+4 - Calculate Factorial using Modular Function
+5 - Exit
 ================================================================
 
-Choice (1-4): 3
+Choice (1-5): 3
 
 ================================================================
                 Factorial Calculation (for)
@@ -92,12 +93,12 @@ Choice (1-5): 5
 
 ## 💡 Key Concepts Applied
 
-- **Factorial Mathematical Model:** Defined for non-negative integers as $n! = \prod_{k=1}^n k$, with the mathematical identity $0! = 1$.
-- **Multiplicative Accumulator:** Initializes `factorial_number = 1` and iteratively multiplies each factor (`factorial_number *= temporary_number`).
-- **Dynamic Expression Formatting:** Distinguishes interior multiplication factors from the final reduction using conditional inline output (`if (temporary_number > 1) printf("x "); else printf("= ");`).
-- **Loop Comparison (`while`, `do...while` and `for`):** Demonstrates how loop design impacts edge cases. A `while` loop checks the condition before the first iteration, `do...while` executes unconditionally at least once, and `for` groups initialization, condition and decrement in a single header (`for (temporary_number = selected_number; temporary_number >= 1; temporary_number--)`), which is the best fit when the number of repetitions is known.
-- **Procedural Modularization (Class 10):** Isolates the calculation into a helper function (`calculate_factorial_modular`) accepting `selected_number` by value, establishing clean parameter scope.
-- **Formatted Input (`scanf`):** Captures integer choices and targets directly with `scanf("%i")`, which automatically skips leading whitespace and newlines natively.
+- **How Factorial Works:** The factorial of a number multiplies that number by every positive integer below it down to 1 (for example, `5! = 5 x 4 x 3 x 2 x 1 = 120`). By mathematical definition, the factorial of 0 and 1 is always `1`.
+- **Accumulator Variable Starting at 1:** Initializes `factorial_number = 1` and iteratively multiplies each factor (`factorial_number *= temporary_number`).
+- **Printing x or = Inside the Loop:** Distinguishes interior multiplication factors from the final reduction using conditional output (`if (temporary_number > 1) printf("x "); else printf("= ");`).
+- **Comparing Loop Structures (`while`, `do...while`, and `for`):** Demonstrates how loop design affects execution. A `while` loop checks the condition before running, `do...while` runs at least once before testing, and `for` groups initialization, condition, and decrement together (`for (temporary_number = selected_number; temporary_number >= 1; temporary_number--)`), making it ideal when the number of iterations is known in advance.
+- **Moving the Calculation into a Function:** Isolates the calculation into a dedicated function (`calculate_factorial_modular`) that receives `selected_number` by value, establishing clean parameter scope.
+- **Formatted Input (`scanf`):** Captures integer choices directly with `scanf("%i")`, which automatically skips leading whitespace and newline characters.
 
 ---
 

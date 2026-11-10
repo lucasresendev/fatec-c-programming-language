@@ -8,19 +8,19 @@
 </div>
 
 > **Origin:** Class 03 (Decision Structures: Part 1)  
-> **Topic:** Binary Conditionals (`if`/`else`), Modulo Operator (`%`), and Numeric Truth
+> **Topic:** if/else Statements, True/False in C (1 and 0), and Remainder Operator (%)
 
 ---
 
 ## 🎯 Problem Statement
 
-Write a program that reads an integer number, checks whether it is even or odd using decision structures, and prompts the user whether they wish to continue evaluating numbers in an interactive loop.
+In this exercise, I wrote a program that reads an integer, checks whether it is even or odd using decision structures, and asks if I want to keep evaluating numbers in an interactive loop.
 
 ---
 
 ## 💻 Source Code
 
-The implementation is available directly in [`even_or_odd.c`](even_or_odd.c).
+The full implementation is available in [even_or_odd.c](even_or_odd.c).
 
 ---
 
@@ -44,11 +44,11 @@ Do you want to continue? Y or N: n
 
 ## 💡 Key Concepts Applied
 
-- **Modulus Operator (`%`):** Evaluates the remainder of integer division. When `number % 2 == 0`, the remainder is zero, confirming an even integer.
-- **Mutual Exclusivity (`if` vs `else`):** Instead of executing two independent `if` statements (`number % 2 == 0` and `number % 2 != 0`), using `else` avoids redundant conditional evaluation because a number cannot be simultaneously even and odd.
-- **Numeric Truth in C:** In C, zero evaluates to false while any non-zero value evaluates to true.
-- **Input Buffer Hygiene (`scanf(" %c")`):** Prepending a whitespace before `%c` instructs `scanf` to discard leading whitespace characters, including lingering newline characters (`\n`) left in the standard input stream from previous numeric inputs.
-- **Interactive Repetition (`do...while`):** Guarantees at least one execution pass before testing the user's continuation prompt (`yes_or_no == 'y' || yes_or_no == 'Y'`).
+- **Remainder Operator (`%`):** Calculates the remainder of integer division. When `number % 2 == 0`, the remainder is zero, confirming that the integer is even.
+- **Two Paths with `if/else`:** Instead of writing two separate `if` checks (`number % 2 == 0` and `number % 2 != 0`), using `else` avoids redundant evaluation because a number cannot be both even and odd.
+- **True/False in C:** C did not have a dedicated boolean type in its original versions. Instead, zero represents false while any non-zero value evaluates to true.
+- **Input Buffer Cleaning (`scanf(" %c")`):** Adding a space before `%c` tells `scanf` to ignore leading whitespace, including leftover newline characters (`\n`) from previous numeric inputs.
+- **Interactive Repetition (`do...while`):** Runs the evaluation loop at least once before testing the continuation prompt (`yes_or_no == 'y' || yes_or_no == 'Y'`).
 
 ---
 

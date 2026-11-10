@@ -8,19 +8,19 @@
 </div>
 
 > **Origin:** Class 03 (Initial Evaluator) & Class 04 (Nested Retake Branching)  
-> **Topic:** Nested Conditionals (`if` inside `else`), Arithmetic Mean & Academic Flow Routing
+> **Topic:** Average Calculation, if/else, and Nested if for Retake Exam
 
 ---
 
 ## 🎯 Problem Statement
 
-Read two grades between 0 and 10 from the student and calculate their arithmetic mean. If the average is 6.0 or higher, the student passes immediately. Otherwise, the program prompts for a retake exam score, recalculates the final average, and determines whether the student passes or fails through nested decision structures.
+In this exercise, I wrote a program that reads two grades between 0 and 10 and calculates their arithmetic mean. If the average is 6.0 or higher, the student passes immediately. Otherwise, the program prompts for a retake exam score, recalculates the final average, and checks whether the student passes or fails through nested decision structures.
 
 ---
 
 ## 💻 Source Code
 
-The implementation is available directly in [`grade_evaluator.c`](grade_evaluator.c).
+The full implementation is available in [grade_evaluator.c](grade_evaluator.c).
 
 ---
 
@@ -55,10 +55,10 @@ You didn't pass the course.
 
 ## 💡 Key Concepts Applied
 
-- **Variable Reutilization:** Instead of repeatedly computing `(first_grade + second_grade) / 2` across multiple branches, storing the quotient in `average_grade` improves readability and optimizes computational overhead.
-- **Nested Conditionals (`if` inside `else`):** When the initial average falls below 6.0, execution branches into the `else` block, where a secondary input and an inner conditional evaluate the updated composite average against the passing threshold.
-- **Floating-Point Arithmetic:** Grading logic uses `float` types to preserve fractional grade components (such as 7.5 or 5.75).
-- **Personal Exploration Note:** In an alternative conditional logic study, a strict policy was explored where students with an initial average strictly below 5.0 fail immediately without access to a retake exam, reserving retakes only for students in the `[5.0, 6.0)` range.
+- **Variable Reuse:** Instead of repeatedly calculating `(first_grade + second_grade) / 2` across multiple branches, storing the result in `average_grade` keeps the code readable and avoids duplicate calculations.
+- **Nested Conditionals (`if` inside `else`):** When the initial average is below 6.0, execution branches into the `else` block, where a new input is requested and an inner conditional evaluates the updated average against the passing threshold.
+- **Floating-Point Arithmetic:** I used `float` types for all grades to preserve decimal precision, such as 7.5 or 5.75.
+- **Alternative Grading Exploration:** In class tests, I also experimented with an alternative rule where students with an initial average below 5.0 fail immediately, reserving the retake exam only for scores between 5.0 and 5.9.
 
 ---
 

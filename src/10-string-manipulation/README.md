@@ -24,48 +24,6 @@ The full implementation is available directly in [`string_manipulation.c`](strin
 
 ---
 
-## 📊 Algorithmic Flow & Trace
-
-```mermaid
-flowchart TD
-    Start(["[Start]"]) --> Decl["Declare first_name[30], second_name[30], copied_name[30], concatenated_names[60], char_index = 0"]
-    Decl --> In1[/"Input: first_name"/]
-    In1 --> In2[/"Input: second_name"/]
-    In2 --> CopyLoop{"first_name[char_index] != '\\0'"}
-    CopyLoop -- Yes --> CopyChar["copied_name[char_index] = first_name[char_index]; char_index++"]
-    CopyChar --> CopyLoop
-    CopyLoop -- No --> NullTerm["copied_name[char_index] = '\\0'"]
-    NullTerm --> ShowCopy[/"Output: First letter and manual copy"/]
-    ShowCopy --> Cmp{"strcmp(first_name, second_name) == 0"}
-    Cmp -- Yes --> Equal[/"Output: The names are equal!"/]
-    Cmp -- No --> Diff[/"Output: The names are not equal!"/]
-    Equal --> ConcatInit["concatenated_names[0] = '\\0'"]
-    Diff --> ConcatInit
-    ConcatInit --> Cat["strcat(concatenated_names, first_name); strcat(concatenated_names, second_name)"]
-    Cat --> ShowCat[/"Output: Concatenated names"/]
-    ShowCat --> Finish(["[End]"])
-```
-
-RAM memory trace for inputs `first_name = "Ana"` and `second_name = "Bia"`:
-
-| Step | Instruction | `char_index` | `first_name` | `second_name` | `copied_name` | `concatenated_names` | Condition Evaluated | Terminal Output |
-| :---: | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
-| 1 | Declaration & init | `0` | `?` | `?` | `?` | `?` | - | - |
-| 2 | Read `first_name` | `0` | `"Ana\0"` | `?` | `?` | `?` | - | Prompt user |
-| 3 | Read `second_name` | `0` | `"Ana\0"` | `"Bia\0"` | `?` | `?` | - | Prompt user |
-| 4 | Copy loop (`char_index = 0`) | `0` | `"Ana\0"` | `"Bia\0"` | `'A'` | `?` | `first_name[0] != '\0'` -> True | - |
-| 5 | Copy loop (`char_index = 1`) | `1` | `"Ana\0"` | `"Bia\0"` | `"An"` | `?` | `first_name[1] != '\0'` -> True | - |
-| 6 | Copy loop (`char_index = 2`) | `2` | `"Ana\0"` | `"Bia\0"` | `"Ana"` | `?` | `first_name[2] != '\0'` -> True | - |
-| 7 | Copy loop exit (`char_index = 3`) | `3` | `"Ana\0"` | `"Bia\0"` | `"Ana"` | `?` | `first_name[3] == '\0'` -> False | - |
-| 8 | Null terminator assignment | `3` | `"Ana\0"` | `"Bia\0"` | `"Ana\0"` | `?` | - | - |
-| 9 | First char & copy output | `3` | `"Ana\0"` | `"Bia\0"` | `"Ana\0"` | `?` | - | Display `'A'` and `"Ana"` |
-| 10 | Compare strings | `3` | `"Ana\0"` | `"Bia\0"` | `"Ana\0"` | `?` | `strcmp(...) == 0` -> False | `"The names are not equal!"` |
-| 11 | Initialize `concatenated_names[0]` | `3` | `"Ana\0"` | `"Bia\0"` | `"Ana\0"` | `"\0"` | - | - |
-| 12 | `strcat` sequence | `3` | `"Ana\0"` | `"Bia\0"` | `"Ana\0"` | `"AnaBia\0"` | - | - |
-| 13 | Output concatenated | `3` | `"Ana\0"` | `"Bia\0"` | `"Ana\0"` | `"AnaBia\0"` | - | `"Concatenated names: AnaBia"` |
-
----
-
 ## 🖥️ Terminal Output
 
 ```text
@@ -92,11 +50,11 @@ Concatenated names: FatecFatec
 
 ## 💡 Key Concepts Applied
 
-- **Null Terminator (`\0`):** In C, strings are arrays of `char` terminated by `\0` (ASCII 0). Functions like `printf("%s")` sequentially read memory until this sentinel byte is reached.
-- **Array Decaying in `scanf`:** When passing a string name to `scanf("%s", first_name)`, the identifier evaluates directly to the memory address of its first element (`&first_name[0]`), so the `&` operator is not needed.
-- **Manual Copy vs. `strcpy`:** Strings cannot be assigned directly with `=`. In a manual copy, looping until `\0` followed by setting `copied_name[char_index] = '\0'` is required to prevent uninitialized memory artifacts.
-- **Lexicographical Comparison (`strcmp`):** Using `first_name == second_name` compares memory addresses rather than the text content. `strcmp` inspects ASCII codes character-by-character and returns `0` when contents match.
-- **Safe Concatenation (`strcat`):** `strcat` scans for the first `\0` in the destination array to start appending. Explicitly setting `concatenated_names[0] = '\0'` guarantees an empty string start before concatenating.
+- **Null Terminator (`\0`):** In C, strings are not a primitive data type, but arrays of `char` ending with `\0` (ASCII 0). Functions like `printf("%s")` sequentially read memory until this character that marks the end of the string is reached.
+- **Passing Arrays to `scanf`:** When passing a string name to `scanf("%s", first_name)`, the identifier evaluates directly to the memory address of its first element (`&first_name[0]`), so the `&` operator is not needed.
+- **Manual Copy vs. `strcpy`:** Strings cannot be assigned directly using `=`. In a manual copy loop, setting `copied_name[char_index] = '\0'` right after the loop finishes is essential to avoid printing leftover memory garbage.
+- **String Comparison with `strcmp`:** Using `first_name == second_name` compares memory addresses rather than the text content. The `strcmp` function compares characters one by one according to their ASCII codes, returning `0` when both strings match.
+- **Safe Concatenation with `strcat`:** The `strcat` function searches for the first `\0` in the destination array to begin appending. Setting `concatenated_names[0] = '\0'` guarantees an empty string start instead of inheriting leftover memory garbage.
 
 ---
 

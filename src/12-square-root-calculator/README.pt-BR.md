@@ -8,59 +8,21 @@
 </div>
 
 > **Origem:** Aula 10 (Funções, Modularização e Biblioteca `<math.h>`)  
-> **Tópico:** Modularização Procedural, Biblioteca Matemática (`-lm`) e Retenção em Vetores Paralelos
+> **Tópico:** Funções, Biblioteca <math.h> (sqrt e -lm) e Vetores
 
 ---
 
 ## 🎯 Enunciado do Problema
 
-Calcular as raízes quadradas de uma série de números reais informada pelo usuário, utilizando funções modulares e a biblioteca matemática padrão da linguagem C (`<math.h>`). Neste exercício, leio a quantidade desejada de valores, solicito cada entrada em ponto flutuante, calculo a raiz quadrada através de `sqrt()` e apresento os números originais lado a lado com suas raízes correspondentes em uma lista consolidada.
+Calcular as raízes quadradas de uma quantidade de números reais informada pelo usuário, utilizando funções modulares e a biblioteca matemática padrão da linguagem C (`<math.h>`). Na aula, o professor apresentou o uso de funções como `sqrt()` calculando e imprimindo cada resultado diretamente dentro do loop, sem guardar os valores digitados.
 
-### 🏛️ Escopo de Aula vs. Abordagem Autoral / Externa
-
-- **Escopo do Curso na Fatec:** O objetivo proposto em sala concentrou-se na modularização de programas em funções (`void calculateSquareRoots()`) e no uso das funções matemáticas de `<math.h>` (`sqrt()`, `pow()`, `ceil()`, `floor()`). A demonstração de base feita em aula processava cada valor e imprimia a saída imediatamente em um único loop, sem reter os dados na memória.
-- **Minha Extensão Autoral:** Em vez de calcular e descartar os dados na hora, preferi guardar tudo em dois vetores paralelos (`values[]` e `square_roots[]`), validando as entradas (pedindo para digitar de novo se a quantidade for menor ou igual a zero e tratando números negativos para colocar 0.0 na raiz). Com isso, o programa exibe uma tabela organizada de todos os resultados ao final.
+Na minha implementação, preferi ir um pouco além do exercício de aula: guardo todos os números e suas respectivas raízes em dois arrays paralelos (`values[]` e `square_roots[]`), tratando valores negativos para receberem 0.0 e validando a quantidade informada com uma repetição. Dessa forma, consigo imprimir uma tabela organizada com todos os resultados no final da execução.
 
 ---
 
 ## 💻 Código-Fonte
 
 A implementação completa está disponível diretamente em [`square_root_calculator.c`](square_root_calculator.c).
-
----
-
-## 📊 Fluxo e Teste de Mesa
-
-```mermaid
-flowchart TD
-    Start(["[Início]"]) --> CallFunc[["calculate_square_roots()"]]
-    CallFunc --> PromptCount[/"Entrada: total_values"/]
-    PromptCount --> ValidateCount{"total_values <= 0"}
-    ValidateCount -- Sim --> RePrompt[/"Mensagem de erro e repete leitura"/] --> ValidateCount
-    ValidateCount -- Não --> Alloc["Declara values[total_values], square_roots[total_values]"]
-    Alloc --> LoopInput{"i < total_values"}
-    LoopInput -- Sim --> ReadVal[/"Entrada: values[i]"/]
-    ReadVal --> CheckNeg{"values[i] < 0.0"}
-    CheckNeg -- Sim --> SetZero["square_roots[i] = 0.0"] --> IncI["i++"] --> LoopInput
-    CheckNeg -- Não --> CalcRoot["square_roots[i] = sqrt(values[i])"] --> IncI
-    LoopInput -- Não --> LoopOutput{"i < total_values"}
-    LoopOutput -- Sim --> PrintResult[/"Saída: values[i] e square_roots[i]"/] --> IncOut["i++"] --> LoopOutput
-    LoopOutput -- Não --> Finish(["[Fim]"])
-```
-
-Teste de mesa na memória RAM para as entradas `total_values = 3`, `values = [16.0, 25.0, 9.0]`:
-
-| Passo | Instrução | `i` | `total_values` | `values[i]` | `square_roots[i]` | Condição Avaliada | Saída no Terminal |
-| :---: | :--- | :---: | :---: | :---: | :---: | :---: | :--- |
-| 1 | Entrada na função | `0` | `0` | `?` | `?` | - | Solicita quantidade |
-| 2 | Leitura de `total_values` | `0` | `3` | `?` | `?` | `total_values <= 0` -> Falso | - |
-| 3 | Leitura de `values[0]` | `0` | `3` | `16.00` | `?` | `16.00 < 0.0` -> Falso | - |
-| 4 | Cálculo de `sqrt(16.0)` | `0` | `3` | `16.00` | `4.00` | - | - |
-| 5 | Leitura de `values[1]` | `1` | `3` | `25.00` | `?` | `25.00 < 0.0` -> Falso | - |
-| 6 | Cálculo de `sqrt(25.0)` | `1` | `3` | `25.00` | `5.00` | - | - |
-| 7 | Leitura de `values[2]` | `2` | `3` | `9.00` | `?` | `9.00 < 0.0` -> Falso | - |
-| 8 | Cálculo de `sqrt(9.0)` | `2` | `3` | `9.00` | `3.00` | - | - |
-| 9 | Impressão do relatório | `0..2` | `3` | `[16, 25, 9]` | `[4, 5, 3]` | `i < 3` -> Encerra repetição | Lista consolidada |
 
 ---
 
@@ -84,23 +46,19 @@ Square root of 9.00 is 3.00
 
 ## 💡 Principais Conceitos Aplicados
 
-- **Sub-rotinas Modulares:** Decomposição da lógica algorítmica em um procedimento dedicado (`calculate_square_roots()`), respeitando o princípio de responsabilidade única.
-- **Biblioteca Matemática (`<math.h>`):** Aplicação de `sqrt()` para raízes quadradas em ponto flutuante conforme o padrão IEEE 754.
-- **Flag de Ligação (`-lm`):** Em compiladores GCC e Clang no Linux, a vinculação dos símbolos matemáticos da biblioteca compartilhada `libm.so` exige passar explicitamente a flag `-lm` no comando do terminal.
-- **Retenção em Vetores vs. Impressão Efêmera:** O armazenamento em arrays isola a etapa de coleta de dados da etapa de geração de relatórios.
+- **Funções Modulares:** Divisão do código em uma função dedicada (`calculate_square_roots()`), deixando a função `main()` limpa e focada em disparar o programa.
+- **Biblioteca Matemática (`<math.h>`):** Uso de `sqrt()` para calcular raízes quadradas em ponto flutuante de precisão dupla (`double`).
+- **Flag de Ligação (`-lm`):** No GCC e no Clang no Linux, a biblioteca matemática não é vinculada automaticamente, sendo necessário passar a flag `-lm` no comando do terminal para o compilador incluir as funções da biblioteca matemática.
+- **Armazenamento em Vetores Paralelos:** Em vez de imprimir e descartar cada valor imediatamente, o uso de arrays permite separar a leitura dos dados da exibição do relatório final.
 
 ---
 
 ## 🚀 Como Executar
 
-### Compilação Isolada
-
 ```bash
+# Compilar e executar com GCC
+mkdir -p dist && gcc -Wall -O2 src/12-square-root-calculator/square_root_calculator.c -o dist/square_root_calculator -lm && ./dist/square_root_calculator
+
+# Ou compilar e executar com Clang (padrão macOS)
 mkdir -p dist && clang -Wall -O2 src/12-square-root-calculator/square_root_calculator.c -o dist/square_root_calculator -lm && ./dist/square_root_calculator
-```
-
-### Execução pelo Menu Consolidado
-
-```bash
-mkdir -p dist && clang -Wall -O2 src/00-consolidated-menu/consolidated_menu.c -o dist/consolidated_menu -lm && ./dist/consolidated_menu
 ```

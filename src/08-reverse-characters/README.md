@@ -8,54 +8,19 @@
 </div>
 
 > **Origin:** Class 08 (Repetition Structures: Part 2 & Arrays)  
-> **Topic:** 1D Arrays (Vectors), Dynamic Sizing at Runtime, and Reverse Index Traversal
+> **Topic:** Character Arrays, Zero-Based Indexing, and Reverse Loop
 
 ---
 
 ## 🎯 Problem Statement
 
-Read characters typed by the user and display them in reverse order. In my solution, I first ask how many characters will be typed (re-asking until the value is greater than 0), store them in an array whose size is decided at runtime, and then print the array twice: in the typed order and in the inverted order.
+In this exercise, I wrote a program that reads characters entered by the user and prints them in reverse order. I first ask how many characters will be typed, validating that the count is greater than 0, store them in a variable-length array, and then print the elements in their original order followed by their reverse order.
 
 ---
 
 ## 💻 Source Code
 
-The implementation is available directly in [`reverse_characters.c`](reverse_characters.c).
-
----
-
-## 📊 Algorithmic Flow & Trace
-
-```mermaid
-flowchart TD
-    Start(["[Start]"]) --> Init["char_count = 0"]
-    Init --> Check{"char_count <= 0"}
-    Check -- Yes --> Ask[/"Input: char_count"/]
-    Ask --> Check
-    Check -- No --> Create["Create character[char_count]"]
-    Create --> Read["for i = 0 to char_count - 1"]
-    Read --> Input[/"Input: character[i]"/]
-    Input --> Read
-    Read --> Show["for i = 0 to char_count - 1"]
-    Show --> Out1[/"Output: character[i]"/]
-    Out1 --> Show
-    Show --> Rev["for i = char_count - 1 down to 0"]
-    Rev --> Out2[/"Output: character[i]"/]
-    Out2 --> Rev
-    Rev --> Finish(["[End]"])
-```
-
-Trace for `char_count = 3` with the characters `x`, `y`, `z`:
-
-| Step | Instruction | `char_count` | `i` | `character[0]` | `character[1]` | `character[2]` | Terminal Output |
-| :---: | :--- | :---: | :---: | :---: | :---: | :---: | :--- |
-| 1 | Declaration and initialization | `0` | `?` | `?` | `?` | `?` | - |
-| 2 | Input `char_count` | `3` | `?` | `?` | `?` | `?` | Prompt user |
-| 3 | `i = 0`: read | `3` | `0` | `x` | `?` | `?` | `Character 1:` |
-| 4 | `i = 1`: read | `3` | `1` | `x` | `y` | `?` | `Character 2:` |
-| 5 | `i = 2`: read | `3` | `2` | `x` | `y` | `z` | `Character 3:` |
-| 6 | Print in order (`i = 0` to `2`) | `3` | `2` | `x` | `y` | `z` | `x y z` |
-| 7 | Print inverted (`i = 2` down to `0`) | `3` | `0` | `x` | `y` | `z` | `z y x` |
+The full implementation is available in [reverse_characters.c](reverse_characters.c).
 
 ---
 
@@ -78,10 +43,10 @@ Characters in inverted order: d c b a
 
 ## 💡 Key Concepts Applied
 
-- **Array With Runtime Size:** `char character[char_count]` is a variable length array (C99), so its size is only known after the user answers the first question.
-- **Index Starting at 0:** An array with `char_count` elements has valid positions from `0` to `char_count - 1`, which is why the loops stop with `i < char_count`.
-- **Reverse Traversal:** The inverted output starts at the last index (`char_count - 1`) and decrements until `0` (`for (int i = char_count - 1; i >= 0; i--)`).
-- **Input Buffer Hygiene:** The space before `%c` in `scanf(" %c", &character[i])` skips the Enter left in the buffer by the previous read.
+- **Variable-Length Arrays (C99):** Using `char character[char_count]` allows sizing the array at runtime based on the count entered by the user.
+- **Zero-Indexed Arrays:** In C, an array with `char_count` elements has valid indices from `0` to `char_count - 1`, which is why traversal loops check `i < char_count`.
+- **Printing Backwards with for:** Printing in inverted order starts at the last valid index (`char_count - 1`) and decrements down to 0 (`for (int i = char_count - 1; i >= 0; i--)`).
+- **Input Buffer Cleaning:** Placing a leading space before `%c` in `scanf(" %c", &character[i])` discards any leftover newline character from the previous input.
 
 ---
 

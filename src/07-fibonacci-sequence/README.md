@@ -8,23 +8,23 @@
 </div>
 
 > **Origin:** Class 06 (do-while & while) & Class 08 (for)  
-> **Topic:** Sliding Window Recurrence & Input Validation  
-> **Lineage:** Precursor to recursive sequence generation and sum traces in [Class 11: Recursive Fibonacci](../14-recursive-fibonacci)
+> **Topic:** Fibonacci Sequence with Loops (do-while, while, for) and Input Validation  
+> **Lineage:** Base for the recursive version in [Class 11: Recursive Fibonacci](../14-recursive-fibonacci)
 
 ---
 
 ## 🎯 Problem Statement
 
-Generate the Fibonacci sequence and display the step-by-step arithmetic addition pairs ($1 + 1 = 2$, $1 + 2 = 3$, $2 + 3 = 5$, etc.). In my solution, the program has an interactive comparative submenu demonstrating the three loop structures (`do...while`, `while` and `for`) across two problem formulations explored in class:
+In this exercise, I generated the Fibonacci sequence and displayed each arithmetic addition pair (`1 + 1 = 2`, `1 + 2 = 3`, `2 + 3 = 5`, and so on). I built an interactive comparative submenu demonstrating the three loop structures (`do...while`, `while`, and `for`) across two approaches we explored in class:
 
 1. **Value Ceiling Limit:** The sequence and sum operations terminate when values exceed a numeric threshold (`next <= limit`).
-2. **Term Count Limit (Corrected):** The user specifies the exact quantity of terms to generate. Input validation enforces `limit > 0`, generating $N$ sequence numbers and the corresponding pairwise additions. This formulation is available with `do...while`, `while` and `for`.
+2. **Term Count Limit:** The user specifies the exact number of terms to generate. Input validation enforces `limit > 0`, generating the requested sequence numbers and their pairwise additions. This version is available with `do...while`, `while`, and `for`.
 
 ---
 
 ## 💻 Source Code
 
-The implementation is available directly in [`fibonacci_sequence.c`](fibonacci_sequence.c).
+The full implementation is available in [fibonacci_sequence.c](fibonacci_sequence.c).
 
 ---
 
@@ -117,17 +117,12 @@ Choice (1-6): 6
 
 ## 💡 Key Concepts Applied
 
-- **Fibonacci Recurrence Relation:** Defined as $F_1 = 1, F_2 = 1$ and $F_n = F_{n-1} + F_{n-2}$ for $n \ge 3$.
-- **Sliding Window State Transition:** Updates the state sequentially without requiring vector allocation in memory:
-  ```c
-  sum = current + next;
-  current = next;
-  next = sum;
-  ```
-- **Input Validation Loop:** Guards against non-positive inputs using defensive re-prompting (`while (limit <= 0)`, `do...while (limit <= 0)` or `for (; limit <= 0;)`).
-- **`for` With Optional Parts:** The `for` version leaves out the initialization (the counters are set before) and works as a `while` for the validation, while the term generation uses `for (; loop < limit; loop++)`.
-- **Algorithmic Refinement (Value Ceiling vs. Term Count):** Reflects the classroom evolution from stopping when values exceed a ceiling (`next <= limit`) to generating a precise count of items (`loop < limit`).
-- **Pairwise Sums Decomposition:** Displays the arithmetic operations that produce each subsequent term when $N > 2$.
+- **How the Sequence Works:** In the Fibonacci sequence, the first two numbers are `1` and `1`, and each subsequent number is the sum of the two preceding numbers.
+- **Updating Variables Inside the Loop:** Uses three variables `current`, `next`, and `sum` to advance through the sequence without needing an array: `sum = current + next`, `current = next`, `next = sum`.
+- **Input Validation Loop:** Guards against non-positive inputs using defensive re-prompting (`while (limit <= 0)`, `do...while (limit <= 0)`, or `for (; limit <= 0;)`).
+- **`for` Loop with Optional Components:** The `for` validation leaves out initialization since counters are set earlier, functioning like a `while`, while term generation uses `for (; loop < limit; loop++)`.
+- **Refinement from Ceiling Value to Term Count:** Reflects our progression in class from stopping when values exceed a ceiling (`next <= limit`) to generating an exact count of items (`loop < limit`).
+- **Pairwise Sum Decomposition:** Shows the arithmetic operations that produce each subsequent term when more than two terms are requested.
 
 ---
 

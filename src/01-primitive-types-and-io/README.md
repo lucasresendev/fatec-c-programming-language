@@ -14,13 +14,13 @@
 
 ## 🎯 Problem Statement
 
-Declare variables across standard C primitive data types (`char`, `int`, `float`, `long`, `double`), inspect their allocated memory sizes in bytes via `sizeof`, print initial default values using formatted placeholders, and capture interactive user input through `scanf`.
+In this exercise, I declared variables across standard C primitive data types (`char`, `int`, `float`, `long`, `double`), checked their allocated size in bytes with the `sizeof` operator, printed their default values with formatted placeholders, and captured new user input using `scanf`.
 
 ---
 
 ## 💻 Source Code
 
-The implementation is available directly in [`primitive_types_and_io.c`](primitive_types_and_io.c).
+The full implementation is available in [primitive_types_and_io.c](primitive_types_and_io.c).
 
 ---
 
@@ -52,17 +52,17 @@ The double real number is 2.718282, size: 8 byte(s)
 
 ## 💡 Key Concepts Applied
 
-- **The 3 Pillars of Programming:** A language is a complete programming language when it supports **variables** (retaining/altering state in memory), **decision-making** (branching logic), and **loops** (iteration).
-- **Variable Identifier Rules:** In C, variable names cannot start with a digit, cannot clash with reserved language keywords (like `int`, `float`, `return`), and may only use letters, digits, and underscores (`_`).
-- **Primitive Data Types & Memory Allocation:**
-  - `char`: 1 byte (single character / small integer).
+- **The 3 Pillars of Programming:** Programming becomes much easier to understand when working with **variables** (storing and altering values in memory), **decision-making** (branching logic), and **loops** (repeating code blocks).
+- **Variable Identifier Rules:** In C, variable names cannot start with a digit, cannot clash with reserved keywords (such as `int`, `float`, `return`), and may only use letters, digits, and underscores (`_`).
+- **Primitive Data Types and Memory Sizing:**
+  - `char`: 1 byte (single character or small integer).
   - `int`: 4 bytes (standard integer representation).
   - `float`: 4 bytes (single-precision floating point).
-  - `long`: 4 or 8 bytes depending on platform/data model (LP64 vs LLP64).
+  - `long`: 4 or 8 bytes depending on the operating system and compiler.
   - `double`: 8 bytes (double-precision floating point).
-- **Memory Inspection (`sizeof`):** The `sizeof` operator queries the compile-time/run-time byte size of any type or variable, formatted with `%zu` (`size_t`).
-- **Formatted Output (`printf`):** Displaying variables using format specifiers (`%c`, `%d`, `%ld`, `%lf`, `%zu`) and precision specifiers like `%.2f` for two decimal places.
-- **Formatted Input (`scanf`):** Reading user input into memory locations with the address-of operator `&`. Using a leading whitespace (`" %c"`) consumes any lingering newline characters left in the standard input buffer.
+- **Memory Inspection with `sizeof`:** The `sizeof` operator queries the byte size of any type or variable in memory, printed with the `%zu` (`size_t`) format.
+- **Formatted Output (`printf`):** Displaying variables using format placeholders (`%c`, `%d`, `%ld`, `%lf`, `%zu`) and precision controls like `%.2f` for two decimal places.
+- **Formatted Input (`scanf`):** Reading user input into memory locations with the address-of operator `&`. Using a leading space (`" %c"`) consumes newline characters that remained in the input buffer.
 
 ---
 

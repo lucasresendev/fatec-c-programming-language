@@ -8,59 +8,21 @@
 </div>
 
 > **Origin:** Class 10 (Functions, Modular Programming & `<math.h>`)  
-> **Topic:** Procedural Modularization, Math Library (`-lm`), and Parallel Array Retention
+> **Topic:** Functions, <math.h> Library (sqrt and -lm), and Arrays
 
 ---
 
 ## 🎯 Problem Statement
 
-Calculate the square roots of a user-defined series of real numbers using modular functions and the standard C mathematics library (`<math.h>`). In this exercise, I read the desired number of values, prompt the user for each floating-point entry, compute the square root via `sqrt()`, and output the original values alongside their corresponding square roots in a consolidated summary list.
+Calculate the square roots of a series of real numbers entered by the user, using modular functions and the standard C math library (`<math.h>`). In class, the professor showed how to use functions like `sqrt()` by computing and printing each result directly inside a single loop, without storing the values.
 
-### 🏛️ Classroom Scope vs. Autoral / External Approach
-
-- **Fatec Course Scope:** The classroom prompt focused on modularizing C programs into standalone functions (`void calculateSquareRoots()`) and using standard `<math.h>` mathematical functions (`sqrt()`, `pow()`, `ceil()`, `floor()`). In class, the baseline student example processed inputs on the fly within a single loop without retaining them in memory.
-- **My Autoral Extension:** Instead of computing and discarding values immediately, I chose to save them into two parallel arrays (`values[]` and `square_roots[]`), validating user input (re-prompting on non-positive counts, and setting square root to 0.0 for negative numbers). This allows the program to display an organized table of all results after data entry is complete.
+In my solution, I chose to take it a step further: I store all input numbers and their calculated square roots in two parallel arrays (`values[]` and `square_roots[]`), setting the square root to 0.0 if the user enters a negative number, and validating the input count with a loop. This allows the program to print an organized summary table of all results at the end.
 
 ---
 
 ## 💻 Source Code
 
 The full implementation is available directly in [`square_root_calculator.c`](square_root_calculator.c).
-
----
-
-## 📊 Algorithmic Flow & Trace
-
-```mermaid
-flowchart TD
-    Start(["[Start]"]) --> CallFunc[["calculate_square_roots()"]]
-    CallFunc --> PromptCount[/"Input: total_values"/]
-    PromptCount --> ValidateCount{"total_values <= 0"}
-    ValidateCount -- Yes --> RePrompt[/"Output error & prompt again"/] --> ValidateCount
-    ValidateCount -- No --> Alloc["Declare values[total_values], square_roots[total_values]"]
-    Alloc --> LoopInput{"i < total_values"}
-    LoopInput -- Yes --> ReadVal[/"Input: values[i]"/]
-    ReadVal --> CheckNeg{"values[i] < 0.0"}
-    CheckNeg -- Yes --> SetZero["square_roots[i] = 0.0"] --> IncI["i++"] --> LoopInput
-    CheckNeg -- No --> CalcRoot["square_roots[i] = sqrt(values[i])"] --> IncI
-    LoopInput -- No --> LoopOutput{"i < total_values"}
-    LoopOutput -- Yes --> PrintResult[/"Output: values[i] and square_roots[i]"/] --> IncOut["i++"] --> LoopOutput
-    LoopOutput -- No --> Finish(["[End]"])
-```
-
-RAM memory trace for inputs `total_values = 3`, `values = [16.0, 25.0, 9.0]`:
-
-| Step | Instruction | `i` | `total_values` | `values[i]` | `square_roots[i]` | Condition Evaluated | Terminal Output |
-| :---: | :--- | :---: | :---: | :---: | :---: | :---: | :--- |
-| 1 | Function entry | `0` | `0` | `?` | `?` | - | Prompt user for count |
-| 2 | Read `total_values` | `0` | `3` | `?` | `?` | `total_values <= 0` -> False | - |
-| 3 | Read `values[0]` | `0` | `3` | `16.00` | `?` | `16.00 < 0.0` -> False | - |
-| 4 | Compute `sqrt(16.0)` | `0` | `3` | `16.00` | `4.00` | - | - |
-| 5 | Read `values[1]` | `1` | `3` | `25.00` | `?` | `25.00 < 0.0` -> False | - |
-| 6 | Compute `sqrt(25.0)` | `1` | `3` | `25.00` | `5.00` | - | - |
-| 7 | Read `values[2]` | `2` | `3` | `9.00` | `?` | `9.00 < 0.0` -> False | - |
-| 8 | Compute `sqrt(9.0)` | `2` | `3` | `9.00` | `3.00` | - | - |
-| 9 | Batch report output | `0..2` | `3` | `[16, 25, 9]` | `[4, 5, 3]` | `i < 3` -> Loop ends | Consolidated list |
 
 ---
 
@@ -84,23 +46,19 @@ Square root of 9.00 is 3.00
 
 ## 💡 Key Concepts Applied
 
-- **Modular Subroutines:** Decoupling algorithm logic into a specialized procedure (`calculate_square_roots()`) adhering to single responsibility principles.
-- **Mathematical Library (`<math.h>`):** Leveraging `sqrt()` for standard IEEE 754 floating-point square root computations.
-- **Linker Flag Requirement (`-lm`):** On GCC and Clang in Linux environments, linking against the shared math runtime library (`libm.so`) requires passing the `-lm` argument during compilation.
-- **Array Retention vs. Ephemeral I/O:** Storing input values in memory arrays ensures that input collection remains isolated from report generation.
+- **Modular Functions:** Organizing code into a dedicated function (`calculate_square_roots()`), keeping `main()` clean and focused on running the program.
+- **Mathematical Library (`<math.h>`):** Using `sqrt()` to calculate double-precision floating-point square roots.
+- **Linker Flag Requirement (`-lm`):** In GCC and Clang on Linux, the math library is not linked by default, so passing the `-lm` flag to the compiler is necessary for the compiler to include math library functions.
+- **Parallel Array Storage:** Storing numbers in arrays keeps data collection separate from final report printing, instead of immediately discarding each value after calculation.
 
 ---
 
 ## 🚀 How to Run
 
-### Standalone Compilation
-
 ```bash
+# Compile and run with GCC
+mkdir -p dist && gcc -Wall -O2 src/12-square-root-calculator/square_root_calculator.c -o dist/square_root_calculator -lm && ./dist/square_root_calculator
+
+# Or compile and run with Clang (macOS default)
 mkdir -p dist && clang -Wall -O2 src/12-square-root-calculator/square_root_calculator.c -o dist/square_root_calculator -lm && ./dist/square_root_calculator
-```
-
-### Consolidated Menu Execution
-
-```bash
-mkdir -p dist && clang -Wall -O2 src/00-consolidated-menu/consolidated_menu.c -o dist/consolidated_menu -lm && ./dist/consolidated_menu
 ```
