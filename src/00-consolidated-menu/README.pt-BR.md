@@ -1,48 +1,49 @@
 <div align="center">
 
-  🇬🇧 **[English Version](README.md)**
+  🇺🇸 **[English Version](README.md)**
   <br>
 
   # ⚙️ Menu Consolidado de Exercícios (`consolidated_menu.c`)
 
 </div>
 
-> **Origem:** Aulas 05 a 12 (Coleção Consolidada de Exercícios)  
-> **Tópico:** Arquitetura Orientada a Menu, Loop de Eventos com `do...while` e Integração Multi-Módulo  
-> **Continuidade:** Idealizado na Aula 05, tornado interativo na Aula 06, expandido progressivamente ao longo do semestre
+> **Origem:** Aulas 05 a 14 (Coleção Consolidada de Exercícios)  
+> **Tópico:** Menu Interativo com switch/case, Loop do...while e Funções  
+> **Continuidade:** Ideia inicial na Aula 05, colocado em loop na Aula 06 e atualizado até a Aula 14
 
 ---
 
 ## 🎯 Enunciado do Problema
 
-Unificar todos os exercícios práticos desenvolvidos ao longo do semestre em um menu interativo no terminal (`00-consolidated-menu`). O programa executa continuamente dentro de uma repetição `do...while`, despachando a execução para cada rotina e retornando ao menu principal até que o usuário informe explicitamente a Opção 19 para encerrar.
+Neste projeto, reuni todos os exercícios práticos e a avaliação final que desenvolvi ao longo do semestre em um menu interativo no terminal (`00-consolidated-menu`). Estruturei o programa com uma repetição contínua usando `do...while`, que executa a rotina escolhida e retorna ao menu principal até que a opção 20 seja informada para encerrar.
 
-O menu reúne 18 exercícios integrados:
+O menu reúne 19 exercícios integrados:
 1. **Verificador de Par ou Ímpar**
 2. **Avaliador de Notas com Exame de Recuperação**
-3. **Loja de Item Único** (Escada de Descontos)
-4. **Loja de Sobremesas** (Precificação Aditiva via `switch/case` e Fallthrough)
+3. **Loja de Item Único** (Tabela de Descontos)
+4. **Loja de Sobremesas** (Precificação via `switch/case` e Fallthrough)
 5. **Cálculo de Fatorial** (`do...while`)
 6. **Cálculo de Fatorial** (`while`)
 7. **Cálculo de Fatorial** (`for`)
 8. **Sequência de Fibonacci** (`do...while` com validação)
 9. **Sequência de Fibonacci** (`while` com validação)
 10. **Sequência de Fibonacci** (`for` com validação)
-11. **Caracteres em Ordem Reversa** (array percorrido de trás para frente)
-12. **Maior e Menor Número** (array com bubble sort)
-13. **Manipulação de Strings** (`string.h`, cópia manual, comparação, concatenação)
-14. **Soma de Matrizes** (arrays 2D com soma elemento a elemento)
-15. **Calculadora de Raiz Quadrada** (`<math.h>`, retenção em vetores e relatório em lote)
-16. **Fatorial Recursivo** (acumulador recursivo em cauda com expansão)
-17. **Fibonacci Recursivo** (geração de termos e decomposição aritmética de somas)
-18. **Sistema de Gerenciamento Acadêmico** (registros com `struct` e `typedef`)
-19. **Sair**
+11. **Caracteres em Ordem Reversa** (vetor percorrido de trás para frente)
+12. **Maior e Menor Número** (vetor com ordenação bubble sort)
+13. **Manipulação de Strings** (`string.h`, cópia manual, comparação e concatenação)
+14. **Soma de Matrizes** (matrizes 2D com soma elemento a elemento)
+15. **Calculadora de Raiz Quadrada** (`<math.h>`, armazenamento em vetores e relatório em lote)
+16. **Fatorial Recursivo** (função recursiva mostrando cada multiplicação)
+17. **Fibonacci Recursivo** (geração de termos e somas passo a passo)
+18. **Sistema de Gerenciamento Acadêmico** (`struct`, `typedef`, geração de relatório e persistência em múltiplos arquivos)
+19. **Validador de CPF** (Avaliação Final: cálculo dos dígitos verificadores e ponteiros)
+20. **Sair**
 
 ---
 
 ## 💻 Código-Fonte
 
-A implementação completa está disponível diretamente em [`consolidated_menu.c`](consolidated_menu.c).
+O código completo está em [consolidated_menu.c](consolidated_menu.c).
 
 ---
 
@@ -70,10 +71,11 @@ A implementação completa está disponível diretamente em [`consolidated_menu.
 16 - Recursive Factorial
 17 - Recursive Fibonacci
 18 - Academic Management System
-19 - Exit
+19 - CPF Validator (Final Assessment)
+20 - Exit
 ================================================================
 
-Choice (1-19): 7
+Choice (1-20): 7
 
 ================================================================
                        Factorial (for)
@@ -106,10 +108,11 @@ For the number 5, the factorial is: 5 x 4 x 3 x 2 x 1 = 120
 16 - Recursive Factorial
 17 - Recursive Fibonacci
 18 - Academic Management System
-19 - Exit
+19 - CPF Validator (Final Assessment)
+20 - Exit
 ================================================================
 
-Choice (1-19): 19
+Choice (1-20): 20
 
 ================================================================
                    Exiting program. Goodbye!
@@ -120,11 +123,11 @@ Choice (1-19): 19
 
 ## 💡 Principais Conceitos Aplicados
 
-- **Menu de Exercícios do Curso (`00`):** Ponto de entrada consolidado do repositório, posicionado no início de `src/` e atualizado continuamente à medida que novos exercícios e algoritmos são implementados.
-- **Execução Contínua via `do...while`:** Garante a renderização do menu ao menos uma vez e mantém a aplicação viva até que a condição sentinela `exercise_choice != 19` se torne falsa.
-- **Declaração de Variáveis no Topo do Escopo:** As variáveis escalares de todos os módulos ficam no início de `main(void)`, reforçando a clareza de alocação de memória no paradigma estruturado. Os exercícios com arrays e matrizes declaram suas coleções dinâmicas dentro do próprio bloco, já que as dimensões dependem do que o usuário digita.
-- **Tratamento do Buffer de Entrada:** Enquanto especificadores numéricos e de texto (`%i`, `%f`, `%s`) já descartam espaços e quebras de linha automaticamente, leituras de caractere utilizam `scanf(" %c")` com espaço à esquerda intencional para evitar capturar o `\n` residual do teclado.
-- **Identidade Visual Padronizada:** Réguas divisórias de 64 caracteres `=` garantem clareza e separação estética entre cada módulo.
+- **Menu Unificado de Exercícios:** Criei este programa como ponto de entrada principal dos meus exercícios práticos, atualizando o código sempre que concluía uma nova atividade da matéria.
+- **Execução Contínua com `do...while`:** O laço de repetição garante que o menu apareça pelo menos uma vez e continue em execução até a condição `exercise_choice != 20` se tornar falsa (0).
+- **Organização e Escopo de Variáveis:** Declarei as variáveis comuns no início de `main(void)` para manter uma estrutura clara. Nos exercícios que usam vetores e matrizes dimensionados pelo usuário, declarei as coleções dentro de cada caso do `switch`.
+- **Limpeza do Buffer de Entrada:** Enquanto leituras numéricas (`%i`, `%f`) ignoram espaços e quebras de linha anteriores, para ler caracteres com `scanf(" %c")` incluí um espaço antes do `%c` para não capturar o `\n` que sobrou no teclado.
+- **Apresentação Visual Padronizada:** Utilizei réguas divisórias de 64 caracteres `=` para manter a tela limpa e consistente em todas as opções do menu.
 
 ---
 
@@ -132,8 +135,8 @@ Choice (1-19): 19
 
 ```bash
 # Compilar e executar com GCC
-mkdir -p dist && gcc -Wall -O2 src/00-consolidated-menu/consolidated_menu.c -o dist/consolidated_menu && ./dist/consolidated_menu
+mkdir -p dist && gcc -Wall -O2 src/00-consolidated-menu/consolidated_menu.c -lm -o dist/consolidated_menu && ./dist/consolidated_menu
 
 # Ou compilar e executar com Clang (padrão macOS)
-mkdir -p dist && clang -Wall -O2 src/00-consolidated-menu/consolidated_menu.c -o dist/consolidated_menu && ./dist/consolidated_menu
+mkdir -p dist && clang -Wall -O2 src/00-consolidated-menu/consolidated_menu.c -lm -o dist/consolidated_menu && ./dist/consolidated_menu
 ```

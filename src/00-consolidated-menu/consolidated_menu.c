@@ -51,6 +51,55 @@ struct MENU_STUDENT {
 
 typedef struct MENU_STUDENT MENU_STUDENT;
 
+#define MENU_CPF_SIZE 14
+#define MENU_CPF_DIGITS_SIZE 11
+
+static void menu_clean_cpf(const char input[], int cpf_digits[], int *input_digits_size) {
+    *input_digits_size = 0;
+
+    for (int i = 0; input[i] != '\0'; i++) {
+        if (input[i] >= '0' && input[i] <= '9') {
+            if (*input_digits_size < MENU_CPF_DIGITS_SIZE) {
+                cpf_digits[*input_digits_size] = input[i] - '0';
+            }
+            (*input_digits_size)++;
+        }
+    }
+}
+
+static int menu_cpf_all_equal(int cpf_digits[]) {
+    for (int i = 1; i < MENU_CPF_DIGITS_SIZE; i++) {
+        if (cpf_digits[i] != cpf_digits[0]) {
+            return 0;
+        }
+    }
+    return 1;
+}
+
+static int menu_check_cpf(int cpf_digits[], int num_digits) {
+    int weighted_sum = 0;
+
+    for (int i = 0; i < num_digits; i++) {
+        int weight = num_digits + 1 - i;
+        weighted_sum += cpf_digits[i] * weight;
+    }
+
+    int remainder = weighted_sum % 11;
+    int expected = 0;
+
+    if (remainder < 2) {
+        expected = 0;
+    } else {
+        expected = 11 - remainder;
+    }
+
+    if (cpf_digits[num_digits] == expected) {
+        return 0;
+    } else {
+        return 1;
+    }
+}
+
 int main(void) {
     // Menu selection
     int exercise_choice = 0;
@@ -126,9 +175,10 @@ int main(void) {
         printf("16 - Recursive Factorial\n");
         printf("17 - Recursive Fibonacci\n");
         printf("18 - Academic Management System\n");
-        printf("19 - Exit\n");
+        printf("19 - CPF Validator (Final Assessment)\n");
+        printf("20 - Exit\n");
         printf("================================================================\n\n");
-        printf("Choice (1-19): ");
+        printf("Choice (1-20): ");
 
         scanf("%i", &exercise_choice);
 
@@ -748,16 +798,50 @@ int main(void) {
             int current_student_count = 0;
             char continue_reg = ' ';
             MENU_STUDENT local_students[MENU_MAX_STUDENTS];
+            FILE *file_pointer;
+
+            // Load saved data from files if available (Class 13: Persistent Storage - Read)
+            file_pointer = fopen("total.txt", "rt");
+            if (file_pointer != NULL) {
+                fscanf(file_pointer, "%i", &current_student_count);
+                fclose(file_pointer);
+            }
+
+            file_pointer = fopen("ids.txt", "rt");
+            if (file_pointer != NULL) {
+                for (int i = 0; i < current_student_count; i++) {
+                    fscanf(file_pointer, "%i", &local_students[i].id);
+                }
+                fclose(file_pointer);
+            }
+
+            file_pointer = fopen("names.txt", "rt");
+            if (file_pointer != NULL) {
+                for (int i = 0; i < current_student_count; i++) {
+                    fscanf(file_pointer, "%s", local_students[i].name);
+                }
+                fclose(file_pointer);
+            }
+
+            if (current_student_count > 0) {
+                printf("Loaded %i student(s) from files.\n\n", current_student_count);
+            }
 
             do {
                 printf("--- Academic Management System ---\n");
                 printf("1 - Register students\n");
                 printf("2 - Show all students\n");
-                printf("3 - Return to main menu\n");
-                printf("Select an option (1-3): ");
+                printf("3 - Save and read report\n");
+                printf("4 - Save and return to main menu\n");
+                printf("Select an option (1-4): ");
                 scanf("%i", &student_option);
 
                 if (student_option == 1) {
+                    if (current_student_count >= MENU_MAX_STUDENTS) {
+                        printf("\nCapacity reached (%i students).\n\n", MENU_MAX_STUDENTS);
+                        continue;
+                    }
+
                     while (current_student_count < MENU_MAX_STUDENTS) {
                         printf("\n--- Student %i ---\n", current_student_count + 1);
                         printf("ID: ");
@@ -768,7 +852,7 @@ int main(void) {
                         current_student_count++;
 
                         if (current_student_count >= MENU_MAX_STUDENTS) {
-                            printf("Capacity reached (%i students).\n", MENU_MAX_STUDENTS);
+                            printf("Capacity reached (%i students).\n\n", MENU_MAX_STUDENTS);
                             break;
                         }
 
@@ -790,24 +874,111 @@ int main(void) {
                         printf("\n");
                     }
                 } else if (student_option == 3) {
-                    printf("Returning to main menu...\n");
+                    if (current_student_count == 0) {
+                        printf("\nNo students registered yet.\n\n");
+                        continue;
+                    }
+
+                    char report_line[100] = "";
+
+                    file_pointer = fopen("report.txt", "wt");
+                    if (file_pointer == NULL) {
+                        printf("No memory available!\n\n");
+                        continue;
+                    } else {
+                        for (int i = 0; i < current_student_count; i++) {
+                            fprintf(file_pointer, "%i %s\n", local_students[i].id, local_students[i].name);
+                        }
+                        fclose(file_pointer);
+                    }
+
+                    file_pointer = fopen("report.txt", "rt");
+                    if (file_pointer == NULL) {
+                        printf("No memory available!\n\n");
+                        continue;
+                    } else {
+                        printf("\n--- Report (report.txt) ---\n");
+                        for (int i = 0; i < current_student_count; i++) {
+                            if (fscanf(file_pointer, " %[^\n]", report_line) == 1) {
+                                printf("%s\n", report_line);
+                            }
+                        }
+                        printf("\n");
+                        fclose(file_pointer);
+                    }
+                } else if (student_option == 4) {
+                    file_pointer = fopen("total.txt", "wt");
+                    if (file_pointer != NULL) {
+                        fprintf(file_pointer, "%i\n", current_student_count);
+                        fclose(file_pointer);
+                    }
+
+                    file_pointer = fopen("ids.txt", "wt");
+                    if (file_pointer != NULL) {
+                        for (int i = 0; i < current_student_count; i++) {
+                            fprintf(file_pointer, "%i\n", local_students[i].id);
+                        }
+                        fclose(file_pointer);
+                    }
+
+                    file_pointer = fopen("names.txt", "wt");
+                    if (file_pointer != NULL) {
+                        for (int i = 0; i < current_student_count; i++) {
+                            fprintf(file_pointer, "%s\n", local_students[i].name);
+                        }
+                        fclose(file_pointer);
+                    }
+
+                    printf("All data saved successfully. Returning to main menu...\n");
                 } else {
-                    printf("Invalid option! Please enter 1, 2, or 3.\n\n");
+                    printf("Invalid option! Please enter 1, 2, 3, or 4.\n\n");
                 }
-            } while (student_option != 3);
+            } while (student_option != 4);
 
             printf("\n================================================================\n\n");
         } else if (exercise_choice == 19) {
+            printf("\n================================================================\n");
+            printf("              CPF Validator (Final Assessment)\n");
+            printf("================================================================\n\n");
+
+            char cpf_input[MENU_CPF_SIZE + 1];
+            int cpf_digits[MENU_CPF_DIGITS_SIZE];
+            int cpf_digits_size = 0;
+
+            while (1) {
+                printf("Enter a CPF to be validated: ");
+                scanf("%s", cpf_input);
+
+                menu_clean_cpf(cpf_input, cpf_digits, &cpf_digits_size);
+
+                if (cpf_digits_size != MENU_CPF_DIGITS_SIZE) {
+                    printf("\nError: The CPF must contain exactly 11 numeric digits.\n\n");
+                    continue;
+                }
+
+                break;
+            }
+
+            if (menu_cpf_all_equal(cpf_digits) == 1 ||
+                menu_check_cpf(cpf_digits, 9) != 0 ||
+                menu_check_cpf(cpf_digits, 10) != 0) {
+                printf("\nThis CPF is invalid.\n");
+            } else {
+                printf("This CPF is valid.\n");
+            }
+
+            printf("\n================================================================\n\n");
+        } else if (exercise_choice == 20) {
             printf("\n================================================================\n");
             printf("                   Exiting program. Goodbye!\n");
             printf("================================================================\n\n");
         } else {
             printf("\n================================================================\n");
-            printf("        Invalid selection! Please enter a number 1 to 19.\n");
+            printf("        Invalid selection! Please enter a number 1 to 20.\n");
             printf("================================================================\n\n");
         }
 
-    } while (exercise_choice != 19);
+    } while (exercise_choice != 20);
 
     return 0;
 }

@@ -3,25 +3,25 @@
   🇧🇷 **[Versão em Português](README.pt-BR.md)**
   <br>
 
-  # ⚙️ Consolidated Menu - Coursework Exercises (`consolidated_menu.c`)
+  # ⚙️ Consolidated Menu: Coursework Exercises (`consolidated_menu.c`)
 
 </div>
 
-> **Origin:** Classes 05 to 12 (Consolidated Coursework Collection)  
-> **Topic:** Menu-Driven Architecture, `do...while` Event Loop & Multi-Module Integration  
-> **Lineage:** Conceived in Class 05, operationalized in Class 06, continuously expanded across the semester
+> **Origin:** Classes 05 to 14 (Consolidated Coursework Collection)  
+> **Topic:** Interactive Menu with switch/case, do...while Loop, and Functions  
+> **Lineage:** Started in Class 05, put inside a loop in Class 06, and updated through Class 14
 
 ---
 
 ## 🎯 Problem Statement
 
-Unify all practical exercises developed throughout the semester into an interactive console menu (`00-consolidated-menu`). The program executes continuously inside a `do...while` repetition loop, dispatching to each specific problem routine and returning to the main menu until the user explicitly enters Option 19 to terminate.
+In this project, I brought together all the practical exercises and the final assessment I developed during the semester into a single interactive console menu (`00-consolidated-menu`). The program runs continuously inside a `do...while` loop, jumping to each specific exercise routine and returning to the main menu until option 20 is selected to exit.
 
-The menu includes 18 integrated exercises:
+The menu includes 19 integrated exercises:
 1. **Even or Odd Checker**
 2. **Academic Grade Evaluator** (with Retake Exam)
-3. **One Item Shop** (Tiered Discount Ladder)
-4. **Dessert Shop** (Switch & Fallthrough Pricing)
+3. **One Item Shop** (Discount Table)
+4. **Dessert Shop** (Switch and Fallthrough Pricing)
 5. **Factorial Calculator** (`do...while`)
 6. **Factorial Calculator** (`while`)
 7. **Factorial Calculator** (`for`)
@@ -32,17 +32,18 @@ The menu includes 18 integrated exercises:
 12. **Lowest and Highest Numbers** (array with bubble sort)
 13. **String Manipulation** (`string.h`, manual copy, comparison, concatenation)
 14. **Matrix Addition** (2D arrays with element-by-element sum)
-15. **Square Root Calculator** (`<math.h>`, array storage and batch reporting)
-16. **Recursive Factorial** (tail-recursive accumulator with expansion)
-17. **Recursive Fibonacci** (sequence terms and arithmetic additions)
-18. **Academic Management System** (`struct` and `typedef` records)
-19. **Exit**
+15. **Square Root Calculator** (`<math.h>`, array storage, and batch reporting)
+16. **Recursive Factorial** (recursive function printing each multiplication)
+17. **Recursive Fibonacci** (sequence terms and step-by-step sums)
+18. **Academic Management System** (`struct`, `typedef`, report generation, and multi-file persistence)
+19. **CPF Validator** (Final Assessment: check-digit calculation and pointer pass-by-reference)
+20. **Exit**
 
 ---
 
 ## 💻 Source Code
 
-The implementation is available directly in [`consolidated_menu.c`](consolidated_menu.c).
+The full implementation is available in [consolidated_menu.c](consolidated_menu.c).
 
 ---
 
@@ -70,10 +71,11 @@ The implementation is available directly in [`consolidated_menu.c`](consolidated
 16 - Recursive Factorial
 17 - Recursive Fibonacci
 18 - Academic Management System
-19 - Exit
+19 - CPF Validator (Final Assessment)
+20 - Exit
 ================================================================
 
-Choice (1-19): 7
+Choice (1-20): 7
 
 ================================================================
                        Factorial (for)
@@ -106,10 +108,11 @@ For the number 5, the factorial is: 5 x 4 x 3 x 2 x 1 = 120
 16 - Recursive Factorial
 17 - Recursive Fibonacci
 18 - Academic Management System
-19 - Exit
+19 - CPF Validator (Final Assessment)
+20 - Exit
 ================================================================
 
-Choice (1-19): 19
+Choice (1-20): 20
 
 ================================================================
                    Exiting program. Goodbye!
@@ -120,11 +123,11 @@ Choice (1-19): 19
 
 ## 💡 Key Concepts Applied
 
-- **Consolidated Exercises Menu (`00`):** Acts as the primary consolidated entry point for the repository, continually updated as new programming assignments and algorithmic challenges are completed.
-- **Continuous Execution via `do...while`:** Guarantees that the main menu renders at least once and keeps running until the sentinel condition `exercise_choice != 19` evaluates to false.
-- **Top-Level Declarations:** The scalar variables across all problem domains are declared at the beginning of `main(void)`, demonstrating classic structured C scoping. The array and matrix exercises declare their dynamic collections inside their own branches, since their dimensions depend on user input.
-- **Input Buffer Handling:** While numeric and string format specifiers (`%i`, `%f`, `%s`) discard whitespace and newlines automatically, single character inputs use `scanf(" %c")` with an intentional leading space to prevent capturing leftover newline (`\n`) bytes.
-- **Consistent UI Framing:** Standardized 64-character `=` divider bars keep the same look across all sub-modules.
+- **Centralized Menu Structure:** I built this program as an interactive entry point for my coursework, updating it continuously as we completed new programming exercises in class.
+- **Continuous Loop with `do...while`:** The `do...while` loop ensures the menu displays at least once and keeps running until the condition `exercise_choice != 20` becomes false (0).
+- **Variable Declarations and Scoping:** I declared separate variables at the start of `main(void)` for clear structured organization. For exercises that use arrays or matrices sized by the user, I declared those collections inside their specific switch blocks.
+- **Input Buffer Cleaning:** While numeric format specifiers (`%i`, `%f`) skip whitespace and newlines, reading a single character with `scanf(" %c")` requires a leading space so it does not capture leftover newline characters from the keyboard.
+- **Visual Presentation:** I formatted every screen with 64-character `=` divider lines to keep the terminal layout neat and consistent across all options.
 
 ---
 
@@ -132,8 +135,8 @@ Choice (1-19): 19
 
 ```bash
 # Compile and run with GCC
-mkdir -p dist && gcc -Wall -O2 src/00-consolidated-menu/consolidated_menu.c -o dist/consolidated_menu && ./dist/consolidated_menu
+mkdir -p dist && gcc -Wall -O2 src/00-consolidated-menu/consolidated_menu.c -lm -o dist/consolidated_menu && ./dist/consolidated_menu
 
 # Or compile and run with Clang (macOS default)
-mkdir -p dist && clang -Wall -O2 src/00-consolidated-menu/consolidated_menu.c -o dist/consolidated_menu && ./dist/consolidated_menu
+mkdir -p dist && clang -Wall -O2 src/00-consolidated-menu/consolidated_menu.c -lm -o dist/consolidated_menu && ./dist/consolidated_menu
 ```
