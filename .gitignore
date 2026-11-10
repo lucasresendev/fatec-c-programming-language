@@ -24,3 +24,10 @@ AGENTS.md
 drafts/
 rascunhos/
 scratch/
+
+# Runtime generated text files (Class 13 persistence & reports)
+report.txt
+total.txt
+ids.txt
+names.txt
+file.txt
